@@ -1,0 +1,1 @@
+export default function Blog(){return (<div><h1>Blog</h1><p className="note">Area articoli e aggiornamenti. Crea post statici o integra un CMS headless in futuro.</p></div>)}
