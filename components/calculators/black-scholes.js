@@ -1,7 +1,16 @@
 // pages/calcolatori/black-scholes.js
 import { useState, useMemo } from "react";
 
-function cdf(x){ return 0.5 * (1 + Math.erf(x/Math.SQRT2)); }
+// approssimazione numerica della funzione di ripartizione normale standard
+function cdf(x){
+  var sign = x < 0 ? -1 : 1;
+  x = Math.abs(x)/Math.sqrt(2);
+  const t = 1/(1+0.3275911*x);
+  const a1=0.254829592, a2=-0.284496736, a3=1.421413741, a4=-1.453152027, a5=1.061405429;
+  const erf = 1 - (((((a5*t+a4)*t)+a3)*t+a2)*t+a1)*t*Math.exp(-x*x);
+  return 0.5*(1+sign*erf);
+}
+
 function pdf(x){ return Math.exp(-0.5*x*x)/Math.sqrt(2*Math.PI); }
 
 export default function BlackScholes(){
