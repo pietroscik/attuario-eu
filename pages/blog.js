@@ -67,7 +67,7 @@ export default function Blog() {
   return (
     <>
       <Nav />
-      <main className="container">
+      <main id="top" className="container">
         <section className="hero hero--stack">
           <p className="eyebrow">Attuarial insight hub</p>
           <h1>Blog & risorse pratiche</h1>
@@ -166,6 +166,52 @@ export default function Blog() {
               </article>
             ))}
           </div>
+        </section>
+
+        <section id="archivio" className="section">
+          <h2>Archivio articoli</h2>
+          <p className="section-intro">
+            Una selezione dei contributi pubblicati negli ultimi mesi, utile per recuperare rapidamente analisi e casi studio.
+          </p>
+          <div className="stack">
+            {latest.map(post => (
+              <article key={`${post.title}-archivio`} className="card stack-sm">
+                <div className="article-meta">
+                  <span>{post.date}</span>
+                  {post.tags.map(tag => (
+                    <span key={`${post.title}-${tag}`} className="tag-pill">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <h3 style={{ margin: 0 }}>{post.title}</h3>
+                <p style={{ margin: 0, opacity: 0.8 }}>{post.summary}</p>
+                <a href="#top" style={{ fontWeight: 600 }}>
+                  Torna all'inizio ↑
+                </a>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section id="iscrizione-newsletter" className="section">
+          <h2>Iscrizione newsletter</h2>
+          <p className="section-intro">
+            Lasciaci la tua e-mail per ricevere una volta al mese gli aggiornamenti più rilevanti su normativa, modelli e casi
+            di studio.
+          </p>
+          <article className="card stack-sm">
+            <p style={{ margin: 0, opacity: 0.85 }}>
+              Compila il modulo dedicato indicando nome, cognome e società. Ti invieremo un link di conferma entro 24 ore e,
+              da quel momento, riceverai solo comunicazioni attuariali essenziali.
+            </p>
+            <a className="btn primary" href="https://attuario.eu/newsletter" rel="noopener noreferrer">
+              Apri il modulo di iscrizione
+            </a>
+            <p className="calculator-note" style={{ marginTop: 0 }}>
+              Puoi disiscriverti in qualsiasi momento rispondendo alla mail o scrivendo a info@attuario.eu.
+            </p>
+          </article>
         </section>
       </main>
       <Footer />
