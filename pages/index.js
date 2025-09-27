@@ -1,41 +1,42 @@
-import Link from "next/link";
-import Nav from "../components/Nav";
-import Footer from "../components/Footer";
+// pages/index.js
+import Head from "next/head";
 
-export default function Home(){
-  return (<>
-    <Nav/>
-    <main style={{maxWidth:960, margin:"0 auto", padding:"32px 16px"}}>
-      <section style={{textAlign:"center", marginBottom:32}}>
-        <h1 style={{fontSize:36, fontWeight:700, margin:"0 0 12px"}}>Soluzioni attuariali per decisioni migliori</h1>
-        <p style={{fontSize:18, opacity:.85}}>
-          Pricing, riserve, solvibilità e gestione del rischio per assicurazioni, fondi e PMI.
-          Dalla modellazione statistica alla reportistica conforme (IFRS 17, Solvency).
+export default function Home() {
+  return (
+    <>
+      <Head>
+        <title>Attuario.EU – Portale attuariale</title>
+        <meta name="description" content="Calcolatori, articoli e risorse per attuari e consulenti finanziari. Un progetto divulgativo di Pietro Maietta." />
+      </Head>
+
+      <main className="px-4 py-10 max-w-4xl mx-auto">
+        <h1 className="text-4xl font-bold mb-4">Benvenuto su Attuario.EU</h1>
+        <p className="mb-6 text-lg text-gray-700">
+          Un portale pensato per professionisti, studenti e appassionati di attuariato, economia, finanza e risk management.
+          Troverai strumenti di calcolo, articoli tecnici e divulgativi, risorse normative e modelli utili alla professione.
         </p>
-        <div style={{display:"flex", gap:12, justifyContent:"center", marginTop:16}}>
-          <Link href="/contatti" style={{padding:"10px 16px", background:"#000", color:"#fff", borderRadius:999}}>Prenota una call</Link>
-          <Link href="/calcolatori" style={{padding:"10px 16px", border:"1px solid #000", borderRadius:999}}>Prova i calcolatori</Link>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <SectionCard title="📘 Wiki Attuariale" href="/wiki" desc="Glossario, formule, normativa e appunti attuariali commentati." />
+          <SectionCard title="🧮 Calcolatori" href="/calcolatori" desc="Strumenti interattivi per rendite, pensioni, premi, e molto altro." />
+          <SectionCard title="📝 Blog" href="/blog" desc="Articoli divulgativi, approfondimenti e modelli attuariali." />
+          <SectionCard title="🛒 Shop & Modelli" href="/shop" desc="Excel, PDF e tool professionali disponibili per l'acquisto o il download." />
+          <SectionCard title="📡 Contatti" href="/contatti" desc="Scrivimi per collaborazioni, consulenze o suggerimenti." />
         </div>
-      </section>
-      <section style={{display:"grid", gap:12, gridTemplateColumns:"repeat(auto-fit,minmax(220px,1fr))"}}>
-        {[["Pricing tecnico","Frequenza × severità, GLM, credibilità."],
-          ["Riserve","RBNS/IBNR con metodi deterministici e stocastici."],
-          ["Solvibilità","VaR/CVaR, capitale a rischio e stress test."]]
-          .map(([t,d],i)=>(
-            <div key={i} style={{border:"1px solid #eee", borderRadius:16, padding:16}}>
-              <h3 style={{margin:"0 0 6px"}}>{t}</h3><p style={{margin:0, opacity:.8}}>{d}</p>
-            </div>
-        ))}
-      </section>
-      <section style={{marginTop:24, border:"1px solid #eee", background:"#fafafa", borderRadius:16, padding:16}}>
-        <h2 style={{margin:"0 0 8px"}}>Case studies</h2>
-        <ul style={{margin:"0 0 0 18px"}}>
-          <li>Tariffa sinistri auto con GLM e segmentazione rischio.</li>
-          <li>IBNR per ramo danni con metodo semplice + sensitività.</li>
-          <li>Report IFRS 17 sintetico per PMI assicurativa.</li>
-        </ul>
-      </section>
-    </main>
-    <Footer/>
-  </>);
+
+        <div className="mt-10 text-sm text-gray-500">
+          Un progetto ideato da <strong>Pietro Maietta</strong>, laureando in Metodi Quantitativi presso l’Università di Napoli “Parthenope”.
+        </div>
+      </main>
+    </>
+  );
+}
+
+function SectionCard({ title, href, desc }) {
+  return (
+    <a href={href} className="border p-4 rounded-xl hover:shadow-lg transition bg-white">
+      <h2 className="text-xl font-semibold mb-1">{title}</h2>
+      <p className="text-gray-600">{desc}</p>
+    </a>
+  );
 }
