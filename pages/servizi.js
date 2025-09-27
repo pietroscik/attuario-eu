@@ -1,4 +1,6 @@
-import Nav from "../components/Nav"; import Footer from "../components/Footer";
+import Link from "next/link";
+import Nav from "../components/Nav";
+import Footer from "../components/Footer";
 export default function Servizi(){
   const items = [
     ["Pricing","Tariffe tecniche, GLM, analisi elasticità e marginalità."],
@@ -20,7 +22,7 @@ export default function Servizi(){
         ))}
       </div>
       <div style={{marginTop:16}}>
-        <a href="/contatti" style={{padding:"10px 16px", background:"#000", color:"#fff", borderRadius:999}}>Richiedi un preventivo</a>
+        <Link href="/contatti" style={{padding:"10px 16px", background:"#000", color:"#fff", borderRadius:999}}>Richiedi un preventivo</Link>
       </div>
     </main>
     <Footer/>

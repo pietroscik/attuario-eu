@@ -1,5 +1,7 @@
+import Link from "next/link";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
+
 export default function Home(){
   return (<>
     <Nav/>
@@ -11,8 +13,8 @@ export default function Home(){
           Dalla modellazione statistica alla reportistica conforme (IFRS 17, Solvency).
         </p>
         <div style={{display:"flex", gap:12, justifyContent:"center", marginTop:16}}>
-          <a href="/contatti" style={{padding:"10px 16px", background:"#000", color:"#fff", borderRadius:999}}>Prenota una call</a>
-          <a href="/calcolatori" style={{padding:"10px 16px", border:"1px solid #000", borderRadius:999}}>Prova i calcolatori</a>
+          <Link href="/contatti" style={{padding:"10px 16px", background:"#000", color:"#fff", borderRadius:999}}>Prenota una call</Link>
+          <Link href="/calcolatori" style={{padding:"10px 16px", border:"1px solid #000", borderRadius:999}}>Prova i calcolatori</Link>
         </div>
       </section>
       <section style={{display:"grid", gap:12, gridTemplateColumns:"repeat(auto-fit,minmax(220px,1fr))"}}>

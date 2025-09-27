@@ -1,22 +1,174 @@
-import Nav from "../components/Nav"; import Footer from "../components/Footer";
-export default function Blog(){
-  const posts = [
-    ["IFRS 17: 10 controlli prima del bilancio","Checklist operativa."],
-    ["GLM nel pricing: 5 errori da evitare","Link function, leakage, overfit."],
-    ["Riserve semplici vs triangoli","Quando basta il quick estimate."]
-  ];
-  return (<>
-    <Nav/>
-    <main style={{maxWidth:960, margin:"0 auto", padding:"32px 16px"}}>
-      <h1 style={{fontSize:28, fontWeight:700}}>Blog</h1>
-      <div style={{display:"grid", gap:12}}>
-        {posts.map(([t,s],i)=>(
-          <article key={i} style={{border:"1px solid #eee", borderRadius:16, padding:16}}>
-            <h3 style={{margin:"0 0 6px"}}>{t}</h3><p style={{margin:0, opacity:.8}}>{s}</p>
-          </article>
-        ))}
-      </div>
-    </main>
-    <Footer/>
-  </>);
+import Nav from "../components/Nav";
+import Footer from "../components/Footer";
+
+const featured = {
+  title: "IFRS 17: dalla teoria al closing",
+  summary: "Roadmap trimestrale per ridurre tempi di chiusura, con checklist per attuario, finance e IT.",
+  readingTime: "8 minuti",
+  tags: ["IFRS17", "Governance", "Reporting"],
+};
+
+const latest = [
+  {
+    title: "GLM nel pricing motor: come leggere i coefficienti",
+    summary: "Dalla scelta della link function al test di significatività: guida pratica con esempio in R.",
+    date: "Aprile 2024",
+    tags: ["Pricing", "GLM"],
+  },
+  {
+    title: "Monitoraggio riserve: KPI e soglie di allerta",
+    summary: "Dashboard mensile con loss ratio, run-off e sensitività sui triangoli di sinistri.",
+    date: "Marzo 2024",
+    tags: ["Riserve", "Controlli"],
+  },
+  {
+    title: "Life analytics: modellare il lapse rate",
+    summary: "Segmentazione comportamentale e regressioni logistiche per prevedere i riscatti.",
+    date: "Febbraio 2024",
+    tags: ["Life", "Persistency"],
+  },
+];
+
+const resources = [
+  {
+    title: "Playbook Solvency II",
+    description: "Template per ORSA, capital management e analisi di sensitività.",
+  },
+  {
+    title: "Modelli e dataset",
+    description: "File Excel/CSV di esempio per triangoli, GLM e tavole demografiche.",
+  },
+  {
+    title: "Guide rapide",
+    description: "Step-by-step per audit trail, pricing rapido e validazioni ad hoc.",
+  },
+];
+
+const categorie = [
+  {
+    title: "Pricing",
+    description: "Tecniche GLM, segmentazione clienti, elasticità prezzo e gestione portafoglio.",
+  },
+  {
+    title: "Riserve",
+    description: "Triangoli, metodi stocastici e controlli di reasonableness per danni e vita.",
+  },
+  {
+    title: "Regolamentazione",
+    description: "IFRS 17, Solvency II, IVASS: sintesi operative e checklist di conformità.",
+  },
+  {
+    title: "Data & Tech",
+    description: "Tooling, automazioni, stack dati e collaborazioni tra attuario e data engineer.",
+  },
+];
+
+export default function Blog() {
+  return (
+    <>
+      <Nav />
+      <main className="container">
+        <section className="hero hero--stack">
+          <p className="eyebrow">Attuarial insight hub</p>
+          <h1>Blog & risorse pratiche</h1>
+          <p className="section-intro">
+            Approfondimenti operativi su pricing, riserve, capital management e trasformazione digitale. Ogni articolo contiene
+            checklist scaricabili, snippet di codice e casi d'uso reali.
+          </p>
+        </section>
+
+        <section className="section">
+          <div className="grid" style={{ alignItems: "stretch" }}>
+            <article className="card stack">
+              <span className="eyebrow" style={{ color: "#2563eb" }}>
+                In evidenza
+              </span>
+              <h2 style={{ margin: 0 }}>{featured.title}</h2>
+              <p className="section-intro" style={{ margin: 0 }}>{featured.summary}</p>
+              <div className="article-meta">
+                <span>{featured.readingTime}</span>
+                {featured.tags.map(tag => (
+                  <span key={tag} className="tag-pill">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </article>
+            <div className="stack">
+              <article className="card stack-sm">
+                <h3 style={{ margin: 0 }}>Newsletter attuariale</h3>
+                <p style={{ margin: 0, opacity: 0.8 }}>
+                  Un recap mensile con alert normativi, script pronti e benchmark di mercato.
+                </p>
+                <a className="btn primary" href="#iscrizione-newsletter">
+                  Iscriviti ora
+                </a>
+              </article>
+              <article className="card stack-sm">
+                <h3 style={{ margin: 0 }}>Invia un contributo</h3>
+                <p style={{ margin: 0, opacity: 0.8 }}>
+                  Vuoi condividere un case study o un modello? Invia la proposta: revisione in 48 ore.
+                </p>
+                <a href="mailto:info@attuario.eu" style={{ fontWeight: 600 }}>
+                  Proponi un articolo →
+                </a>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section className="section">
+          <div className="section-heading">
+            <h2>Ultimi articoli</h2>
+            <a href="#archivio">Archivio completo</a>
+          </div>
+          <div className="stack">
+            {latest.map(post => (
+              <article key={post.title} className="card stack-sm">
+                <div className="article-meta">
+                  <span>{post.date}</span>
+                  {post.tags.map(tag => (
+                    <span key={tag} className="tag-pill">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <h3 style={{ margin: 0 }}>{post.title}</h3>
+                <p style={{ margin: 0, opacity: 0.8 }}>{post.summary}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="section">
+          <h2>Sezioni editoriali</h2>
+          <p className="section-intro">Le aree tematiche principali del blog, utili per navigare per disciplina attuariale.</p>
+          <div className="grid">
+            {categorie.map(category => (
+              <article key={category.title} className="card stack-sm">
+                <h3 style={{ margin: 0 }}>{category.title}</h3>
+                <p style={{ margin: 0, opacity: 0.8 }}>{category.description}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="section">
+          <h2>Toolkit del mese</h2>
+          <p className="section-intro">
+            Risorse scaricabili per mettere in pratica gli articoli: modelli, template e checklist operative.
+          </p>
+          <div className="resource-grid">
+            {resources.map(resource => (
+              <article key={resource.title} className="card stack-sm">
+                <h3 style={{ margin: 0 }}>{resource.title}</h3>
+                <p style={{ margin: 0, opacity: 0.8 }}>{resource.description}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
+  );
 }

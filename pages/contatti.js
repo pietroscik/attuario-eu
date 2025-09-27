@@ -1,4 +1,6 @@
-import Nav from "../components/Nav"; import Footer from "../components/Footer";
+import Link from "next/link";
+import Nav from "../components/Nav";
+import Footer from "../components/Footer";
 export default function Contatti(){
   return (<>
     <Nav/>
@@ -11,7 +13,7 @@ export default function Contatti(){
         <textarea name="messaggio" placeholder="Descrizione richiesta" required style={{padding:12, borderRadius:12, border:"1px solid #ddd", minHeight:140}}/>
         <button style={{padding:"10px 16px", background:"#000", color:"#fff", borderRadius:999, width:"fit-content"}}>Invia</button>
       </form>
-      <p style={{fontSize:12, opacity:.7, marginTop:8}}>Con l’invio accetti <a href="/privacy">Privacy</a>.</p>
+      <p style={{fontSize:12, opacity:.7, marginTop:8}}>Con l’invio accetti <Link href="/privacy">Privacy</Link>.</p>
     </main>
     <Footer/>
   </>);
