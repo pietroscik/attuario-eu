@@ -1,2 +1,2 @@
-import PremioPuro from "../../components/calculators/premioPuro";
+import PremioPuro from "../../components/calculators/PremioPuro";
 export default function Page(){ return <PremioPuro />; }
