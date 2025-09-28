@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import PremioPuro from "../components/calculators/PremioPuro";
@@ -159,6 +160,13 @@ const servizi = [
 export default function Calcolatori() {
   return (
     <>
+      <Head>
+        <title>Calcolatori attuariali online | Attuario.eu</title>
+        <meta
+          name="description"
+          content="Tool interattivi per premio puro, riserve, rendite e indicatori tecnici con formule, dataset di prova e linee guida operative."
+        />
+      </Head>
       <Nav />
       <main className="container">
         <section className="hero hero--stack">

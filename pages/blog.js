@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 
@@ -129,6 +130,13 @@ const normative = [
 export default function Blog() {
   return (
     <>
+      <Head>
+        <title>Blog attuariale | Attuario.eu</title>
+        <meta
+          name="description"
+          content="Approfondimenti attuariali su pricing, riserve, normativa e data analytics con checklist operative e toolkit scaricabili."
+        />
+      </Head>
       <Nav />
       <main id="top" className="container">
         <section className="hero hero--stack">
