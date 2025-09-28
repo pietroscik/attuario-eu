@@ -1,1 +1,0 @@
-export default function Calcolatori(){return (<div><h1>Calcolatori</h1><p className="note">Sezione per piccoli tool online. Inizia con versioni statiche (descrizione/formula) e link a consulenza.</p></div>)}
