@@ -5,9 +5,19 @@ export const HOME_HIGHLIGHTS = [
     link: "/teoria",
   },
   {
+    title: "Community attuario.eu",
+    text: "Partecipa alle discussioni su Discord, resta aggiornato via Telegram e unisciti a gruppi studio e mentorship tematici.",
+    link: "/community",
+  },
+  {
     title: "Applicazioni pratiche",
     text: "Dalla tariffazione vita e danni alla gestione delle riserve: workflow replicabili, dataset commentati e suggerimenti per presentare i risultati al management.",
     link: "/applicazioni",
+  },
+  {
+    title: "Shop attuario.eu",
+    text: "Kit digitali con template, script e guide operative per studiare, lavorare e formare team con materiali sempre aggiornati.",
+    link: "/shop",
   },
   {
     title: "Risorse autorevoli",
