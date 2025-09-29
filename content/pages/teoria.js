@@ -98,7 +98,9 @@ export const THEORY_RESEARCH_HIGHLIGHTS = [
     slug: "/wiki/ricerche-attuariali.html#antonio-plat-2014",
   },
   {
-    title: "📊 The cost of financial frictions for life insurers",
-    description:
-      "Analizza come le restrizioni di capitale e le frizioni finanziarie influenzino prezzi, offerta di prodotti vita e allocazioni di portafoglio nel lungo periodo.",
-    slug: "/wiki/ricerche-attuariali.htm
+   {
+  title: "📊 The cost of financial frictions for life insurers",
+  description:
+    "Analizza come le restrizioni di capitale e le frizioni finanziarie influenzino prezzi, offerta di prodotti vita e allocazioni di portafoglio nel lungo periodo.",
+  slug: "/wiki/ricerche-attuariali.html#koijen-yogo-2016",
+},
