@@ -1,7 +1,8 @@
 export const RESOURCE_SECTIONS = [
   {
     title: "Istituzioni e formazione",
-    description: "Portali ufficiali e accademici da cui attingere documenti tecnici, normativa e percorsi di studio.",
+    description:
+      "Portali ufficiali e accademici da cui attingere documenti tecnici, normativa, percorsi di studio e opportunità di aggiornamento continuo.",
     items: [
       {
         name: "Ordine Nazionale degli Attuari",
@@ -18,11 +19,17 @@ export const RESOURCE_SECTIONS = [
         url: "https://blog.actuaries.org.uk",
         note: "Approfondimenti professionali e riflessioni dei membri IFoA.",
       },
+      {
+        name: "EAA – European Actuarial Academy",
+        url: "https://www.actuarial-academy.com",
+        note: "Catalogo di corsi specialistici europei e materiali post-evento scaricabili.",
+      },
     ],
   },
   {
     title: "Blog e magazine attuariali",
-    description: "Siti divulgativi e tecnici con articoli su carriera, modelli quantitativi e tendenze InsurTech.",
+    description:
+      "Siti divulgativi e tecnici con articoli su carriera, modelli quantitativi e tendenze InsurTech.",
     items: [
       {
         name: "ProActuary",
@@ -39,11 +46,17 @@ export const RESOURCE_SECTIONS = [
         url: "https://theactuarialclub.com",
         note: "Tutorial pratici su reserving, GLM, esami e strumenti software.",
       },
+      {
+        name: "Actuaries Digital",
+        url: "https://www.actuaries.digital",
+        note: "Riflessioni su tecnologia, climate risk, carriera e cultura attuariale internazionale.",
+      },
     ],
   },
   {
     title: "Community e risorse collaborative",
-    description: "Spazi per confrontarsi, reperire dataset e partecipare a progetti divulgativi.",
+    description:
+      "Spazi per confrontarsi, reperire dataset e partecipare a progetti divulgativi.",
     items: [
       {
         name: "Actuarial Outpost",
@@ -59,6 +72,33 @@ export const RESOURCE_SECTIONS = [
         name: "Human Mortality Database",
         url: "https://www.mortality.org",
         note: "Dataset demografici open source per analisi di longevità e demografia.",
+      },
+      {
+        name: "GitHub – attuario-eu",
+        url: "https://github.com/attuario-eu",
+        note: "Repository sperimentali con codice aperto per modelli attuariali, strumenti didattici e tutorial.",
+      },
+    ],
+  },
+  {
+    title: "Podcast, video e divulgazione",
+    description:
+      "Contenuti multimediali per approfondire temi assicurativi, finanziari e di gestione del rischio anche lontano dalla scrivania.",
+    items: [
+      {
+        name: "Actuaries Institute Podcast",
+        url: "https://www.actuaries.asn.au/podcast",
+        note: "Interviste su trend emergenti, policy e storie professionali dal panorama internazionale.",
+      },
+      {
+        name: "Society of Actuaries – Webcast Library",
+        url: "https://www.soa.org/resources/webcasts/",
+        note: "Registrazioni di webinar su Solvency, ERM, climate e innovazione di prodotto.",
+      },
+      {
+        name: "Riskbooks Webinar Series",
+        url: "https://www.riskbooks.com/pages/webinars",
+        note: "Seminari gratuiti su enterprise risk management e risk governance con esperti globali.",
       },
     ],
   },

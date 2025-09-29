@@ -5,6 +5,7 @@ export const THEORY_TOPICS = [
       "Valore attuale atteso e criteri di equivalenza",
       "Tavole di mortalità discrete e continue",
       "Rendite temporanee, vitalizie e differite",
+      "Modelli a tempo continuo e discreto per il calcolo delle prime",
     ],
   },
   {
@@ -13,6 +14,7 @@ export const THEORY_TOPICS = [
       "Leggi di mortalità (Makeham, Gompertz)",
       "Model point e costruzione di tavole generazionali",
       "Probabilità congiunte e copule per rischi multipli",
+      "Inferenza bayesiana e stima parametrica/non parametrica",
     ],
   },
   {
@@ -21,6 +23,7 @@ export const THEORY_TOPICS = [
       "Premi puri, caricamenti e equilibrio tecnico",
       "Metodi di credibilità classici e Bayesiani",
       "Distribuzioni per sinistri danni e riassicurazione",
+      "Riserve sinistri con modelli GLM e GLMM",
     ],
   },
   {
@@ -29,6 +32,7 @@ export const THEORY_TOPICS = [
       "Catene di Markov per sinistri vita",
       "Triangoli (Chain Ladder, Bornhuetter-Ferguson)",
       "Approccio stocastico con Bootstrap e Mack",
+      "Tecniche di aggregazione e granularità micro-level",
     ],
   },
   {
@@ -37,6 +41,16 @@ export const THEORY_TOPICS = [
       "Duration, convexity e immunizzazione",
       "Asset Liability Management (ALM)",
       "Gestione integrata del rischio con metriche VaR / TVaR",
+      "Opzioni incorporate e replicating portfolio",
+    ],
+  },
+  {
+    title: "Normativa e governance",
+    items: [
+      "Framework Solvency II: moduli, SCR e ORSA",
+      "IFRS 17: modelli di valutazione e disclosure",
+      "Enterprise Risk Management e framework di controllo interno",
+      "Principi attuariali professionali e standard IVASS/EIOPA",
     ],
   },
 ];
@@ -68,21 +82,25 @@ export const THEORY_RESEARCH_HIGHLIGHTS = [
       "Duration e convexity sono utilizzate per immunizzare il portafoglio contro variazioni di tasso, coordinando attivi e passivi. L'approfondimento collega l'Asset Liability Management a metriche di rischio come VaR e TVaR, evidenziando l'uso di scenari deterministici e simulazioni stocastiche per la gestione del capitale.",
   },
   {
+    title: "Gestione integrata del rischio climatico",
+    description:
+      "Linee guida per incorporare scenari climatici nei modelli attuariali, misurare l’esposizione fisica e di transizione e costruire stress test coerenti con le raccomandazioni NGFS.",
+  },
+  {
+    title: "Modelli di longevity avanzati",
+    description:
+      "Introduzione a Lee-Carter, Cairns-Blake-Dowd e approcci multi-population, con esempi su come calibrare i parametri e valutare il rischio di miglioramento della sopravvivenza.",
+  },
+  {
     title: "📌 Micro-level stochastic loss reserving for general insurance",
     description:
       "Propone modelli granulari su singolo sinistro che combinano componenti di frequenza e severità con covariate assicurative, riducendo la dipendenza da assunzioni aggregate.",
     slug: "/wiki/ricerche-attuariali.html#antonio-plat-2014",
   },
   {
-    title: "📊 The cost of financial frictions for life insurers",
-    description:
-      "Analizza come le restrizioni di capitale e le frizioni finanziarie influenzino prezzi, offerta di prodotti vita e allocazioni di portafoglio nel lungo periodo.",
-    slug: "/wiki/ricerche-attuariali.html#koijen-yogo-2016",
-  },
-  {
-    title: "🧮 On the calculation of the Solvency Capital Requirement based on nested simulations",
-    description:
-      "Approfondisce tecniche di simulazione annidata per il calcolo dello SCR, con focus su efficienza computazionale e accuratezza statistica.",
-    slug: "/wiki/ricerche-attuariali.html#bauer-reuss-singer-2012",
-  },
+  title: "📊 The cost of financial frictions for life insurers",
+  description:
+    "Analizza come le restrizioni di capitale e le frizioni finanziarie influenzino prezzi, offerta di prodotti vita e allocazioni di portafoglio nel lungo periodo.",
+  slug: "/wiki/ricerche-attuariali.html#koijen-yogo-2016",
+},
 ];

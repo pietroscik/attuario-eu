@@ -31,3 +31,11 @@ Per aggiungere una nuova sezione:
 1. Crea o aggiorna il file in `content/pages/` con le costanti esportate.
 2. Importa le costanti nella relativa pagina in `pages/`.
 3. Aggiorna eventuali componenti se il contenuto introduce nuove strutture.
+
+## Linee guida editoriali
+
+- Scrivi in italiano, con tono divulgativo ma preciso: cita norme, standard e riferimenti quando disponibili.
+- Mantieni i testi autoesplicativi: includi contesto, esempi pratici e call to action utili senza rimandare forzatamente ad altre pagine.
+- Quando elenchi risorse esterne, aggiungi una nota sintetica che spieghi perché il link è utile alla community attuariale.
+- Verifica periodicamente che gli URL esterni siano attivi; in caso contrario sostituiscili o rimuovili.
+- Preferisci array ordinati alfabeticamente o per importanza crescente; commenta direttamente nel file se scegli un ordinamento differente.

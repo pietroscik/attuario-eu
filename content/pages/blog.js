@@ -24,4 +24,24 @@ export const BLOG_POSTS = [
     summary:
       "Panoramica delle linee guida CAS 2022 e dei white paper SOA per coniugare algoritmi complessi, interpretabilità e governance dei dati.",
   },
+  {
+    title: "Longevity risk: dalle tavole dinamiche ai prodotti innovativi",
+    summary:
+      "Confronto tra approcci deterministici e stocastici alle tavole di mortalità, impatti su rendite e polizze long-term care e casi studio dal mercato europeo.",
+  },
+  {
+    title: "Data governance attuariale: costruire un catalogo dati vivente",
+    summary:
+      "Checklist per censire le fonti informative, definire data owner, stabilire controlli di qualità e favorire la collaborazione tra attuari e data engineer.",
+  },
+  {
+    title: "InsurTech italiano: panoramica su startup e partnership 2024",
+    summary:
+      "Mappa delle principali iniziative InsurTech in Italia, modelli di collaborazione con compagnie tradizionali e lezioni apprese dai sandbox regolamentari.",
+  },
+  {
+    title: "Didattica attuariale: come usare simulazioni e giochi seri in aula",
+    summary:
+      "Suggerimenti pratici per progettare esercitazioni immersive, strumenti digitali per il blended learning e rubriche di valutazione trasparenti.",
+  },
 ];
