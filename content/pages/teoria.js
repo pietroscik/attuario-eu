@@ -103,3 +103,4 @@ export const THEORY_RESEARCH_HIGHLIGHTS = [
     "Analizza come le restrizioni di capitale e le frizioni finanziarie influenzino prezzi, offerta di prodotti vita e allocazioni di portafoglio nel lungo periodo.",
   slug: "/wiki/ricerche-attuariali.html#koijen-yogo-2016",
 },
+];
