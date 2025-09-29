@@ -28,6 +28,12 @@ export default function Home() {
           <a className="button secondary" href="#sezioni">
             Esplora le sezioni
           </a>
+          <a className="button secondary" href="/community">
+            Entra nella community
+          </a>
+          <a className="button secondary" href="/shop">
+            Scopri i kit digitali
+          </a>
         </div>
       </section>
 
