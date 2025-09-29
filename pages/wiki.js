@@ -217,10 +217,17 @@ export default function Wiki() {
           pubblicazione annuale dello SFCR, il deposito dei QRT e il coordinamento con l&apos;Autorità di vigilanza per eventuali richieste di
           approfondimento.
         </p>
+        <p>
+          La Relazione della Funzione Attuariale e l&apos;attestazione sulle riserve tecniche devono essere allineate con il perimetro SFCR,
+          recependo i rimandi del Regolamento IVASS n. 38/2018 e delle EIOPA ORSA/SFCR Guidelines su governance, coerenza tra informativa
+          quantitativa e narrativa e follow-up delle raccomandazioni.
+        </p>
         <ul>
           <li>Preparare perimetro dati e controlli qualità per QRT trimestrali/annuali e narrativo SFCR.</li>
+          <li>Validare i dataset tecnici (portafoglio, sinistri, riassicurazione) con log di qualità condivisi tra attuario e funzione dati.</li>
+          <li>Eseguire riconciliazioni puntuali tra BEL, SCR e disclosure quantitative per evitare incoerenze nei template.</li>
           <li>Approvare lo SFCR in CdA, pubblicarlo entro i termini e conservarne l&apos;edizione digitale firmata.</li>
-          <li>Coordinare funzioni Risk, Compliance e Attuariato per il processo di attestazione Solvency II.</li>
+          <li>Coordinare funzioni Risk, Compliance e Attuariato per il processo di attestazione Solvency II e tracciarne le raccomandazioni attuariali fino alla chiusura.</li>
         </ul>
         <h3>Governance del rischio e ORSA</h3>
         <p>
