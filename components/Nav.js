@@ -1,14 +1,28 @@
 import Link from "next/link";
-export default function Nav(){
+
+const links = [
+  { href: "/teoria", label: "Teoria" },
+  { href: "/applicazioni", label: "Applicazioni" },
+  { href: "/attuario", label: "Attuari" },
+  { href: "/risorse", label: "Risorse" },
+  { href: "/notizie", label: "Notizie" },
+  { href: "/strumenti", label: "Strumenti" },
+  { href: "/blog", label: "Blog" },
+];
+
+export default function Nav() {
   return (
-    <header style={{borderBottom:"1px solid #eee"}}>
-      <div style={{maxWidth:960, margin:"0 auto", padding:"12px 16px", display:"flex", alignItems:"center", justifyContent:"space-between"}}>
-        <Link href="/" className="brand" style={{fontWeight:600, fontSize:18}}>Attuario.eu</Link>
-        <nav style={{display:"flex", gap:16, fontSize:14}}>
-          <Link href="/servizi">Servizi</Link>
-          <Link href="/calcolatori">Calcolatori</Link>
-          <Link href="/blog">Blog</Link>
-          <Link href="/contatti" className="cta" style={{padding:"8px 12px", border:"1px solid #000", borderRadius:999}}>Prenota una call</Link>
+    <header className="site-header" role="banner">
+      <div className="shell shell--header">
+        <Link href="/" className="brand">
+          attuario.eu
+        </Link>
+        <nav className="site-nav" aria-label="Navigazione principale">
+          {links.map(({ href, label }) => (
+            <Link key={href} href={href} className="site-nav__link">
+              {label}
+            </Link>
+          ))}
         </nav>
       </div>
     </header>
