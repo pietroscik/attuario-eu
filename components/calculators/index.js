@@ -2,6 +2,9 @@ import Layout from "../Layout";
 import PremioPuro from "./PremioPuro";
 import PremioUnico from "./PremioUnico";
 import RiservaSemplice from "./RiservaSemplice";
+import DurationConvexity from "./DurationConvexity";
+import PensioneIndicizzata from "./PensioneIndicizzata";
+import PortafoglioAssicurativo from "./PortafoglioAssicurativo";
 
 export const calculatorCards = [
   {
@@ -33,6 +36,21 @@ export const calculatorCards = [
     href: "/calcolatori/annuity",
     title: "Rendite/Annuity",
     desc: "Coefficienti e valori attuali/futuri per rendite immediate e anticipate con pagamenti costanti.",
+  },
+  {
+    href: "/calcolatori/duration-convexity",
+    title: "Duration & Convexity",
+    desc: "Misura sensibilità prezzo/tasso di un titolo obbligazionario con grafico prezzo-yield e riferimenti IVASS/EIOPA.",
+  },
+  {
+    href: "/calcolatori/pensione-indicizzata",
+    title: "Pensione indicizzata",
+    desc: "Stima retribuzione finale, quota maturata e valore attuale di una pensione rivalutata secondo D.Lgs. 252/2005.",
+  },
+  {
+    href: "/calcolatori/portafoglio-variabile",
+    title: "Portafoglio assicurativo",
+    desc: "Frontiera rischio-rendimento e VaR 99% per asset allocation miste da includere nel report ORSA.",
   },
 ];
 
@@ -67,6 +85,11 @@ export default function CalculatorDirectory() {
               <p>{desc}</p>
             </a>
           ))}
+        </div>
+        <div className="calculator-grid" style={{ marginTop: "1.5rem" }}>
+          <DurationConvexity />
+          <PensioneIndicizzata />
+          <PortafoglioAssicurativo />
         </div>
       </section>
       <section className="section info-panel">
