@@ -16,6 +16,7 @@ const COMMUNITY_CHANNELS = [
       "Aggiornamenti rapidi su eventi, uscite editoriali e call for paper. Perfetto se preferisci ricevere notifiche push senza perdere i thread principali.",
     action: "Iscriviti su Telegram",
     href: "https://t.me/attuarioeu",
+
   },
   {
     name: "Gruppi studio mensili",
@@ -85,6 +86,7 @@ export default function Community() {
     <Layout
       title="Community"
       eyebrow="Spazio di confronto"
+
       intro="Hub collaborativo per gruppi di studio e iniziative tra professionisti, studenti e docenti. Qui trovi i canali ufficiali su Discord e Telegram, il calendario delle attività e le linee guida per partecipare in modo efficace."
     >
       <section className="info-panel" aria-labelledby="community-canali">
@@ -121,6 +123,7 @@ export default function Community() {
       <section className="section info-panel" aria-labelledby="community-linee-guida">
         <h2 id="community-linee-guida">Linee guida di partecipazione</h2>
         <p>
+
           La community è moderata da volontari: segui queste indicazioni per mantenere un ambiente accogliente e professionale.
         </p>
         <ul className="list">
@@ -144,6 +147,7 @@ export default function Community() {
           ))}
         </div>
         <p className="small-print">
+
           Vuoi proporre un nuovo gruppo o coordinare un workshop? Compila il form nella pagina{" "}
           <Link href="/contatti">Contatti</Link> specificando obiettivi, target e materiali proposti.
         </p>
