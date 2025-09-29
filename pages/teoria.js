@@ -43,6 +43,28 @@ const topics = [
   },
 ];
 
+const researchHighlights = [
+  {
+    title: "📌 Micro-level stochastic loss reserving for general insurance",
+    description:
+      "Propone modelli granulari su singolo sinistro che combinano componenti di frequenza e severità con covariate assicurative, riducendo la dipendenza da assunzioni aggregate.",
+    slug: "/wiki/ricerche-attuariali.html#antonio-plat-2014",
+  },
+  {
+    title: "📊 The cost of financial frictions for life insurers",
+    description:
+      "Analizza come le restrizioni di capitale e le frizioni finanziarie influenzino prezzi, offerta di prodotti vita e allocazioni di portafoglio nel lungo periodo.",
+    slug: "/wiki/ricerche-attuariali.html#koijen-yogo-2016",
+  },
+  {
+    title:
+      "🧮 On the calculation of the Solvency Capital Requirement based on nested simulations",
+    description:
+      "Approfondisce tecniche di simulazione annidata per il calcolo dello SCR, con focus su efficienza computazionale e accuratezza statistica.",
+    slug: "/wiki/ricerche-attuariali.html#bauer-reuss-singer-2012",
+  },
+];
+
 export default function Teoria() {
   return (
     <Layout
@@ -74,6 +96,27 @@ export default function Teoria() {
         <p className="small-print">
           Materiale didattico open-source con licenza CC BY-SA, ideale per corsi universitari e gruppi di studio.
         </p>
+      </section>
+
+      <section className="section info-panel">
+        <h2>Ricerche consigliate</h2>
+        {researchHighlights.map(({ title, description, slug }) => (
+          <div
+            key={slug}
+            style={{
+              background: "#eef6ff",
+              padding: "1rem",
+              borderLeft: "4px solid #0066cc",
+              margin: "1rem 0",
+            }}
+          >
+            <h3>{title}</h3>
+            <p>{description}</p>
+            <a href={slug} target="_blank" rel="noopener noreferrer">
+              Apri la scheda completa
+            </a>
+          </div>
+        ))}
       </section>
     </Layout>
   );
