@@ -1,26 +1,93 @@
-// pages/calcolatori/index.js
-export default function CalcolatoriIndex(){
-  const cards = [
-      {href:"/calcolatori/premio-puro", title:"Premio Puro", desc:"Wrapper del componente esistente"},
-      {href:"/calcolatori/riserva-semplice", title:"Riserva Semplice", desc:"Wrapper del componente esistente"},
-    {href:"/calcolatori/black-scholes", title:"Black–Scholes", desc:"Prezzo, greche e scenari per Call/Put europee"},
-    {href:"/calcolatori/capm", title:"CAPM & Sharpe", desc:"Rendimento atteso, premio per il rischio e indice di Sharpe"},
-    {href:"/calcolatori/annuity", title:"Rendite/Annuity", desc:"Valore attuale e futuro di rendite immediate e anticipate"},
+import Layout from "../Layout";
+import PremioPuro from "./PremioPuro";
+import PremioUnico from "./PremioUnico";
+import RiservaSemplice from "./RiservaSemplice";
+
+export const calculatorCards = [
+  {
+    href: "/calcolatori/premio-puro",
+    title: "Premio puro",
+    desc: "Premio atteso di un contratto danni dato frequenza e severità medie, con spiegazione delle ipotesi sottostanti.",
+  },
+  {
+    href: "/calcolatori/premio-unico",
+    title: "Premio unico",
+    desc: "Valutazione del premio unico per coperture vita con probabilità di sinistro, durata e caricamenti personalizzabili.",
+  },
+  {
+    href: "/calcolatori/riserva-semplice",
+    title: "Riserva semplice",
+    desc: "Stima indicativa della riserva tecnica (RBNS + IBNR) a partire da sinistri aperti e costo medio residuo.",
+  },
+  {
+    href: "/calcolatori/black-scholes",
+    title: "Black–Scholes",
+    desc: "Prezzo teorico, greche e sensibilità di opzioni europee Call/Put partendo da input di mercato.",
+  },
+  {
+    href: "/calcolatori/capm",
+    title: "CAPM & Sharpe",
+    desc: "Rendimento atteso, premio per il rischio e indice di Sharpe per un portafoglio dato beta e volatilità.",
+  },
+  {
+    href: "/calcolatori/annuity",
+    title: "Rendite/Annuity",
+    desc: "Coefficienti e valori attuali/futuri per rendite immediate e anticipate con pagamenti costanti.",
+  },
+];
+
+export default function CalculatorDirectory() {
+  const embeddedTools = [
+    "/calcolatori/premio-puro",
+    "/calcolatori/premio-unico",
+    "/calcolatori/riserva-semplice",
   ];
+
+  const otherTools = calculatorCards.filter(({ href }) => !embeddedTools.includes(href));
+
   return (
-    <main style={{maxWidth:900, margin:"2rem auto", padding:"1rem"}}>
-      <h1 style={{fontSize:"2rem", marginBottom:8}}>Calcolatori Attuariali & Finanziari</h1>
-      <p style={{opacity:0.8, marginBottom:24}}>Toolkit minimo per il sito <code>attuario.eu</code>. Aggiungi liberamente nuove schede.</p>
-      <div style={{display:"grid", gridTemplateColumns:"repeat(auto-fit, minmax(260px,1fr))", gap:16}}>
-        {cards.map(c => (
-          <a key={c.href} href={c.href} style={{textDecoration:"none", color:"inherit"}}>
-            <div style={{border:"1px solid #eaeaea", borderRadius:12, padding:16}}>
-              <div style={{fontWeight:700, fontSize:"1.1rem"}}>{c.title}</div>
-              <div style={{opacity:0.8, marginTop:8}}>{c.desc}</div>
-            </div>
-          </a>
-        ))}
-      </div>
-    </main>
+    <Layout
+      title="Calcolatori attuariali"
+      eyebrow="Toolkit interattivo"
+      intro="Una raccolta di strumenti didattici per esplorare formule attuariali e finanziarie. Ogni calcolatore include spiegazioni basate su testi ANIA, IVASS ed EIOPA per garantire rigore metodologico."
+      metaDescription="Hub dei calcolatori attuariali di attuario.eu: premio puro, premio unico, riserva semplice e altri strumenti finanziari con metodologie IVASS/EIOPA."
+    >
+      <section className="calculator-grid" aria-label="Calcolatori rapidi">
+        <PremioPuro />
+        <PremioUnico />
+        <RiservaSemplice />
+      </section>
+
+      <section className="section" aria-label="Altri strumenti disponibili">
+        <h2>Altri calcolatori sul sito</h2>
+        <div className="card-grid">
+          {otherTools.map(({ href, title, desc }) => (
+            <a key={href} className="link-card" href={href}>
+              <h3>{title}</h3>
+              <p>{desc}</p>
+            </a>
+          ))}
+        </div>
+      </section>
+      <section className="section info-panel">
+        <h2>Linee guida di riferimento</h2>
+        <p>
+          Ogni calcolatore richiama le principali normative europee e nazionali su pricing e riservazione. Prima di utilizzare i
+          risultati in sede aziendale confrontali con le seguenti fonti:
+        </p>
+        <ul className="list">
+          <li>Regolamenti IVASS n. 38/2018, 41/2018 e lettere al mercato sulla governance dei prodotti.</li>
+          <li>Linee guida EIOPA su riservazione, tassi tecnici e product oversight and governance.</li>
+          <li>Testi ANIA, CEA e Society of Actuaries su tariffazione, profit testing e technical provisions.</li>
+        </ul>
+        <p className="small-print">
+          Integra questi riferimenti nel fascicolo tecnico e nei materiali di governance per prevenire lacune informative e ridurre
+          gli errori operativi (come link interrotti o script incompleti) che possono emergere nei controlli interni.
+        </p>
+      </section>
+      <p className="small-print" style={{ marginTop: "2rem" }}>
+        I risultati mostrati dai calcolatori sono indicativi e utili a scopo didattico. Per applicazioni professionali è indispensabile validare dati, formule e ipotesi con un attuario abilitato e documentare il processo nel fascicolo tecnico, come previsto dal Regolamento IVASS n. 38/2018.
+      </p>
+    </Layout>
   );
 }
