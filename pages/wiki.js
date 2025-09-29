@@ -193,6 +193,37 @@ export default function Wiki() {
           MCEV misura il valore economico per gli azionisti includendo valore temporale delle opzioni, IFRS 17 privilegia la rappresentazione
           contabile delle passività con margini differiti. Fonte: CFO Forum, Market Consistent Embedded Value Principles 2016.
         </p>
+        <h3>Obblighi IDD e requisiti POG</h3>
+        <p>
+          La Direttiva (UE) 2016/97 e il Regolamento Delegato (UE) 2017/2358 richiedono presidi sul Product Oversight and Governance con
+          recepimento locale IVASS (Reg. n. 45/2020) per documentare target market, test di valore e sorveglianza continua sui prodotti.
+        </p>
+        <ul>
+          <li>Formalizzare la policy POG con ruoli, responsabilità e metriche di monitoraggio.</li>
+          <li>Validare almeno annualmente il target market e gli scenari di detrimento della clientela.</li>
+          <li>Archiviare evidenze dei comitati di product approval e delle verifiche di value for money.</li>
+        </ul>
+        <h3>Reporting SFCR e obblighi di trasparenza</h3>
+        <p>
+          Il Regolamento Delegato (UE) 2015/35, le Linee guida EIOPA sul reporting (2020) e il Regolamento IVASS n. 33/2016 impongono la
+          pubblicazione annuale dello SFCR, il deposito dei QRT e il coordinamento con l&apos;Autorità di vigilanza per eventuali richieste di
+          approfondimento.
+        </p>
+        <ul>
+          <li>Preparare perimetro dati e controlli qualità per QRT trimestrali/annuali e narrativo SFCR.</li>
+          <li>Approvare lo SFCR in CdA, pubblicarlo entro i termini e conservarne l&apos;edizione digitale firmata.</li>
+          <li>Coordinare funzioni Risk, Compliance e Attuariato per il processo di attestazione Solvency II.</li>
+        </ul>
+        <h3>Governance del rischio e ORSA</h3>
+        <p>
+          Le Linee guida EIOPA sul sistema di governance (2017), le raccomandazioni della Commissione europea sul risk management e il
+          Regolamento IVASS n. 38/2018 richiedono un&apos;ORSA prospettica, politiche di rischio documentate e flussi informativi verso il CdA.
+        </p>
+        <ul>
+          <li>Aggiornare il risk appetite framework con metriche quantitative e qualitative coerenti con lo SCR.</li>
+          <li>Eseguire almeno annualmente l&apos;ORSA, includendo scenari di stress e piani di recupero del capitale.</li>
+          <li>Definire una checklist di follow-up per le azioni ORSA e tracciarne lo stato di avanzamento.</li>
+        </ul>
       </section>
       <section className="info-panel" aria-labelledby="teoria-attuariale-base">
         <h2 id="teoria-attuariale-base">Teoria attuariale base</h2>
