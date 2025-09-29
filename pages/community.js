@@ -1,19 +1,22 @@
+import Link from "next/link";
+
 import Layout from "../components/Layout";
 
 const COMMUNITY_CHANNELS = [
   {
-    name: "Slack attuario.eu",
+    name: "Server Discord",
     description:
-      "Canale principale per confrontarsi su esami, carriera e novità normative. Include thread dedicati a vita, danni, previdenza e data science.",
-    action: "Richiedi l'invito",
-    href: "/contatti",
+      "Canale principale per confrontarsi in tempo reale su esami, carriera e novità normative. Include stanze vocali, canali tematici e bacheche per gruppi studio.",
+    action: "Accedi a Discord",
+    href: "https://discord.attuario.eu",
   },
   {
-    name: "Forum Discourse",
+    name: "Canale Telegram",
     description:
-      "Spazio asincrono per condividere case study, template di calcolo e discussioni approfondite su Solvency II e IFRS 17.",
-    action: "Entra nel forum",
-    href: "https://community.attuario.eu",
+      "Aggiornamenti rapidi su eventi, uscite editoriali e call for paper. Perfetto se preferisci ricevere notifiche push senza perdere i thread principali.",
+    action: "Iscriviti su Telegram",
+    href: "https://t.me/attuarioeu",
+
   },
   {
     name: "Gruppi studio mensili",
@@ -83,12 +86,13 @@ export default function Community() {
     <Layout
       title="Community"
       eyebrow="Spazio di confronto"
-      intro="Hub collaborativo per gruppi di studio, forum e iniziative tra professionisti, studenti e docenti. Qui trovi i canali ufficiali, il calendario delle attività e le linee guida per partecipare in modo efficace."
+
+      intro="Hub collaborativo per gruppi di studio e iniziative tra professionisti, studenti e docenti. Qui trovi i canali ufficiali su Discord e Telegram, il calendario delle attività e le linee guida per partecipare in modo efficace."
     >
       <section className="info-panel" aria-labelledby="community-canali">
         <h2 id="community-canali">Dove ci incontriamo</h2>
         <p>
-          Scegli il canale più adatto al tuo stile di apprendimento: chat sincrone per confronto rapido, forum per discussioni approfondite, eventi live per esercitazioni e mentorship.
+          Scegli il canale più adatto al tuo stile di apprendimento: chat e thread su Discord per confronto rapido e approfondito, aggiornamenti push su Telegram, eventi live per esercitazioni e mentorship.
         </p>
         <div className="card-grid">
           {COMMUNITY_CHANNELS.map(({ name, description, action, href }) => (
@@ -119,6 +123,7 @@ export default function Community() {
       <section className="section info-panel" aria-labelledby="community-linee-guida">
         <h2 id="community-linee-guida">Linee guida di partecipazione</h2>
         <p>
+
           La community è moderata da volontari: segui queste indicazioni per mantenere un ambiente accogliente e professionale.
         </p>
         <ul className="list">
@@ -142,7 +147,9 @@ export default function Community() {
           ))}
         </div>
         <p className="small-print">
-          Vuoi proporre un nuovo gruppo o coordinare un workshop? Compila il form nella pagina <a href="/contatti">Contatti</a> specificando obiettivi, target e materiali proposti.
+
+          Vuoi proporre un nuovo gruppo o coordinare un workshop? Compila il form nella pagina{" "}
+          <Link href="/contatti">Contatti</Link> specificando obiettivi, target e materiali proposti.
         </p>
       </section>
     </Layout>

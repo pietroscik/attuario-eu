@@ -1,3 +1,7 @@
+
+import Link from "next/link";
+
+
 import Layout from "../components/Layout";
 
 const SHOP_BUNDLES = [
@@ -43,7 +47,9 @@ const SHOP_FAQ = [
   {
     question: "Come ricevo i materiali?",
     answer:
-      "Dopo l'acquisto ricevi un link via email con accesso immediato ai file in formato ZIP. Gli aggiornamenti futuri vengono inviati automaticamente alla stessa casella.",
+
+      "Dopo l’acquisto ricevi un link via email con accesso immediato ai file in formato ZIP. Gli aggiornamenti futuri vengono inviati automaticamente alla stessa casella.",
+
   },
   {
     question: "Che licenza si applica?",
@@ -68,8 +74,22 @@ export default function Shop() {
     <Layout
       title="Shop attuario.eu"
       eyebrow="Kit digitali"
-      intro="Template, script e tool attuariali pronti all'uso. Questa pagina descrive le proposte editoriali e il flusso di acquisto: collega qui la tua piattaforma di e-commerce preferita per completare il checkout."
+
+      intro="Template, script e tool attuariali pronti all’uso. I kit sono pacchetti digitali scaricabili che combinano materiali pratici e aggiornamenti continui: qui trovi le proposte editoriali e il flusso di acquisto."
     >
+      <section className="section info-panel" aria-labelledby="shop-definition">
+        <h2 id="shop-definition">Che cos’è un kit digitale</h2>
+        <p>
+          Ogni kit raccoglie risorse coordinate su un tema attuariale: template modificabili, notebook con codice commentato, checklist operative e guide per applicare i contenuti in autonomia o in team.
+        </p>
+        <ul className="list">
+          <li>Download immediato in formato ZIP con file organizzati per argomento.</li>
+          <li>Aggiornamenti gratuiti ogni volta che pubblichiamo nuove versioni o correzioni.</li>
+          <li>Accesso a un canale dedicato nella community per confrontarti con altri utilizzatori.</li>
+        </ul>
+      </section>
+
+
       <section className="section" aria-labelledby="shop-bundle">
         <h2 id="shop-bundle">Kit disponibili</h2>
         <div className="card-grid">
@@ -83,9 +103,11 @@ export default function Shop() {
                   <li key={item}>{item}</li>
                 ))}
               </ul>
-              <a className="button secondary" href="/contatti">
+
+              <Link className="button secondary" href="/contatti">
                 Richiedi anteprima
-              </a>
+              </Link>
+
             </article>
           ))}
         </div>
@@ -118,7 +140,9 @@ export default function Shop() {
       <section className="section info-panel" aria-labelledby="shop-supporto">
         <h2 id="shop-supporto">Supporto e aggiornamenti</h2>
         <p>
-          Ogni kit include una bacheca changelog e un canale dedicato nella community. Se hai suggerimenti o vuoi proporre un nuovo strumento scrivici da <a href="/contatti">Contatti</a> indicando obiettivi e requisiti funzionali.
+
+          Ogni kit include una bacheca changelog e un canale dedicato nella community. Se hai suggerimenti o vuoi proporre un nuovo strumento scrivici da <Link href="/contatti">Contatti</Link> indicando obiettivi e requisiti funzionali.
+
         </p>
         <p className="small-print">
           Tutti i materiali sono pensati per fini educativi e divulgativi. Non costituiscono consulenza professionale né sostituiscono le verifiche richieste da regolatori o auditor.

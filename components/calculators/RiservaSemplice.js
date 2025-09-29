@@ -92,7 +92,7 @@ export default function RiservaSemplice() {
         <div>Riserva attualizzata: € {risultati.riservaAttualizzata.toFixed(2)}</div>
       </div>
       <p className="calculator-note">
-        L'approccio reale richiede metodi triangolari (Chain-Ladder, Bornhuetter-Ferguson) e margini di rischio secondo Solvency
+        L’approccio reale richiede metodi triangolari (Chain-Ladder, Bornhuetter-Ferguson) e margini di rischio secondo Solvency
         II/IFRS 17. Questo strumento semplifica i passaggi per fornire un ordine di grandezza rapidamente comunicabile.
       </p>
     </div>

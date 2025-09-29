@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import Layout from "../components/Layout";
 
 import { TOOL_RESOURCES } from "../content/pages/strumenti";
@@ -25,9 +27,9 @@ export default function Strumenti() {
       <section className="section info-panel">
         <h2>Calcolatori online</h2>
         <p>Prova i tool interattivi per calcolare premi puri, riserve semplificate e indicatori di sopravvivenza.</p>
-        <a className="button secondary" href="/calcolatori">
+        <Link className="button secondary" href="/calcolatori">
           Vai ai calcolatori
-        </a>
+        </Link>
         <p className="small-print">
           Uso consentito solo per studio e divulgazione. Nessuna garanzia di accuratezza per applicazioni commerciali.
         </p>

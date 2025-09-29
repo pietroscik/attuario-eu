@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import Layout from "../components/Layout";
 
 export default function Contatti() {
@@ -22,7 +24,7 @@ export default function Contatti() {
         </button>
       </form>
       <p className="small-print">
-        Con l’invio accetti la <a href="/privacy">Privacy</a>. I messaggi ricevuti vengono letti entro 72 ore.
+        Con l’invio accetti la <Link href="/privacy">Privacy</Link>. I messaggi ricevuti vengono letti entro 72 ore.
       </p>
     </Layout>
   );
