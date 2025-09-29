@@ -1,39 +1,124 @@
-import Nav from "../components/Nav";
-import Footer from "../components/Footer";
-export default function Home(){
-  return (<>
-    <Nav/>
-    <main style={{maxWidth:960, margin:"0 auto", padding:"32px 16px"}}>
-      <section style={{textAlign:"center", marginBottom:32}}>
-        <h1 style={{fontSize:36, fontWeight:700, margin:"0 0 12px"}}>Soluzioni attuariali per decisioni migliori</h1>
-        <p style={{fontSize:18, opacity:.85}}>
-          Pricing, riserve, solvibilità e gestione del rischio per assicurazioni, fondi e PMI.
-          Dalla modellazione statistica alla reportistica conforme (IFRS 17, Solvency).
+import Layout from "../components/Layout";
+
+const highlights = [
+  {
+    title: "Teoria attuariale chiara",
+    text: "Formule spiegate con esempi numerici, grafici interattivi e mini-quiz per fissare i concetti chiave.",
+    link: "/teoria",
+  },
+  {
+    title: "Applicazioni pratiche",
+    text: "Dalla tariffazione vita e danni alla gestione delle riserve: casi studio e workflow replicabili.",
+    link: "/applicazioni",
+  },
+  {
+    title: "Risorse autorevoli",
+    text: "Raccolta curata di siti, blog e community attuariali per ispirarti e restare aggiornato.",
+    link: "/risorse",
+  },
+  {
+    title: "Strumenti e dataset",
+    text: "Tutorial su Excel, R e Python, template scaricabili e calcolatori online per esercitarsi.",
+    link: "/strumenti",
+  },
+  {
+    title: "Radar normativo",
+    text: "Aggiornamenti su Solvency II, IFRS 17 e ricerca accademica con sintesi divulgative.",
+    link: "/notizie",
+  },
+];
+
+const personas = [
+  {
+    title: "Studente",
+    copy:
+      "Ripassa le basi matematiche, prova i calcolatori e consulta le guide sugli esami universitari e sulle certificazioni professionali.",
+  },
+  {
+    title: "Professionista",
+    copy:
+      "Approfondisci ALM, risk management e novità regolamentari con schede sintetiche e riferimenti alla letteratura di settore.",
+  },
+  {
+    title: "Curioso",
+    copy:
+      "Scopri come gli attuari analizzano rischi assicurativi e finanziari attraverso esempi concreti e articoli spiegati semplice.",
+  },
+];
+
+const updates = [
+  "Nuove schede su IFRS 17 e interazione con Solvency II nella sezione Notizie.",
+  "Script Python per simulare tavole di mortalità generazionali nella sezione Strumenti.",
+  "Serie “Attuario nel mondo reale”: focus su ruoli in previdenza complementare.",
+];
+
+export default function Home() {
+  return (
+    <Layout
+      title="attuario.eu"
+      intro="attuario.eu è una piattaforma italiana dedicata a studenti, professionisti e curiosi del mondo attuariale. Qui trovi spiegazioni rigorose ma leggibili, strumenti didattici e aggiornamenti per orientarti tra teoria, pratica e normative."
+      metaDescription="Divulgazione attuariale indipendente con teoria, applicazioni, risorse e strumenti didattici. Nessuna consulenza professionale, solo conoscenza condivisa."
+      hideHeader
+    >
+      <section className="hero">
+        <span className="tagline">Divulgazione attuariale indipendente</span>
+        <h1>La scienza del rischio, raccontata in modo accessibile</h1>
+        <p>
+          attuario.eu è una piattaforma italiana dedicata a studenti, professionisti e curiosi del mondo attuariale. Qui trovi
+          spiegazioni rigorose ma leggibili, strumenti didattici e aggiornamenti per orientarti tra teoria, pratica e normative.
         </p>
-        <div style={{display:"flex", gap:12, justifyContent:"center", marginTop:16}}>
-          <a href="/contatti" style={{padding:"10px 16px", background:"#000", color:"#fff", borderRadius:999}}>Prenota una call</a>
-          <a href="/calcolatori" style={{padding:"10px 16px", border:"1px solid #000", borderRadius:999}}>Prova i calcolatori</a>
+        <div className="hero-actions">
+          <a className="button" href="/newsletter">
+            Iscriviti alla newsletter
+          </a>
+          <a className="button secondary" href="#sezioni">
+            Esplora le sezioni
+          </a>
         </div>
       </section>
-      <section style={{display:"grid", gap:12, gridTemplateColumns:"repeat(auto-fit,minmax(220px,1fr))"}}>
-        {[["Pricing tecnico","Frequenza × severità, GLM, credibilità."],
-          ["Riserve","RBNS/IBNR con metodi deterministici e stocastici."],
-          ["Solvibilità","VaR/CVaR, capitale a rischio e stress test."]]
-          .map(([t,d],i)=>(
-            <div key={i} style={{border:"1px solid #eee", borderRadius:16, padding:16}}>
-              <h3 style={{margin:"0 0 6px"}}>{t}</h3><p style={{margin:0, opacity:.8}}>{d}</p>
-            </div>
-        ))}
+
+      <section id="sezioni" className="section">
+        <div className="card-grid">
+          {highlights.map(({ title, text, link }) => (
+            <a key={title} className="link-card" href={link}>
+              <h3>{title}</h3>
+              <p>{text}</p>
+            </a>
+          ))}
+        </div>
       </section>
-      <section style={{marginTop:24, border:"1px solid #eee", background:"#fafafa", borderRadius:16, padding:16}}>
-        <h2 style={{margin:"0 0 8px"}}>Case studies</h2>
-        <ul style={{margin:"0 0 0 18px"}}>
-          <li>Tariffa sinistri auto con GLM e segmentazione rischio.</li>
-          <li>IBNR per ramo danni con metodo semplice + sensitività.</li>
-          <li>Report IFRS 17 sintetico per PMI assicurativa.</li>
+
+      <section className="section">
+        <h2>Percorsi consigliati</h2>
+        <div className="persona-grid">
+          {personas.map(({ title, copy }) => (
+            <div key={title} className="card">
+              <h3>{title}</h3>
+              <p>{copy}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="section">
+        <h2>Aggiornamenti recenti</h2>
+        <ul className="list">
+          {updates.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
         </ul>
       </section>
-    </main>
-    <Footer/>
-  </>);
+
+      <section className="section info-panel">
+        <h2>Community & collaborazioni</h2>
+        <p>
+          attuario.eu accoglie contributi accademici, segnalazioni di eventi e richieste di collaborazione su progetti divulgativi.
+          Non vengono erogate consulenze professionali, ma siamo felici di raccontare e condividere esperienze del settore.
+        </p>
+        <a className="button secondary" href="/contatti">
+          Scrivici un messaggio
+        </a>
+      </section>
+    </Layout>
+  );
 }

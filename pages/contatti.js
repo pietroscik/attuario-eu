@@ -1,18 +1,29 @@
-import Nav from "../components/Nav"; import Footer from "../components/Footer";
-export default function Contatti(){
-  return (<>
-    <Nav/>
-    <main style={{maxWidth:720, margin:"0 auto", padding:"32px 16px"}}>
-      <h1 style={{fontSize:28, fontWeight:700}}>Contatti</h1>
-      <p style={{opacity:.85}}>Raccontami l’esigenza e ti rispondo entro 1 giorno lavorativo.</p>
-      <form action="https://formspree.io/f/your-id" method="POST" style={{display:"grid", gap:12}}>
-        <input name="nome" placeholder="Nome e azienda" required style={{padding:12, borderRadius:12, border:"1px solid #ddd"}}/>
-        <input name="email" type="email" placeholder="Email" required style={{padding:12, borderRadius:12, border:"1px solid #ddd"}}/>
-        <textarea name="messaggio" placeholder="Descrizione richiesta" required style={{padding:12, borderRadius:12, border:"1px solid #ddd", minHeight:140}}/>
-        <button style={{padding:"10px 16px", background:"#000", color:"#fff", borderRadius:999, width:"fit-content"}}>Invia</button>
+import Layout from "../components/Layout";
+
+export default function Contatti() {
+  return (
+    <Layout
+      title="Contatti & collaborazioni"
+      eyebrow="Partecipa al progetto"
+      intro="attuario.eu non offre consulenza professionale o servizi commerciali. Puoi però proporre articoli, segnalare eventi, condividere dataset o suggerire risorse utili alla community."
+      width="narrow"
+    >
+      <form action="https://formspree.io/f/your-id" method="POST" className="form-grid">
+        <input className="input" name="nome" placeholder="Nome e affiliazione" required />
+        <input className="input" name="email" type="email" placeholder="Email" required />
+        <textarea
+          className="input"
+          name="messaggio"
+          placeholder="Descrivi la tua proposta o domanda"
+          required
+        />
+        <button className="button" type="submit">
+          Invia
+        </button>
       </form>
-      <p style={{fontSize:12, opacity:.7, marginTop:8}}>Con l’invio accetti <a href="/privacy">Privacy</a>.</p>
-    </main>
-    <Footer/>
-  </>);
+      <p className="small-print">
+        Con l’invio accetti la <a href="/privacy">Privacy</a>. I messaggi ricevuti vengono letti entro 72 ore.
+      </p>
+    </Layout>
+  );
 }

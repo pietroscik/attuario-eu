@@ -1,22 +1,43 @@
-import Nav from "../components/Nav"; import Footer from "../components/Footer";
-export default function Blog(){
-  const posts = [
-    ["IFRS 17: 10 controlli prima del bilancio","Checklist operativa."],
-    ["GLM nel pricing: 5 errori da evitare","Link function, leakage, overfit."],
-    ["Riserve semplici vs triangoli","Quando basta il quick estimate."]
-  ];
-  return (<>
-    <Nav/>
-    <main style={{maxWidth:960, margin:"0 auto", padding:"32px 16px"}}>
-      <h1 style={{fontSize:28, fontWeight:700}}>Blog</h1>
-      <div style={{display:"grid", gap:12}}>
-        {posts.map(([t,s],i)=>(
-          <article key={i} style={{border:"1px solid #eee", borderRadius:16, padding:16}}>
-            <h3 style={{margin:"0 0 6px"}}>{t}</h3><p style={{margin:0, opacity:.8}}>{s}</p>
+import Layout from "../components/Layout";
+
+const posts = [
+  {
+    title: "Spiegato semplice: cos’è il valore attuale atteso",
+    summary: "Un’introduzione illustrata con esempi numerici e grafici interattivi per studenti e curiosi.",
+  },
+  {
+    title: "Case study: modellare una riserva IBNR con Chain Ladder",
+    summary: "Workflow completo con dataset open source, codice in R e suggerimenti di visualizzazione.",
+  },
+  {
+    title: "IFRS 17 vs Solvency II: cosa cambia davvero",
+    summary: "Guida pratica per comprendere differenze, punti di contatto e impatti sui processi attuariali.",
+  },
+];
+
+export default function Blog() {
+  return (
+    <Layout
+      title="Blog & approfondimenti"
+      eyebrow="Editoriale"
+      intro="Articoli divulgativi, casi studio e rubriche mensili per avvicinare la scienza attuariale a un pubblico più ampio. Nessuna consulenza, solo condivisione di conoscenza."
+    >
+      <section className="card-grid">
+        {posts.map(({ title, summary }) => (
+          <article key={title} className="card">
+            <h2>{title}</h2>
+            <p>{summary}</p>
           </article>
         ))}
-      </div>
-    </main>
-    <Footer/>
-  </>);
+      </section>
+
+      <section className="section info-panel">
+        <h2>Newsletter “Spiegato semplice”</h2>
+        <p>Una email al mese con il riassunto degli articoli pubblicati, link agli eventi e anticipazioni sui nuovi strumenti.</p>
+        <a className="button" href="/newsletter">
+          Iscriviti
+        </a>
+      </section>
+    </Layout>
+  );
 }

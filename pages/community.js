@@ -1,9 +1,18 @@
-export default function Page() {
+import Layout from "../components/Layout";
+
+export default function Community() {
   return (
-    <div>
-      <h1>Community</h1>
-      <div className="note">Spazio di confronto professionale. Se usi Discourse o altro, linka qui.</div>
-      <p>Personalizza questa pagina in <code>community.js</code>.</p>
-    </div>
-  )
+    <Layout
+      title="Community"
+      eyebrow="Spazio di confronto"
+      intro="Punto di raccolta per gruppi di studio, forum e iniziative collaborative. Personalizza questa sezione collegando la piattaforma community che preferisci (Discourse, Slack, Discord, ecc.)."
+    >
+      <div className="info-panel">
+        <p>
+          Suggerimento: integra un feed Discourse o linka canali tematici (esami, carriera, normativa). Ricorda di indicare le
+          regole di partecipazione e la moderazione.
+        </p>
+      </div>
+    </Layout>
+  );
 }
