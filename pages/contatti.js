@@ -24,6 +24,11 @@ export default function Contatti() {
         </button>
       </form>
       <p className="small-print">
+        Preferisci usare la tua casella di posta? Scrivici direttamente a{" "}
+        <a href="mailto:info@attuario.eu">info@attuario.eu</a>{" "}
+        per collaborazioni editoriali, idee per eventi e segnalazioni di risorse.
+      </p>
+      <p className="small-print">
         Con l’invio accetti la <Link href="/privacy">Privacy</Link>. I messaggi ricevuti vengono letti entro 72 ore.
       </p>
     </Layout>
