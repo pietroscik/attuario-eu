@@ -266,6 +266,32 @@ export default function Wiki() {
             le politiche di rischio in coerenza con le indicazioni IVASS/EIOPA.
           </li>
         </ul>
+        <h3>Funzione Attuariale e pareri regolamentari</h3>
+        <p>
+          La Funzione Attuariale presidia la coerenza delle riserve tecniche, emette pareri su sottoscrizione e riassicurazione e
+          contribuisce all&apos;ORSA per assicurare l&apos;allineamento tra profilo di rischio e capitale, in adempimento alla Direttiva
+          2009/138/CE art. 48, al Regolamento IVASS n. 38/2018 e alle EIOPA Guidelines on System of Governance.
+        </p>
+        <p>
+          Tra i compiti chiave rientrano la validazione metodologica delle Best Estimate Liability e degli aggiustamenti per rischio,
+          la verifica della qualità dei dati e degli assunti utilizzati nelle valutazioni attuariali e la formulazione di raccomandazioni
+          formali verso il CdA su politiche di underwriting, accordi di riassicurazione e adeguatezza del capitale prospettico.
+        </p>
+        <h4>Checklist operativa</h4>
+        <ul>
+          <li>
+            Pianificare un calendario integrato delle deliverable (parere annuale sulle riserve, contributo ORSA, pareri su underwriting
+            e riassicurazione) con milestone approvate dal CdA.
+          </li>
+          <li>
+            Tracciare sistematicamente raccomandazioni e action plan con stato di attuazione, owner e scadenze condivisi con le funzioni
+            di controllo e con il follow-up richiesto dalla normativa.
+          </li>
+          <li>
+            Gestire la reportistica verso CdA e IVASS con template standardizzati, versionamento dei documenti e repository centralizzato
+            per evidenze di revisione, invio e approvazione.
+          </li>
+        </ul>
       </section>
       <section className="info-panel" aria-labelledby="teoria-attuariale-base">
         <h2 id="teoria-attuariale-base">Teoria attuariale base</h2>
