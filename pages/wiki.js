@@ -20,6 +20,11 @@ export default function Wiki() {
             Quota del premio destinata a coprire esclusivamente il rischio assicurato, calcolata come valore atteso del danno.
             Fonte: IAA Actuarial Glossary 2022.
           </dd>
+          <dt>Best Estimate Liability (BEL)</dt>
+          <dd>
+            Valore attuale atteso delle passività assicurative calcolato con ipotesi best estimate e curve risk-free coerenti con Solvency II.
+            Fonte: EIOPA, Solvency II Technical Specifications for Preparatory Phase 2023.
+          </dd>
           <dt>Valore attuale delle prestazioni (VAP)</dt>
           <dd>
             Attualizzazione delle prestazioni future attese utilizzando un tasso tecnico o risk-free coerente con Solvency II.
@@ -29,6 +34,16 @@ export default function Wiki() {
           <dd>
             Processo di coordinamento tra attivi e passivi per minimizzare rischi di disallineamento in base a IFRS 17 e regolamentazione IVASS.
             Fonte: IVASS Regolamento n. 38/2018.
+          </dd>
+          <dt>Premio lordo</dt>
+          <dd>
+            Importo complessivo versato dal contraente che comprende premio puro, caricamenti e imposte secondo le direttive di distribuzione assicurativa.
+            Fonte: IVASS Regolamento n. 41/2018 su informativa, pubblicità e realizzazione dei prodotti assicurativi.
+          </dd>
+          <dt>Tavole di mortalità generazionali</dt>
+          <dd>
+            Tabelle demografiche che proiettano le probabilità di sopravvivenza per coorti di nascita incorporando trend di longevità e rischi sistemici.
+            Fonte: Ordine degli Attuari, Linee guida sull&apos;utilizzo delle basi demografiche generazionali 2022.
           </dd>
         </dl>
       </section>
