@@ -224,13 +224,40 @@ export default function Wiki() {
         </ul>
         <h3>Governance del rischio e ORSA</h3>
         <p>
-          Le Linee guida EIOPA sul sistema di governance (2017), le raccomandazioni della Commissione europea sul risk management e il
-          Regolamento IVASS n. 38/2018 richiedono un&apos;ORSA prospettica, politiche di rischio documentate e flussi informativi verso il CdA.
+          Le <em>EIOPA Guidelines on Own Risk and Solvency Assessment</em> e il Regolamento IVASS n. 38/2018 richiedono
+          un&apos;ORSA prospettica basata su scenari attuariali coerenti con il piano industriale, sulla validazione periodica dei
+          modelli di capitale e su flussi informativi tempestivi verso il CdA.
+        </p>
+        <p>
+          La funzione attuariale collabora con Risk Management e Finance per sfidare le assumption tecniche, presidiare la
+          coerenza metodologica delle proiezioni e contribuire alle sezioni attuariali della relazione ORSA e del Board ORSA
+          report.
         </p>
         <ul>
-          <li>Aggiornare il risk appetite framework con metriche quantitative e qualitative coerenti con lo SCR.</li>
-          <li>Eseguire almeno annualmente l&apos;ORSA, includendo scenari di stress e piani di recupero del capitale.</li>
-          <li>Definire una checklist di follow-up per le azioni ORSA e tracciarne lo stato di avanzamento.</li>
+          <li>
+            Aggiornare il risk appetite framework con metriche quantitative e qualitative coerenti con lo SCR e gli scenari
+            ORSA prospettici.
+          </li>
+          <li>
+            Disegnare scenari attuariali e reverse stress test che integrino evoluzioni macroeconomiche, trend biometrici e
+            fattori ESG, documentando ipotesi e risultati per il Board report.
+          </li>
+          <li>
+            Validare periodicamente i modelli di capitale e le assumption chiave (mortalità, discontinuità di mercato,
+            volatilità dei tassi) con evidenze di challenge e peer review.
+          </li>
+          <li>
+            Redigere la relazione attuariale ORSA, contribuire alle sezioni del Board ORSA report e coordinare il rilascio del
+            parere attuariale sulle conclusioni di adeguatezza patrimoniale.
+          </li>
+          <li>
+            Monitorare l&apos;implementazione delle azioni correttive definite nel piano ORSA, mantenendo una matrice di
+            responsabilità e scadenze condivisa con le funzioni di controllo.
+          </li>
+          <li>
+            Gestire il ciclo di vita delle assumption (definizione, approvazione, tracciamento delle modifiche) e aggiornare
+            le politiche di rischio in coerenza con le indicazioni IVASS/EIOPA.
+          </li>
         </ul>
       </section>
       <section className="info-panel" aria-labelledby="teoria-attuariale-base">
