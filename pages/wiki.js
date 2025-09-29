@@ -71,6 +71,103 @@ export default function Wiki() {
           le probabilità di sinistro o sopravvivenza. Fonte: Bowers et al., Actuarial Mathematics for Life Contingent Risks 2015.
         </p>
       </section>
+      <section className="info-panel" aria-labelledby="ricerche-attuariali">
+        <h2 id="ricerche-attuariali">Ricerche attuariali selezionate e approfondimenti</h2>
+        <p>
+          Questa rassegna mette in evidenza studi peer-reviewed o working paper utili alla pratica attuariale. ⚠️{" "}
+          <strong>Disclaimer:</strong> le note seguenti sono pensate per orientare l&apos;approfondimento personale e non sostituiscono
+          pareri professionali né linee guida regolamentari ufficiali.
+        </p>
+        <h3>Paper e studi da tenere d&apos;occhio</h3>
+        <ol>
+          <li>
+            <h4>Antonio &amp; Plat (2014) — Micro-level stochastic loss reserving for general insurance</h4>
+            <p>
+              <strong>Fonte:</strong>{" "}
+              <a href="https://onlinelibrary.wiley.com/doi/10.1111/jori.12029" rel="noreferrer" target="_blank">
+                Journal of Risk and Insurance
+              </a>
+            </p>
+            <p>
+              <strong>Sintesi:</strong> propone modelli granulari su singolo sinistro che combinano componenti di frequenza e severità con
+              covariate assicurative, riducendo la dipendenza da assunzioni aggregate.
+            </p>
+            <p>
+              <strong>Applicazioni pratiche:</strong> utile per compagnie con data warehouse strutturati che vogliono raffinare i triangoli di
+              riserva tradizionali con tecniche micro-level e gradient boosting.
+            </p>
+          </li>
+          <li>
+            <h4>Koijen &amp; Yogo (2016) — The cost of financial frictions for life insurers</h4>
+            <p>
+              <strong>Fonte:</strong>{" "}
+              <a href="https://www.aeaweb.org/articles?id=10.1257/aer.20130876" rel="noreferrer" target="_blank">
+                American Economic Review
+              </a>
+            </p>
+            <p>
+              <strong>Sintesi:</strong> analizza come le restrizioni di capitale e le frizioni finanziarie influenzino prezzi, offerta di
+              prodotti vita e allocazioni di portafoglio nel lungo periodo.
+            </p>
+            <p>
+              <strong>Applicazioni pratiche:</strong> supporta stress test interni IFRS 17 e ORSA nel valutare scenari di liquidità e
+              compressione dei margini in contesti di tassi bassi.
+            </p>
+          </li>
+          <li>
+            <h4>Bauer, Reuss &amp; Singer (2012) — On the calculation of the Solvency Capital Requirement based on nested simulations</h4>
+            <p>
+              <strong>Fonte:</strong>{" "}
+              <a href="https://www.cambridge.org/core/journals/astin-bulletin/article/on-the-calculation-of-the-solvency-capital-requirement-based-on-nested-simulations/" rel="noreferrer" target="_blank">
+                ASTIN Bulletin
+              </a>
+            </p>
+            <p>
+              <strong>Sintesi:</strong> approfondisce tecniche di simulazione annidata per il calcolo dello SCR, con focus su efficienza
+              computazionale e accuratezza statistica.
+            </p>
+            <p>
+              <strong>Applicazioni pratiche:</strong> rilevante per i team di risk management che valutano modelli interni parziali o completi
+              in contesti Solvency II.
+            </p>
+          </li>
+        </ol>
+        <h3>Approfondimenti disponibili</h3>
+        <ul>
+          <li>
+            Schede riassuntive con formule chiave e indicatori da monitorare (SCR ratio, variazioni best estimate liabilities).
+          </li>
+          <li>
+            Template di lettura critica per confrontare metodologie statistiche e requisiti IVASS/EIOPA.
+          </li>
+          <li>
+            Collegamenti a talk, podcast e webinar per continuare l&apos;aggiornamento professionale.
+          </li>
+        </ul>
+        <h3>Roadmap editoriale</h3>
+        <ol>
+          <li>Pubblicazione di schede sintetiche sui principali filoni di ricerca vita, danni e previdenza.</li>
+          <li>Sviluppo di casi applicativi con dataset anonimizzati per sperimentare le tecniche descritte.</li>
+          <li>Interviste con ricercatori italiani ed europei su innovazioni in risk management e fintech attuariale.</li>
+        </ol>
+        <h3>Tag tematici</h3>
+        <ul>
+          <li>
+            <strong>#RiskManagement</strong> — metriche di capitale, ORSA e governance prudenziale.
+          </li>
+          <li>
+            <strong>#DataAnalytics</strong> — uso di ML, gradient boosting e Bayesian updating nei modelli attuariali.
+          </li>
+          <li>
+            <strong>#Regolamentazione</strong> — riferimenti a Solvency II, IFRS 17 e best practice EIOPA/IVASS.
+          </li>
+        </ul>
+        <p>
+          🔍{" "}
+          <strong>Nota finale:</strong> le risorse indicate sono a scopo divulgativo; verifica sempre gli aggiornamenti normativi e le
+          politiche interne della tua organizzazione prima di implementare modifiche operative.
+        </p>
+      </section>
     </Layout>
   );
 }
