@@ -30,6 +30,12 @@ export default function Home() {
           <a className="button secondary" href="#sezioni">
             Esplora le sezioni
           </a>
+          <Link className="button secondary" href="/community">
+            Entra nella community
+          </Link>
+          <Link className="button secondary" href="/shop">
+            Scopri i kit digitali
+          </Link>
         </div>
       </section>
 
@@ -78,5 +84,3 @@ export default function Home() {
     </Layout>
   );
 }
-
-export const config = { amp: "hybrid" };
