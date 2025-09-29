@@ -69,6 +69,25 @@ const researchHighlights = [
     description:
       "Duration e convexity sono utilizzate per immunizzare il portafoglio contro variazioni di tasso, coordinando attivi e passivi. L'approfondimento collega l'Asset Liability Management a metriche di rischio come VaR e TVaR, evidenziando l'uso di scenari deterministici e simulazioni stocastiche per la gestione del capitale.",
   },
+  {
+    title: "📌 Micro-level stochastic loss reserving for general insurance",
+    description:
+      "Propone modelli granulari su singolo sinistro che combinano componenti di frequenza e severità con covariate assicurative, riducendo la dipendenza da assunzioni aggregate.",
+    slug: "/wiki/ricerche-attuariali.html#antonio-plat-2014",
+  },
+  {
+    title: "📊 The cost of financial frictions for life insurers",
+    description:
+      "Analizza come le restrizioni di capitale e le frizioni finanziarie influenzino prezzi, offerta di prodotti vita e allocazioni di portafoglio nel lungo periodo.",
+    slug: "/wiki/ricerche-attuariali.html#koijen-yogo-2016",
+  },
+  {
+    title:
+      "🧮 On the calculation of the Solvency Capital Requirement based on nested simulations",
+    description:
+      "Approfondisce tecniche di simulazione annidata per il calcolo dello SCR, con focus su efficienza computazionale e accuratezza statistica.",
+    slug: "/wiki/ricerche-attuariali.html#bauer-reuss-singer-2012",
+  },
 ];
 
 export default function Teoria() {
@@ -94,12 +113,14 @@ export default function Teoria() {
       <section className="section">
         <h2>Quadri teorici fondamentali</h2>
         <div className="card-grid">
-          {researchHighlights.map(({ title, description }) => (
-            <article key={title} className="card">
-              <h3>{title}</h3>
-              <p>{description}</p>
-            </article>
-          ))}
+          {researchHighlights
+            .filter((rh) => !rh.slug)
+            .map(({ title, description }) => (
+              <article key={title} className="card">
+                <h3>{title}</h3>
+                <p>{description}</p>
+              </article>
+            ))}
         </div>
       </section>
 
@@ -112,8 +133,32 @@ export default function Teoria() {
           <li>Mini-quiz autogenerati per verificare la comprensione immediata.</li>
         </ul>
         <p className="small-print">
-          Materiale didattico open-source con licenza CC BY-SA, ideale per corsi universitari e gruppi di studio.
+          Materiale didattico open-source con licenza CC BY-SA, ideale per corsi
+          universitari e gruppi di studio.
         </p>
+      </section>
+
+      <section className="section info-panel">
+        <h2>Ricerche consigliate</h2>
+        {researchHighlights
+          .filter((rh) => rh.slug)
+          .map(({ title, description, slug }) => (
+            <div
+              key={slug}
+              style={{
+                background: "#eef6ff",
+                padding: "1rem",
+                borderLeft: "4px solid #0066cc",
+                margin: "1rem 0",
+              }}
+            >
+              <h3>{title}</h3>
+              <p>{description}</p>
+              <a href={slug} target="_blank" rel="noopener noreferrer">
+                Apri la scheda completa
+              </a>
+            </div>
+          ))}
       </section>
     </Layout>
   );
