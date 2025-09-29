@@ -1,12 +1,138 @@
+import { useState } from "react";
 import Layout from "../components/Layout";
 
 export default function Wiki() {
+  const researchPapers = [
+    {
+      id: "antonio-plat-2014",
+      title: "Micro-level stochastic loss reserving for general insurance",
+      authors: "Antonio & Plat (2014)",
+      sourceLabel: "Journal of Risk and Insurance",
+      sourceHref: "https://onlinelibrary.wiley.com/doi/10.1111/jori.12029",
+      summary:
+        "Propone modelli granulari su singolo sinistro che combinano componenti di frequenza e severità con covariate assicurative, riducendo la dipendenza da assunzioni aggregate.",
+      applications:
+        "Utile per compagnie con data warehouse strutturati che vogliono raffinare i triangoli di riserva tradizionali con tecniche micro-level e gradient boosting.",
+    },
+    {
+      id: "koijen-yogo-2016",
+      title: "The cost of financial frictions for life insurers",
+      authors: "Koijen & Yogo (2016)",
+      sourceLabel: "American Economic Review",
+      sourceHref: "https://www.aeaweb.org/articles?id=10.1257/aer.20130876",
+      summary:
+        "Analizza come le restrizioni di capitale e le frizioni finanziarie influenzino prezzi, offerta di prodotti vita e allocazioni di portafoglio nel lungo periodo.",
+      applications:
+        "Supporta stress test interni IFRS 17 e ORSA nel valutare scenari di liquidità e compressione dei margini in contesti di tassi bassi.",
+    },
+    {
+      id: "bauer-reuss-singer-2012",
+      title:
+        "On the calculation of the Solvency Capital Requirement based on nested simulations",
+      authors: "Bauer, Reuss & Singer (2012)",
+      sourceLabel: "ASTIN Bulletin",
+      sourceHref:
+        "https://www.cambridge.org/core/journals/astin-bulletin/article/on-the-calculation-of-the-solvency-capital-requirement-based-on-nested-simulations/",
+      summary:
+        "Approfondisce tecniche di simulazione annidata per il calcolo dello SCR, con focus su efficienza computazionale e accuratezza statistica.",
+      applications:
+        "Rilevante per i team di risk management che valutano modelli interni parziali o completi in contesti Solvency II.",
+    },
+  ];
+
+  const [openCards, setOpenCards] = useState(() =>
+    researchPapers.reduce((acc, paper) => ({ ...acc, [paper.id]: false }), {})
+  );
+
+  const handleToggle = (paperId) => {
+    setOpenCards((prev) => ({ ...prev, [paperId]: !prev[paperId] }));
+  };
+
   return (
     <Layout
       title="Wiki attuariale"
       eyebrow="Knowledge base"
       intro="Sezione dedicata a glossari, FAQ e snippet normativi riutilizzabili. Popola questa pagina con articoli o collegamenti alla tua base di conoscenza."
     >
+      <style jsx>{`
+        .research-grid {
+          display: grid;
+          gap: 1.5rem;
+          margin: 2rem 0;
+        }
+
+        .research-card {
+          background: var(--card-background, #fff);
+          border: 1px solid rgba(148, 163, 184, 0.35);
+          border-radius: 16px;
+          box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+          padding: 1.5rem;
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .research-card:hover,
+        .research-card:focus-within {
+          transform: translateY(-2px);
+          box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+        }
+
+        .research-card h4 {
+          font-size: 1.1rem;
+          line-height: 1.4;
+          margin: 0 0 0.75rem;
+        }
+
+        .research-card__authors {
+          color: rgb(71, 85, 105);
+          font-weight: 600;
+          margin-bottom: 0.5rem;
+        }
+
+        .research-card__source,
+        .research-card__summary {
+          margin: 0 0 0.75rem;
+        }
+
+        .research-card__source a {
+          color: inherit;
+          text-decoration: underline;
+          text-decoration-color: rgba(59, 130, 246, 0.6);
+        }
+
+        .toggle-button {
+          background: linear-gradient(135deg, #2563eb, #1e3a8a);
+          border: none;
+          border-radius: 9999px;
+          color: #fff;
+          cursor: pointer;
+          font-size: 0.95rem;
+          font-weight: 600;
+          padding: 0.55rem 1.5rem;
+          transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        .toggle-button:hover,
+        .toggle-button:focus-visible {
+          background: linear-gradient(135deg, #1d4ed8, #172554);
+          outline: none;
+          transform: translateY(-1px);
+        }
+
+        .toggle-details {
+          border-top: 1px solid rgba(148, 163, 184, 0.3);
+          display: none;
+          margin-top: 1rem;
+          padding-top: 1rem;
+        }
+
+        .toggle-details.is-visible {
+          display: block;
+        }
+
+        .toggle-details p {
+          margin: 0;
+        }
+      `}</style>
       <section className="info-panel" aria-labelledby="glossario-attuariale">
         <h2 id="glossario-attuariale">Glossario attuariale</h2>
         <p>
@@ -94,71 +220,46 @@ export default function Wiki() {
           pareri professionali né linee guida regolamentari ufficiali.
         </p>
         <h3>Paper e studi da tenere d&apos;occhio</h3>
-        <ol>
-          <li>
-            <h4>Antonio &amp; Plat (2014) — Micro-level stochastic loss reserving for general insurance</h4>
-            <p>
-              <strong>Fonte:</strong>{" "}
-              <a
-                href="https://onlinelibrary.wiley.com/doi/10.1111/jori.12029"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                Journal of Risk and Insurance
-              </a>
-            </p>
-            <p>
-              <strong>Sintesi:</strong> propone modelli granulari su singolo sinistro che combinano componenti di frequenza e severità con
-              covariate assicurative, riducendo la dipendenza da assunzioni aggregate.
-            </p>
-            <p>
-              <strong>Applicazioni pratiche:</strong> utile per compagnie con data warehouse strutturati che vogliono raffinare i triangoli di
-              riserva tradizionali con tecniche micro-level e gradient boosting.
-            </p>
-          </li>
-          <li>
-            <h4>Koijen &amp; Yogo (2016) — The cost of financial frictions for life insurers</h4>
-            <p>
-              <strong>Fonte:</strong>{" "}
-              <a
-                href="https://www.aeaweb.org/articles?id=10.1257/aer.20130876"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                American Economic Review
-              </a>
-            </p>
-            <p>
-              <strong>Sintesi:</strong> analizza come le restrizioni di capitale e le frizioni finanziarie influenzino prezzi, offerta di
-              prodotti vita e allocazioni di portafoglio nel lungo periodo.
-            </p>
-            <p>
-              <strong>Applicazioni pratiche:</strong> supporta stress test interni IFRS 17 e ORSA nel valutare scenari di liquidità e
-              compressione dei margini in contesti di tassi bassi.
-            </p>
-          </li>
-          <li>
-            <h4>Bauer, Reuss &amp; Singer (2012) — On the calculation of the Solvency Capital Requirement based on nested simulations</h4>
-            <p>
-              <strong>Fonte:</strong>{" "}
-              <a
-                href="https://www.cambridge.org/core/journals/astin-bulletin/article/on-the-calculation-of-the-solvency-capital-requirement-based-on-nested-simulations/"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                ASTIN Bulletin
-              </a>
-            </p>
-            <p>
-              <strong>Sintesi:</strong> approfondisce tecniche di simulazione annidata per il calcolo dello SCR, con focus su efficienza
-              computazionale e accuratezza statistica.
-            </p>
-            <p>
-              <strong>Applicazioni pratiche:</strong> rilevante per i team di risk management che valutano modelli interni parziali o completi
-              in contesti Solvency II.
-            </p>
-          </li>
-        </ol>
+        <div className="research-grid" role="list">
+          {researchPapers.map((paper, index) => {
+            const detailsId = `${paper.id}-details-${index}`;
+            const isOpen = openCards[paper.id];
+
+            return (
+              <div className="research-card" key={paper.id} role="listitem">
+                <p className="research-card__authors">{paper.authors}</p>
+                <h4>{paper.title}</h4>
+                <p className="research-card__source">
+                  <strong>Fonte:</strong>{" "}
+                  <a href={paper.sourceHref} rel="noopener noreferrer" target="_blank">
+                    {paper.sourceLabel}
+                  </a>
+                </p>
+                <p className="research-card__summary">
+                  <strong>Sintesi:</strong> {paper.summary}
+                </p>
+                <button
+                  type="button"
+                  className="toggle-button"
+                  aria-expanded={isOpen}
+                  aria-controls={detailsId}
+                  onClick={() => handleToggle(paper.id)}
+                >
+                  {isOpen ? "Nascondi applicazioni pratiche" : "Mostra applicazioni pratiche"}
+                </button>
+                <div
+                  id={detailsId}
+                  className={`toggle-details${isOpen ? " is-visible" : ""}`}
+                  hidden={!isOpen}
+                >
+                  <p>
+                    <strong>Applicazioni pratiche:</strong> {paper.applications}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
         <h3>Approfondimenti disponibili</h3>
         <ul>
           <li>
