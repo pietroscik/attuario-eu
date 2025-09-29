@@ -84,7 +84,11 @@ export default function Wiki() {
             <h4>Antonio &amp; Plat (2014) — Micro-level stochastic loss reserving for general insurance</h4>
             <p>
               <strong>Fonte:</strong>{" "}
-              <a href="https://onlinelibrary.wiley.com/doi/10.1111/jori.12029" rel="noreferrer" target="_blank">
+              <a
+                href="https://onlinelibrary.wiley.com/doi/10.1111/jori.12029"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
                 Journal of Risk and Insurance
               </a>
             </p>
@@ -101,7 +105,11 @@ export default function Wiki() {
             <h4>Koijen &amp; Yogo (2016) — The cost of financial frictions for life insurers</h4>
             <p>
               <strong>Fonte:</strong>{" "}
-              <a href="https://www.aeaweb.org/articles?id=10.1257/aer.20130876" rel="noreferrer" target="_blank">
+              <a
+                href="https://www.aeaweb.org/articles?id=10.1257/aer.20130876"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
                 American Economic Review
               </a>
             </p>
@@ -118,7 +126,11 @@ export default function Wiki() {
             <h4>Bauer, Reuss &amp; Singer (2012) — On the calculation of the Solvency Capital Requirement based on nested simulations</h4>
             <p>
               <strong>Fonte:</strong>{" "}
-              <a href="https://www.cambridge.org/core/journals/astin-bulletin/article/on-the-calculation-of-the-solvency-capital-requirement-based-on-nested-simulations/" rel="noreferrer" target="_blank">
+              <a
+                href="https://www.cambridge.org/core/journals/astin-bulletin/article/on-the-calculation-of-the-solvency-capital-requirement-based-on-nested-simulations/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
                 ASTIN Bulletin
               </a>
             </p>
