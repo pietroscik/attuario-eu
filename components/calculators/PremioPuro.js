@@ -97,7 +97,7 @@ export default function PremioPuro() {
         </div>
         <div>Sinistri attesi ogni 100 polizze: {output.sinistriPerCento.toFixed(2)}</div>
         <div>Premio puro annuo per 100 polizze: € {output.premioPerCento.toFixed(2)}</div>
-        <div>Sinistri attesi sull'intero portafoglio: {output.sinistriAnnui.toFixed(2)}</div>
+        <div>Sinistri attesi sull’intero portafoglio: {output.sinistriAnnui.toFixed(2)}</div>
         <div>Costo complessivo atteso: € {output.costoTotaleAtteso.toFixed(2)}</div>
         <div>Premi lordi raccolti: € {output.premiLordiTotali.toFixed(2)}</div>
         <div>Loss ratio tecnico atteso: {(output.lossRatio * 100).toFixed(1)}%</div>

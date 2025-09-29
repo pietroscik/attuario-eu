@@ -58,7 +58,7 @@ export default function PremioUnico() {
     <div className="calculator">
       <h3>Calcolatore premio unico</h3>
       <p className="calculator-note">
-        Valuta l'importo di premio da incassare una tantum oggi per coperture vita di durata limitata.
+        Valuta l’importo di premio da incassare una tantum oggi per coperture vita di durata limitata.
       </p>
       <label>
         Somma assicurata (€)
@@ -171,12 +171,12 @@ export default function PremioUnico() {
       )}
 
       <p className="calculator-note">
-        Il premio netto corrisponde a S × q × v^n come indicato nei testi di attuarial science (ad esempio Bowers, "Actuarial
-        Mathematics"), mentre caricamenti e spese seguono le linee guida IVASS sulla determinazione del premio di tariffa. Imposta
+        Il premio netto corrisponde a S × q × v^n come indicato nei testi di attuarial science (ad esempio Bowers, “Actuarial
+        Mathematics”), mentre caricamenti e spese seguono le linee guida IVASS sulla determinazione del premio di tariffa. Imposta
         <code>n = 0</code> per coperture immediate o modella durate diverse.
       </p>
       <p className="calculator-note">
-        L'input "Spese variabili" separa i caricamenti percentuali previsti dal Regolamento IVASS n. 41/2018 tra costi tecnici e
+        L’input “Spese variabili” separa i caricamenti percentuali previsti dal Regolamento IVASS n. 41/2018 tra costi tecnici e
         spese di gestione, facilitando la riconciliazione con il fascicolo tecnico e con i prospetti Solvency II (QRT S.05.01).
       </p>
     </div>

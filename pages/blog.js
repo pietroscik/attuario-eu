@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import Layout from "../components/Layout";
 
 import { BLOG_POSTS } from "../content/pages/blog";
@@ -24,9 +26,9 @@ export default function Blog() {
           Una email al mese con il riassunto degli articoli pubblicati, link agli eventi e anticipazioni sui nuovi
           strumenti.
         </p>
-        <a className="button" href="/newsletter">
+        <Link className="button" href="/newsletter">
           Iscriviti
-        </a>
+        </Link>
       </section>
 
       <section className="section info-panel">
@@ -35,9 +37,9 @@ export default function Blog() {
           Tre lezioni on-demand per ripercorrere il framework IASB, esempi numerici e materiali di approfondimento
           consigliati da EFRAG e actuarial task force internazionali.
         </p>
-        <a className="button" href="/risorse/ifrs17-essentials">
+        <Link className="button" href="/risorse/ifrs17-essentials">
           Accedi al mini-corso
-        </a>
+        </Link>
       </section>
     </Layout>
   );

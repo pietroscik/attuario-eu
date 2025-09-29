@@ -6,7 +6,7 @@ export default function PensioneIndicizzataPage() {
     <Layout
       title="Calcolatore pensione indicizzata"
       eyebrow="Prestazioni rivalutate"
-      intro="Simula l'importo di una pensione retributiva con indicizzazione annua costante, calcolando quota maturata, valore attuale e profilo di crescita dei pagamenti."
+      intro="Simula l’importo di una pensione retributiva con indicizzazione annua costante, calcolando quota maturata, valore attuale e profilo di crescita dei pagamenti."
       metaDescription="Calcolatore pensione indicizzata: retribuzione finale, quota di maturazione, valore attuale e grafico dei primi anni di pensione."
       width="narrow"
     >
@@ -18,7 +18,7 @@ export default function PensioneIndicizzataPage() {
           Le prestazioni successive sono rivalutate con un tasso costante, mentre il valore attuale applica il tasso di attualizzazione selezionato.
         </p>
         <p>
-          L'approccio replica i prospetti informativi previsti dal D.Lgs. 252/2005 e dalle note Covip sulle comunicazioni periodiche ai sottoscrittori.
+          L’approccio replica i prospetti informativi previsti dal D.Lgs. 252/2005 e dalle note Covip sulle comunicazioni periodiche ai sottoscrittori.
         </p>
       </section>
       <section className="section">

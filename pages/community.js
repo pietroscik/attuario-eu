@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import Layout from "../components/Layout";
 
 const COMMUNITY_CHANNELS = [
@@ -90,9 +92,11 @@ export default function Community() {
         <p>
           Scegli il canale più adatto al tuo stile di apprendimento: chat e thread su Discord per confronto rapido e approfondito, aggiornamenti push su Telegram, eventi live per esercitazioni e mentorship.
         </p>
+
         <p className="small-print">
           Cerchi racconti e approfondimenti della community? Li trovi raccolti nel nostro <a href="/blog">blog</a>, insieme alle interviste e agli editoriali curati dal team.
         </p>
+
         <div className="card-grid">
           {COMMUNITY_CHANNELS.map(({ name, description, action, href }) => (
             <article key={name} className="card">
@@ -145,7 +149,9 @@ export default function Community() {
           ))}
         </div>
         <p className="small-print">
+
           Vuoi proporre un nuovo gruppo o coordinare un workshop? Compila il form nella pagina <a href="/contatti">Contatti</a> specificando obiettivi, target e materiali proposti.
+
         </p>
       </section>
     </Layout>

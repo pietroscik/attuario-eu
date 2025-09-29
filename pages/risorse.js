@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import Layout from "../components/Layout";
 
 import { RESOURCE_SECTIONS } from "../content/pages/risorse";
@@ -31,11 +33,11 @@ export default function Risorse() {
       <section className="section info-panel">
         <h2>Come contribuire</h2>
         <p>
-          Hai scoperto un sito, un dataset o un progetto open source utile alla community attuariale? Scrivici dalla pagina
-          <a href="/contatti"> Contatti</a> e lo valuteremo per l'inserimento in questa directory.
+          Hai scoperto un sito, un dataset o un progetto open source utile alla community attuariale? Scrivici dalla pagina{" "}
+          <Link href="/contatti">Contatti</Link> e lo valuteremo per l’inserimento in questa directory.
         </p>
         <p className="small-print">
-          Le risorse elencate sono fornite a titolo informativo; attuario.eu non fornisce consulenza né garantisce l'aggiornamento continuo dei contenuti esterni.
+          Le risorse elencate sono fornite a titolo informativo; attuario.eu non fornisce consulenza né garantisce l’aggiornamento continuo dei contenuti esterni.
         </p>
       </section>
     </Layout>

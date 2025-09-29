@@ -43,6 +43,7 @@ const SHOP_FAQ = [
   {
     question: "Come ricevo i materiali?",
     answer:
+
       "Dopo l'acquisto ricevi un link via email con accesso immediato ai file in formato ZIP. Gli aggiornamenti futuri vengono inviati automaticamente alla stessa casella.",
   },
   {
@@ -98,6 +99,7 @@ export default function Shop() {
               <a className="button secondary" href="/contatti">
                 Richiedi anteprima
               </a>
+
             </article>
           ))}
         </div>
@@ -131,6 +133,7 @@ export default function Shop() {
         <h2 id="shop-supporto">Supporto e aggiornamenti</h2>
         <p>
           Ogni kit include una bacheca changelog e un canale dedicato nella community. Se hai suggerimenti o vuoi proporre un nuovo strumento scrivici da <a href="/contatti">Contatti</a> indicando obiettivi e requisiti funzionali.
+
         </p>
         <p className="small-print">
           Tutti i materiali sono pensati per fini educativi e divulgativi. Non costituiscono consulenza professionale né sostituiscono le verifiche richieste da regolatori o auditor.

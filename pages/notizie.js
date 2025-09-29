@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import Layout from "../components/Layout";
 
 import { NEWS_UPDATES } from "../content/pages/notizie";
@@ -25,9 +27,9 @@ export default function Notizie() {
       <section className="section info-panel">
         <h2>Newsletter mensile</h2>
         <p>Riepilogo di articoli, paper e strumenti pubblicati sul sito con commenti degli autori e una selezione di letture extra.</p>
-        <a className="button" href="/newsletter">
+        <Link className="button" href="/newsletter">
           Iscriviti gratuitamente
-        </a>
+        </Link>
         <p className="small-print">Riceverai solo aggiornamenti divulgativi. Nessuna proposta commerciale o consulenza.</p>
       </section>
     </Layout>

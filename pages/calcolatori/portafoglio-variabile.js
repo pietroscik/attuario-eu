@@ -27,14 +27,14 @@ export default function PortafoglioVariabilePage() {
           La frontiera rischio-rendimento supporta la definizione del rischio appetito aziendale e la verifica della coerenza con il piano strategico.
         </p>
         <p>
-          È consigliabile allegare i risultati al report ORSA per dimostrare che l'impresa monitora l'effetto di variazioni di asset allocation sui requisiti di capitale.
+          È consigliabile allegare i risultati al report ORSA per dimostrare che l’impresa monitora l’effetto di variazioni di asset allocation sui requisiti di capitale.
         </p>
       </section>
       <section className="section">
         <h2>Riferimenti</h2>
         <ul className="list">
           <li>Regolamento IVASS n. 38/2018 – Allegato 5 (gestione rischi finanziari).</li>
-          <li>Linee guida EIOPA sull'ORSA (EIOPA-BoS-14/259).</li>
+          <li>Linee guida EIOPA sull’ORSA (EIOPA-BoS-14/259).</li>
           <li>CEIOPS, documento di consultazione sulle strategie di investimento per imprese assicurative.</li>
         </ul>
       </section>
