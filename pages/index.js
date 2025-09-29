@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import Layout from "../components/Layout";
 
 import {
@@ -22,9 +24,9 @@ export default function Home() {
           spiegazioni rigorose ma leggibili, strumenti didattici e aggiornamenti per orientarti tra teoria, pratica e normative.
         </p>
         <div className="hero-actions">
-          <a className="button" href="/newsletter">
+          <Link className="button" href="/newsletter">
             Iscriviti alla newsletter
-          </a>
+          </Link>
           <a className="button secondary" href="#sezioni">
             Esplora le sezioni
           </a>
@@ -34,10 +36,10 @@ export default function Home() {
       <section id="sezioni" className="section">
         <div className="card-grid">
           {HOME_HIGHLIGHTS.map(({ title, text, link }) => (
-            <a key={title} className="link-card" href={link}>
+            <Link key={title} className="link-card" href={link}>
               <h3>{title}</h3>
               <p>{text}</p>
-            </a>
+            </Link>
           ))}
         </div>
       </section>
@@ -69,9 +71,9 @@ export default function Home() {
           attuario.eu accoglie contributi accademici, segnalazioni di eventi e richieste di collaborazione su progetti divulgativi.
           Non vengono erogate consulenze professionali, ma siamo felici di raccontare e condividere esperienze del settore.
         </p>
-        <a className="button secondary" href="/contatti">
+        <Link className="button secondary" href="/contatti">
           Scrivici un messaggio
-        </a>
+        </Link>
       </section>
     </Layout>
   );

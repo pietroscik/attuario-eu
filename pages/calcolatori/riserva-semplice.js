@@ -6,7 +6,7 @@ export default function RiservaSemplicePage() {
     <Layout
       title="Calcolatore riserva semplice"
       eyebrow="RBNS + IBNR"
-      intro="Stima rapida della riserva tecnica combinando il costo residuo dei sinistri aperti con una quota IBNR impostata dall'utente, includendo inflazione e sconto attuariale."
+      intro="Stima rapida della riserva tecnica combinando il costo residuo dei sinistri aperti con una quota IBNR impostata dall’utente, includendo inflazione e sconto attuariale."
       metaDescription="Riserva tecnica semplificata: RBNS, IBNR, inflazione e attualizzazione in linea con le raccomandazioni IVASS e Solvency II."
       width="narrow"
     >
@@ -27,11 +27,11 @@ export default function RiservaSemplicePage() {
         <h2>Consigli operativi</h2>
         <ul className="list">
           <li>Verifica che il costo medio residuo rifletta la severità attesa al netto di franchigie e recuperi.</li>
-          <li>Stima l'IBNR tramite triangoli Chain-Ladder o metodi Bayesian come suggerito da Klugman–Panjer–Willmot.</li>
+          <li>Stima l’IBNR tramite triangoli Chain-Ladder o metodi Bayesian come suggerito da Klugman–Panjer–Willmot.</li>
           <li>Documenta ipotesi e parametri nel fascicolo tecnico, in conformità al Regolamento IVASS n. 38/2018.</li>
         </ul>
         <p>
-          Per portafogli con forte stagionalità valuta l'utilizzo di modelli a calendario (Cape Cod, Bootstrap) e confronta il
+          Per portafogli con forte stagionalità valuta l’utilizzo di modelli a calendario (Cape Cod, Bootstrap) e confronta il
           risultato con i requisiti di capitale Solvency II (SCR). Ricorda che gli aggiustamenti per inflazione possono essere
           derivati da indici ISTAT o da curve forward interne approvate dal comitato rischi.
         </p>
@@ -51,7 +51,7 @@ export default function RiservaSemplicePage() {
           </li>
         </ul>
         <p className="small-print">
-          Inserisci i riferimenti nella documentazione interna per dimostrare l'allineamento con le prassi di settore e ridurre
+          Inserisci i riferimenti nella documentazione interna per dimostrare l’allineamento con le prassi di settore e ridurre
           la probabilità di contestazioni durante gli audit interni o le ispezioni IVASS.
         </p>
       </section>

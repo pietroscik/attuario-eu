@@ -86,7 +86,7 @@ export default function PensioneIndicizzata() {
     <div className="calculator">
       <h3>Pensione indicizzata</h3>
       <p className="calculator-note">
-        Modello semplificato di pensione retributiva indicizzata: applica un'aliquota annua sulla retribuzione di fine carriera
+        Modello semplificato di pensione retributiva indicizzata: applica un’aliquota annua sulla retribuzione di fine carriera
         e rivaluta le prestazioni con un tasso di indicizzazione costante, come nelle simulazioni richieste dal D.Lgs. 252/2005.
       </p>
       <label>
@@ -188,7 +188,7 @@ export default function PensioneIndicizzata() {
             <text x="10" y="20" fontSize="10">Pensione annua (€)</text>
           </svg>
           <figcaption>
-            Evoluzione dell'importo pensionistico indicizzato. Il profilo crescente riflette l'indicizzazione annua scelta e
+            Evoluzione dell’importo pensionistico indicizzato. Il profilo crescente riflette l’indicizzazione annua scelta e
             consente di confrontare scenari con il tasso di attualizzazione previsto dalle comunicazioni Covip.
           </figcaption>
         </figure>

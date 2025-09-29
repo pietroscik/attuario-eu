@@ -6,7 +6,7 @@ export default function PremioUnicoPage() {
     <Layout
       title="Calcolatore premio unico"
       eyebrow="Coperture vita a premio unico"
-      intro="Calcola l'importo da incassare in un'unica soluzione oggi per coprire un capitale assicurato, considerando probabilità di sinistro, durata, caricamenti e spese fisse."
+      intro="Calcola l’importo da incassare in un’unica soluzione oggi per coprire un capitale assicurato, considerando probabilità di sinistro, durata, caricamenti e spese fisse."
       metaDescription="Premio unico vita: calcolatore con probabilità di sinistro, tasso tecnico, caricamenti e spese secondo le linee guida IVASS."
       width="narrow"
     >
@@ -14,7 +14,7 @@ export default function PremioUnicoPage() {
       <section className="section info-panel">
         <h2>Passaggi del calcolo</h2>
         <ol className="list">
-          <li>Valore medio dell'indennizzo: somma assicurata × probabilità di sinistro.</li>
+          <li>Valore medio dell’indennizzo: somma assicurata × probabilità di sinistro.</li>
           <li>Attualizzazione del valore medio con il tasso tecnico impostato.</li>
           <li>Applicazione del caricamento per spese/margini, espresso come percentuale sul premio netto.</li>
         </ol>
@@ -23,7 +23,7 @@ export default function PremioUnicoPage() {
         </p>
         <p>
           In attuazione del Regolamento IVASS n. 41/2018 il premio lordo deve tenere conto anche di spese fisse e marginalità
-          coerenti con il profilo di rischio dell'impresa. L'input "Spese fisse" consente di stimare questo contributo, mentre il
+          coerenti con il profilo di rischio dell’impresa. L’input “Spese fisse” consente di stimare questo contributo, mentre il
           caricamento percentuale riprende la formula classica <code>premio = premio\,netto × (1 + caricamento)</code> illustrata
           in <em>Actuarial Mathematics for Life Contingent Risks</em> (Dickson, Hardy, Waters).
         </p>
@@ -47,7 +47,7 @@ export default function PremioUnicoPage() {
         <p>
           Il calcolatore restituisce anche il premio per mille, utile per confronti rapidi con benchmark di mercato e con i
           prospetti informativi previsti dal Regolamento IVASS n. 41/2018 allegato 4. In sede di pricing definitivo è opportuno
-          verificare la coerenza con i tassi garantiti massimi pubblicati da Banca d'Italia e con le ipotesi demografiche della
+          verificare la coerenza con i tassi garantiti massimi pubblicati da Banca d’Italia e con le ipotesi demografiche della
           nota tecnica.
         </p>
       </section>
@@ -82,8 +82,8 @@ export default function PremioUnicoPage() {
         </ul>
         <p className="small-print">
           La checklist aiuta a ridurre gli errori di implementazione che generano pagine 404 o discrepanze tra nota tecnica e
-          strumenti operativi. Archivia i prospetti di calcolo con versioning controllato per facilitare la revisione dell'attua
-ario incaricato.
+          strumenti operativi. Archivia i prospetti di calcolo con versioning controllato per facilitare la revisione dell’attua
+rio incaricato.
         </p>
       </section>
     </Layout>

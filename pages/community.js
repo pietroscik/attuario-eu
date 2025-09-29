@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import Layout from "../components/Layout";
 
 const COMMUNITY_CHANNELS = [
@@ -142,7 +144,8 @@ export default function Community() {
           ))}
         </div>
         <p className="small-print">
-          Vuoi proporre un nuovo gruppo o coordinare un workshop? Compila il form nella pagina <a href="/contatti">Contatti</a> specificando obiettivi, target e materiali proposti.
+          Vuoi proporre un nuovo gruppo o coordinare un workshop? Compila il form nella pagina{" "}
+          <Link href="/contatti">Contatti</Link> specificando obiettivi, target e materiali proposti.
         </p>
       </section>
     </Layout>
