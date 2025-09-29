@@ -198,10 +198,18 @@ export default function Wiki() {
           La Direttiva (UE) 2016/97 e il Regolamento Delegato (UE) 2017/2358 richiedono presidi sul Product Oversight and Governance con
           recepimento locale IVASS (Reg. n. 45/2020) per documentare target market, test di valore e sorveglianza continua sui prodotti.
         </p>
+        <p>
+          Le Linee guida EIOPA sul POG e il Regolamento IVASS 45/2020 attribuiscono alla funzione attuariale l&apos;onere di validare i test
+          di redditività tecnica (profit testing), esprimere pareri sul value for money e monitorare sistematicamente il mantenimento del
+          margine tecnico, con relativa documentazione e reporting agli organi di governo.
+        </p>
         <ul>
           <li>Formalizzare la policy POG con ruoli, responsabilità e metriche di monitoraggio.</li>
           <li>Validare almeno annualmente il target market e gli scenari di detrimento della clientela.</li>
           <li>Archiviare evidenze dei comitati di product approval e delle verifiche di value for money.</li>
+          <li>Pianificare review periodiche del pricing con profit test aggiornati e analisi sensitività.</li>
+          <li>Validare le ipotesi tecniche (mortalità, spese, riscatto) rispetto ai dati osservati e ai presidi POG.</li>
+          <li>Produrre e conservare i pareri attuariali su value for money e redditività tecnica condividendoli con CdA e funzioni chiave.</li>
         </ul>
         <h3>Reporting SFCR e obblighi di trasparenza</h3>
         <p>
