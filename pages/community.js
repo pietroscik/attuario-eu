@@ -152,7 +152,9 @@ export default function Community() {
         <p className="small-print">
           Vuoi proporre un nuovo gruppo o coordinare un workshop? Compila il form nella pagina{" "}
           <Link href="/contatti">Contatti</Link>{" "}
-          specificando obiettivi, target e materiali proposti.
+          specificando obiettivi, target e materiali proposti. In alternativa scrivi a{" "}
+          <a href="mailto:community@attuario.eu">community@attuario.eu</a>{" "}
+          per entrare in contatto con il team di moderazione.
         </p>
       </section>
     </Layout>
