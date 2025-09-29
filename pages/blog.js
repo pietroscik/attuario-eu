@@ -1,32 +1,6 @@
 import Layout from "../components/Layout";
 
-const posts = [
-  {
-    title: "Stress test assicurativi: cosa impariamo dal report EIOPA 2023",
-    summary:
-      "Analisi dei principali indicatori di resilienza tratti dall’EIOPA Insurance Stress Test 2023 e implicazioni per le funzioni attuariali.",
-  },
-  {
-    title: "IFRS 17 in pratica: l’approccio GMM secondo l’IASB",
-    summary:
-      "Sintesi operativa basata sull’IFRS 17 Project Summary dell’IASB e sui recenti Transition Resource Group papers per impostare policy coerenti.",
-  },
-  {
-    title: "Risk Appetite Framework: le best practice IAIS per il board",
-    summary:
-      "Riepilogo delle Insurance Core Principles dell’IAIS e del paper sulla gestione integrata dei rischi per supportare decisioni consapevoli.",
-  },
-  {
-    title: "Climate risk e metriche ESG: insight dal network NGFS",
-    summary:
-      "Approccio divulgativo ai scenari climatici NGFS 2023 e alle raccomandazioni dell’UNEP FI per integrare KPI ESG nei modelli attuariali.",
-  },
-  {
-    title: "Pricing avanzato: lezioni dal report CAS sull’uso del machine learning",
-    summary:
-      "Panoramica delle linee guida CAS 2022 e dei white paper SOA per coniugare algoritmi complessi, interpretabilità e governance dei dati.",
-  },
-];
+import { BLOG_POSTS } from "../content/pages/blog";
 
 export default function Blog() {
   return (
@@ -36,7 +10,7 @@ export default function Blog() {
       intro="Articoli divulgativi, casi studio e rubriche mensili per avvicinare la scienza attuariale a un pubblico più ampio. Nessuna consulenza, solo condivisione di conoscenza."
     >
       <section className="card-grid">
-        {posts.map(({ title, summary }) => (
+        {BLOG_POSTS.map(({ title, summary }) => (
           <article key={title} className="card">
             <h2>{title}</h2>
             <p>{summary}</p>
