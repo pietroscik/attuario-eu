@@ -101,24 +101,4 @@ export const THEORY_RESEARCH_HIGHLIGHTS = [
     title: "📊 The cost of financial frictions for life insurers",
     description:
       "Analizza come le restrizioni di capitale e le frizioni finanziarie influenzino prezzi, offerta di prodotti vita e allocazioni di portafoglio nel lungo periodo.",
-    slug: "/wiki/ricerche-attuariali.html#koijen-yogo-2016",
-  },
-  {
-    title: "🧮 On the calculation of the Solvency Capital Requirement based on nested simulations",
-    description:
-      "Approfondisce tecniche di simulazione annidata per il calcolo dello SCR, con focus su efficienza computazionale e accuratezza statistica.",
-    slug: "/wiki/ricerche-attuariali.html#bauer-reuss-singer-2012",
-  },
-  {
-    title: "📈 Machine learning in reserving: a practitioner’s guide",
-    description:
-      "Best practice per integrare gradient boosting, reti neurali e explainable AI nei processi di reserving, con riferimento alle linee guida dell’Institute and Faculty of Actuaries.",
-    slug: "/wiki/ricerche-attuariali.html#ifoa-ml-reserving-2021",
-  },
-  {
-    title: "🔍 Fairness e trasparenza nei modelli assicurativi",
-    description:
-      "Panoramica degli standard etici emergenti su pricing e underwriting algoritmico, con esempi di metriche di fairness e approcci di mitigazione.",
-    slug: "/wiki/ricerche-attuariali.html#fairness-insurance-2022",
-  },
-];
+    slug: "/wiki/ricerche-attuariali.htm

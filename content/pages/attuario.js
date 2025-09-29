@@ -1,7 +1,8 @@
 export const ATTUARIO_ROLES = [
   {
     title: "Assicurazioni vita e danni",
-    description: "Dalla tariffazione alle riserve, gli attuari supportano le compagnie nel valutare prodotti e rischi.",
+    description:
+      "Dalla tariffazione alle riserve, gli attuari supportano le compagnie nel valutare prodotti e rischi.",
     bullets: [
       "Organizzazione tipica di un reparto attuariale",
       "KPI di monitoraggio per ramo vita e danni",
@@ -11,7 +12,8 @@ export const ATTUARIO_ROLES = [
   },
   {
     title: "Previdenza e welfare",
-    description: "Gestione di fondi pensione e casse professionali con attenzione a sostenibilità e governance.",
+    description:
+      "Gestione di fondi pensione e casse professionali con attenzione a sostenibilità e governance.",
     bullets: [
       "Ruoli chiave: attuario incaricato, risk manager, consulente del fondo",
       "Come leggere una valutazione attuariale di TFR e piani a benefici definiti",
@@ -21,7 +23,8 @@ export const ATTUARIO_ROLES = [
   },
   {
     title: "Finanza, banche e risk management",
-    description: "Gli attuari portano competenze quantitative nei modelli interni, IFRS 17/9, gestione rischi e ALM.",
+    description:
+      "Gli attuari portano competenze quantitative nei modelli interni, IFRS 17/9, gestione rischi e ALM.",
     bullets: [
       "Come interagire con funzioni CRO, CFO e audit interno",
       "Esempi di progetti: ORSA, stress test, capital modelling",

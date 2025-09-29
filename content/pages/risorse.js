@@ -28,7 +28,8 @@ export const RESOURCE_SECTIONS = [
   },
   {
     title: "Blog e magazine attuariali",
-    description: "Siti divulgativi e tecnici con articoli su carriera, modelli quantitativi e tendenze InsurTech.",
+    description:
+      "Siti divulgativi e tecnici con articoli su carriera, modelli quantitativi e tendenze InsurTech.",
     items: [
       {
         name: "ProActuary",
@@ -54,7 +55,8 @@ export const RESOURCE_SECTIONS = [
   },
   {
     title: "Community e risorse collaborative",
-    description: "Spazi per confrontarsi, reperire dataset e partecipare a progetti divulgativi.",
+    description:
+      "Spazi per confrontarsi, reperire dataset e partecipare a progetti divulgativi.",
     items: [
       {
         name: "Actuarial Outpost",
