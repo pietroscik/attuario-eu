@@ -94,7 +94,8 @@ export default function Community() {
         </p>
 
         <p className="small-print">
-          Cerchi racconti e approfondimenti della community? Li trovi raccolti nel nostro <a href="/blog">blog</a>, insieme alle interviste e agli editoriali curati dal team.
+          Cerchi racconti e approfondimenti della community? Li trovi raccolti nel nostro{" "}
+          <Link href="/blog">blog</Link>, insieme alle interviste e agli editoriali curati dal team.
         </p>
 
         <div className="card-grid">
@@ -149,9 +150,9 @@ export default function Community() {
           ))}
         </div>
         <p className="small-print">
-
-          Vuoi proporre un nuovo gruppo o coordinare un workshop? Compila il form nella pagina <a href="/contatti">Contatti</a> specificando obiettivi, target e materiali proposti.
-
+          Vuoi proporre un nuovo gruppo o coordinare un workshop? Compila il form nella pagina{" "}
+          <Link href="/contatti">Contatti</Link>{" "}
+          specificando obiettivi, target e materiali proposti.
         </p>
       </section>
     </Layout>
