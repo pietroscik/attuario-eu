@@ -12,6 +12,8 @@ Sito divulgativo per `attuario.eu` dedicato alla scienza attuariale con sezioni:
 
 ## Struttura del codice
 - `components/Layout.js` centralizza header, meta tag, navigazione e footer mantenendo il disclaimer divulgativo su ogni pagina.
+- Il menu principale usa i link dichiarati in `content/navigation.js`, così l'ordine di navigazione è configurabile senza toccare il componente.
+- I contenuti statici delle principali pagine editoriali sono raccolti in `content/pages/*.js`, rendendo più semplice aggiornare testi e liste senza scorrere JSX lungo.
 - Gli stili principali vivono in `styles/globals.css` con utility per griglie, card, bottoni e form coerenti fra le sezioni.
 
 ## Avvio locale

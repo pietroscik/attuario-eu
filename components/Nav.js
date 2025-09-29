@@ -1,15 +1,6 @@
 import Link from "next/link";
 
-const links = [
-  { href: "/teoria", label: "Teoria" },
-  { href: "/applicazioni", label: "Applicazioni" },
-  { href: "/attuario", label: "Attuari" },
-  { href: "/risorse", label: "Risorse" },
-  { href: "/wiki", label: "Wiki" },
-  { href: "/notizie", label: "Notizie" },
-  { href: "/strumenti", label: "Strumenti" },
-  { href: "/blog", label: "Blog" },
-];
+import { NAV_LINKS } from "../content/navigation";
 
 export default function Nav() {
   return (
@@ -19,7 +10,7 @@ export default function Nav() {
           attuario.eu
         </Link>
         <nav className="site-nav" aria-label="Navigazione principale">
-          {links.map(({ href, label }) => (
+          {NAV_LINKS.map(({ href, label }) => (
             <Link key={href} href={href} className="site-nav__link">
               {label}
             </Link>
