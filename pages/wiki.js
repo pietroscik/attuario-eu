@@ -183,7 +183,7 @@ export default function Wiki() {
           Tre pilastri: requisiti quantitativi (SCR/MCR), governance e gestione dei rischi, disciplina di mercato tramite disclosure.
           Fonte: Direttiva 2009/138/CE e aggiornamenti EIOPA 2020.
         </p>
-        <h3>IFRS 17 per i bilanci assicurativi</h3>
+        <h3 id="ifrs-17-per-i-bilanci-assicurativi">IFRS 17 per i bilanci assicurativi</h3>
         <p>
           Introduce la misurazione corrente delle passività assicurative con Building Block Approach e Contractual Service Margin.
           Fonte: IASB, IFRS 17 Insurance Contracts 2021.
@@ -325,7 +325,12 @@ export default function Wiki() {
             const isOpen = openCards[paper.id];
 
             return (
-              <div className="research-card" key={paper.id} role="listitem">
+              <div
+                className="research-card"
+                id={paper.id}
+                key={paper.id}
+                role="listitem"
+              >
                 <p className="research-card__authors">{paper.authors}</p>
                 <h4>{paper.title}</h4>
                 <p className="research-card__source">

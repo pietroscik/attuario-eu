@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import Layout from "../components/Layout";
 
 import {
@@ -17,11 +19,31 @@ export default function Teoria() {
     >
       <section className="card-grid">
         {THEORY_TOPICS.map(({ title, items }) => (
-          <article key={title} className="card">
+          <article key={title} className="card theory-card">
             <h2>{title}</h2>
-            <ul className="list">
-              {items.map((item) => (
-                <li key={item}>{item}</li>
+            <ul className="list theory-list">
+              {items.map(({ label, summary, resources }) => (
+                <li key={label}>
+                  <details>
+                    <summary>{label}</summary>
+                    <p>{summary}</p>
+                    {resources?.length ? (
+                      <ul className="resource-links">
+                        {resources.map(({ label: resourceLabel, href, external }) => (
+                          <li key={resourceLabel}>
+                            {external ? (
+                              <a href={href} target="_blank" rel="noopener noreferrer">
+                                {resourceLabel}
+                              </a>
+                            ) : (
+                              <Link href={href}>{resourceLabel}</Link>
+                            )}
+                          </li>
+                        ))}
+                      </ul>
+                    ) : null}
+                  </details>
+                </li>
               ))}
             </ul>
           </article>
@@ -68,12 +90,64 @@ export default function Teoria() {
           >
             <h3>{title}</h3>
             <p>{description}</p>
-            <a href={slug} target="_blank" rel="noopener noreferrer">
-              Apri la scheda completa
-            </a>
+            {slug.startsWith("http") ? (
+              <a href={slug} target="_blank" rel="noopener noreferrer">
+                Apri la scheda completa
+              </a>
+            ) : (
+              <Link href={slug}>Apri la scheda completa</Link>
+            )}
           </div>
         ))}
       </section>
+
+      <style jsx>{`
+        .theory-card details {
+          background: rgba(148, 163, 184, 0.12);
+          border-radius: 12px;
+          margin: 0.75rem 0;
+          padding: 0.75rem 1rem;
+        }
+
+        .theory-card summary {
+          cursor: pointer;
+          font-weight: 600;
+          outline: none;
+        }
+
+        .theory-card summary::-webkit-details-marker {
+          display: none;
+        }
+
+        .theory-card summary::before {
+          content: "+";
+          display: inline-block;
+          margin-right: 0.5rem;
+          transition: transform 0.2s ease;
+        }
+
+        .theory-card details[open] summary::before {
+          content: "−";
+        }
+
+        .theory-card p {
+          margin: 0.5rem 0 0.75rem;
+        }
+
+        .resource-links {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.5rem 1rem;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+        }
+
+        .resource-links a {
+          color: var(--link-color, #1d4ed8);
+          font-weight: 600;
+        }
+      `}</style>
     </Layout>
   );
 }

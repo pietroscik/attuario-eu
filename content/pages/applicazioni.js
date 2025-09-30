@@ -3,66 +3,150 @@ export const APPLICATION_AREAS = [
     title: "Assicurazioni vita",
     description:
       "Pricing di polizze caso vita e caso morte, gestione delle partecipazioni agli utili, business protection e valutazione del longevity risk.",
-    bullet: [
-      "Esempi di tariffe per rendite e temporanee caso morte",
-      "Analisi della sensitività ai tassi di interesse",
-      "Check-list per documentazione Solvency II e POG",
-      "Case study su prodotti ibridi e rendite linked con bonus fedeltà",
+    cases: [
+      {
+        label: "Tariffazione temporanee caso morte",
+        summary:
+          "Usa il template valore attuale per stimare premi puri e confronta l’impatto delle basi demografiche IPS55 vs proiezioni generazionali.",
+        href: "/casi/assicurazioni-vita.html",
+      },
+      {
+        label: "Sensitività tassi d’interesse",
+        summary:
+          "Esegui analisi what-if sul premio puro variando le curve risk-free ±50 bps e valuta l’effetto sulle partecipazioni agli utili.",
+        href: "/calcolatori/duration-convexity",
+      },
+      {
+        label: "Checklist POG & documentazione",
+        summary:
+          "Scarica la scheda con requisiti IDD/POG e integra il memorandum regolamentare nel fascicolo di prodotto.",
+        href: "/casi/assicurazioni-vita.html#output-attesi",
+      },
     ],
   },
   {
     title: "Assicurazioni danni e salute",
     description:
       "Segmentazione portafogli auto, property e medical con GLM, machine learning interpretabile e metodi di credibilità.",
-    bullet: [
-      "Workflow per modelli frequenza × severità in R",
-      "Simulazioni di scenari catastrofali e stress test",
-      "Indicatori tecnici da monitorare nei report periodici",
-      "Esempi di pricing usage-based con dati telematici e wearable",
+    cases: [
+      {
+        label: "Workflow frequenza × severità",
+        summary:
+          "Implementa un modello GLM in R seguendo lo script di riferimento e genera mappe di rischio per la direzione tecnica.",
+        href: "/casi/assicurazioni-danni.html",
+      },
+      {
+        label: "Stress test catastrofali",
+        summary:
+          "Applica scenari vento 1/100 agli exposure property per definire strategie riassicurative e capitali addizionali.",
+        href: "/casi/assicurazioni-danni.html#output-attesi",
+      },
+      {
+        label: "Telematica e pricing dinamico",
+        summary:
+          "Integra variabili telematiche in un modello usage-based e costruisci offerte personalizzate con soglie di rischio.",
+        href: "/casi/data-science.html",
+      },
     ],
   },
   {
     title: "Previdenza e fondi pensione",
     description:
       "Valutazioni attuariali per TFR, fondi a capitalizzazione, casse professionali e piani a benefici definiti con analisi ALM e risk budgeting.",
-    bullet: [
-      "Esempio di calcolo delle passività IAS 19",
-      "Costruzione di scenari di contribuzione e rendimento",
-      "Checklist per le relazioni periodiche agli aderenti",
-      "Dashboard di monitoraggio con indicatori di adeguatezza previdenziale",
+    cases: [
+      {
+        label: "IAS 19 e passività attuariali",
+        summary:
+          "Calcola obbligazioni attuariali a benefici definiti e documenta le assunzioni economiche per la nota integrativa.",
+        href: "/casi/previdenza.html",
+      },
+      {
+        label: "Scenari di contribuzione",
+        summary:
+          "Confronta scenari ottimistici/pessimistici di rendimento e valuta l’adeguatezza delle posizioni individuali.",
+        href: "/casi/previdenza.html#proiezioni-sintetiche",
+      },
+      {
+        label: "Comunicazioni agli aderenti",
+        summary:
+          "Prepara una relazione periodica con KPI ESG, indicatori di adeguatezza e raccomandazioni personalizzate.",
+        href: "/casi/previdenza.html",
+      },
     ],
   },
   {
     title: "Finanza e risk management",
     description:
       "Metriche di rischio integrate per banche, assicurazioni e corporate, con focus su solvibilità, liquidità e rischio climatico.",
-    bullet: [
-      "Modelli ORSA semplificati per PMI assicurative",
-      "Calcolo del capitale economico con metodi VaR e TVaR",
-      "KPI per la comunicazione ai comitati rischi",
-      "Guide per integrare metriche ESG nei reporting prudenziali",
+    cases: [
+      {
+        label: "ORSA semplificato",
+        summary:
+          "Costruisci una vista integrata di capitale disponibile/requisito e definisci trigger di escalation per il comitato rischi.",
+        href: "/casi/finanza-risk.html",
+      },
+      {
+        label: "VaR & TVaR multi-linea",
+        summary:
+          "Utilizza il calcolatore Portafoglio variabile per stimare capitale economico e confrontarlo con soglie di risk appetite.",
+        href: "/calcolatori/portafoglio-variabile",
+      },
+      {
+        label: "Gestione rischio climatico",
+        summary:
+          "Integra scenari NGFS e definisci KPI climatici da monitorare nel reporting periodico.",
+        href: "/casi/finanza-risk.html#kpi-da-monitorare",
+      },
     ],
   },
   {
     title: "Data science e automazione",
     description:
       "Applicazione di tecniche di data engineering, MLOps e automazione dei processi attuariali per ridurre tempi di elaborazione e aumentare la qualità dei dati.",
-    bullet: [
-      "Pipeline ETL documentate con esempi in Python e SQL",
-      "Introduzione a strumenti low-code e RPA per processi di reportistica",
-      "Linee guida per il monitoraggio dei modelli e la gestione del drift",
-      "Struttura di un registro modelli conforme alle linee guida EIOPA",
+    cases: [
+      {
+        label: "Pipeline ETL & feature store",
+        summary:
+          "Implementa ingestion giornaliera con Airflow e gestisci la disponibilità delle feature con Feast.",
+        href: "/casi/data-science.html",
+      },
+      {
+        label: "Monitoraggio drift modelli",
+        summary:
+          "Configura dashboard Evidently AI per analizzare il drift delle predizioni e aggiornare i modelli.",
+        href: "/casi/data-science.html#componenti-principali",
+      },
+      {
+        label: "Registro modelli EIOPA compliant",
+        summary:
+          "Documenta versioni, metriche e processi di governance per soddisfare le linee guida europee.",
+        href: "/casi/data-science.html",
+      },
     ],
   },
   {
     title: "Innovazione prodotti e InsurTech",
     description:
       "Ideazione e prototipazione di prodotti parametrici, polizze on-demand e servizi digitali a supporto dell’esperienza cliente.",
-    bullet: [
-      "Canvas per progettare value proposition assicurative",
-      "Metriche da tracciare in MVP e sperimentazioni sandbox",
-      "Checklist per la valutazione di partner tecnologici e startup",
-      "Casi studio su ecosistemi mobilità, salute e cyber",
+    cases: [
+      {
+        label: "Canvas value proposition",
+        summary:
+          "Compila il canvas per definire proposta di valore, segmenti di clientela e metriche di successo.",
+        href: "/casi/insurtech.html",
+      },
+      {
+        label: "Metriche MVP & sandbox",
+        summary:
+          "Stabilisci metriche di adozione e retention per sperimentazioni in sandbox regolamentare.",
+        href: "/casi/insurtech.html#backlog-mvp",
+      },
+      {
+        label: "Valutazione partner tecnologici",
+        summary:
+          "Verifica requisiti di sicurezza, SLA e compliance privacy dei fornitori InsurTech.",
+        href: "/casi/insurtech.html",
+      },
     ],
   },
 ];

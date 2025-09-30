@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <title>Case study assicurazioni vita</title>
+    <style>
+      body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin: 2rem auto; max-width: 720px; line-height: 1.6; color: #0f172a; }
+      h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+      h2 { font-size: 1.3rem; margin-top: 2rem; }
+      code { background: #f1f5f9; padding: 0.1rem 0.3rem; border-radius: 4px; }
+      ul { padding-left: 1.2rem; }
+    </style>
+  </head>
+  <body>
+    <h1>Case study assicurazioni vita</h1>
+    <p>
+      Il caso analizza una temporanea caso morte con durata 10 anni e capitale assicurato pari a 100.000 €. L&apos;obiettivo è
+      confrontare il premio puro calcolato con tavole <abbr title="Italiano 2010-2012">IPS55</abbr> e una proiezione generazionale con trend di miglioramento della longevità.
+    </p>
+    <h2>Fasi di lavoro</h2>
+    <ol>
+      <li>Carica il file <em>valore-attuale.csv</em> e aggiorna le probabilità con le basi demografiche selezionate.</li>
+      <li>Calcola il valore attuale atteso del sinistro e applica caricamenti di spese variabili/fisse.</li>
+      <li>Effettua una sensitività sui tassi di interesse utilizzando scenari -50 bps e +50 bps.</li>
+      <li>Documenta le ipotesi nella scheda POG e allega le verifiche di suitability per target market.</li>
+    </ol>
+    <h2 id="output-attesi">Output attesi</h2>
+    <ul>
+      <li>Premio puro e premio di tariffa con dettaglio dei caricamenti.</li>
+      <li>Grafico che confronta capitale residuo e valore attuale delle prestazioni per ciascun anno.</li>
+      <li>Check-list normativa con riferimenti a IDD, POG e informative precontrattuali.</li>
+    </ul>
+    <p>
+      Per approfondire consulta la pagina <a href="https://www.ivass.it/">IVASS</a> dedicata alla vigilanza sulla distribuzione assicurativa.
+    </p>
+  </body>
+</html>

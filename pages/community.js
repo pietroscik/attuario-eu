@@ -6,14 +6,14 @@ const COMMUNITY_CHANNELS = [
   {
     name: "Server Discord",
     description:
-      "Canale principale per confrontarsi in tempo reale su esami, carriera e novità normative. Include stanze vocali, canali tematici e bacheche per gruppi studio.",
-    action: "Accedi a Discord",
-    href: "https://discord.attuario.eu",
+      "Spazio principale per chat tematiche, stand-up settimanali e canali vocali. Richiedi l'invito indicando il tuo ambito di interesse e riceverai l'accesso in 24 ore lavorative.",
+    action: "Richiedi invito",
+    href: "mailto:community@attuario.eu?subject=Invito%20Discord&body=Indica%20brevemente%20chi%20sei%20e%20gli%20argomenti%20che%20ti%20interessano%20per%20personalizzare%20l'onboarding.",
   },
   {
     name: "Canale Telegram",
     description:
-      "Aggiornamenti rapidi su eventi, uscite editoriali e call for paper. Perfetto se preferisci ricevere notifiche push senza perdere i thread principali.",
+      "Aggiornamenti rapidi su eventi, uscite editoriali e call for paper. Puoi seguirci dall'app ufficiale oppure da client CLI come tg (Linux), tenendo conto che il progetto open source non è più attivamente mantenuto.",
     action: "Iscriviti su Telegram",
     href: "https://t.me/attuarioeu",
   },
@@ -23,6 +23,13 @@ const COMMUNITY_CHANNELS = [
       "Riunioni online di 60 minuti con focus tematici: preparazione esami professionali, approfondimenti su risk management e workshop di coding.",
     action: "Prenota il prossimo slot",
     href: "https://cal.attuario.eu/community",
+  },
+  {
+    name: "Call individuale con il team",
+    description:
+      "Vuoi confrontarti su un progetto divulgativo o proporre una nuova iniziativa? Scrivici e fissiamo una call conoscitiva di 20 minuti.",
+    action: "Richiedi una call",
+    href: "mailto:community@attuario.eu?subject=Richiesta%20call%20conoscitiva&body=Raccontaci%20in%20pochi%20punti%20l'iniziativa%20o%20le%20domande%20che%20vorresti%20approfondire.",
   },
   {
     name: "Newsletter collaboratori",
