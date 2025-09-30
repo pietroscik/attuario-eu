@@ -18,7 +18,8 @@ Ogni file sotto `content/pages/` espone costanti tematiche richiamate dalla pagi
 - `risorse.js` → `RESOURCE_SECTIONS`
 - `servizi.js` → `SERVICE_REDIRECTS`
 - `strumenti.js` → `TOOL_RESOURCES` (sezioni con risorse e campo `languages` per filtrare tra stack R e Python)
-- `teoria.js` → `THEORY_TOPICS` (raggruppati per livello con `difficulty` per ciascun item), `THEORY_RESEARCH_HIGHLIGHTS`
+- `teoria.js` → `THEORY_TOPICS`, `THEORY_RESEARCH_HIGHLIGHTS`.  
+  `THEORY_TOPICS` raccoglie i moduli per livello (`level: "base" | "intermedio" | "avanzato"`) e ogni item include un campo `difficulty` usato anche per i filtri di difficoltà nella pagina.
 
 La suddivisione rende più rapido:
 

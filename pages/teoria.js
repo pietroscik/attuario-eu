@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useRef, useState } from "react";
 
 import Layout from "../components/Layout";
 
@@ -12,110 +12,158 @@ const RESEARCH_CARDS = THEORY_RESEARCH_HIGHLIGHTS.filter((item) => !item.slug);
 const RESEARCH_LINKS = THEORY_RESEARCH_HIGHLIGHTS.filter((item) => item.slug);
 
 const DIFFICULTY_LABELS = {
+  all: "Tutti i livelli",
   base: "Base",
   intermedio: "Intermedio",
   avanzato: "Avanzato",
 };
 
 const DIFFICULTY_OPTIONS = [
-  { value: "all", label: "Tutti i livelli" },
-  { value: "base", label: "Livello base" },
-  { value: "intermedio", label: "Livello intermedio" },
-  { value: "avanzato", label: "Livello avanzato" },
+  { value: "all", label: DIFFICULTY_LABELS.all },
+  { value: "base", label: DIFFICULTY_LABELS.base },
+  { value: "intermedio", label: DIFFICULTY_LABELS.intermedio },
+  { value: "avanzato", label: DIFFICULTY_LABELS.avanzato },
 ];
 
-export default function Teoria() {
-  const [activeDifficulty, setActiveDifficulty] = useState("all");
+export function TheoryTopicsContent() {
+  const [selectedDifficulty, setSelectedDifficulty] = useState("all");
+  const tabRefs = useRef([]);
 
-  const filteredTopics = useMemo(
-    () =>
-      THEORY_TOPICS.map((topic) => ({
-        ...topic,
-        items: topic.items.filter((item) =>
-          activeDifficulty === "all" ? true : item.difficulty === activeDifficulty
-        ),
-      })).filter((topic) => topic.items.length > 0),
-    [activeDifficulty]
+  const handleKeyDown = (event, index) => {
+    if (!tabRefs.current.length) return;
+    if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") return;
+
+    event.preventDefault();
+    const direction = event.key === "ArrowRight" ? 1 : -1;
+    const nextIndex =
+      (index + direction + DIFFICULTY_OPTIONS.length) % DIFFICULTY_OPTIONS.length;
+    tabRefs.current[nextIndex]?.focus();
+  };
+
+  return (
+    <section aria-labelledby="difficulty-tablist" className="section">
+      <div className="difficulty-filter" role="navigation">
+        <div
+          id="difficulty-tablist"
+          role="tablist"
+          aria-label="Livelli di difficoltà"
+          aria-orientation="horizontal"
+          className="difficulty-tabs"
+        >
+          {DIFFICULTY_OPTIONS.map((option, index) => {
+            const isActive = selectedDifficulty === option.value;
+            return (
+              <button
+                key={option.value}
+                ref={(element) => {
+                  tabRefs.current[index] = element;
+                }}
+                type="button"
+                role="tab"
+                id={`difficulty-tab-${option.value}`}
+                aria-selected={isActive}
+                aria-controls={`difficulty-panel-${option.value}`}
+                tabIndex={isActive ? 0 : -1}
+                className={`difficulty-tab${isActive ? " is-active" : ""}`}
+                onClick={() => setSelectedDifficulty(option.value)}
+                onKeyDown={(event) => handleKeyDown(event, index)}
+              >
+                {option.label}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      {DIFFICULTY_OPTIONS.map(({ value }) => {
+        const isActive = selectedDifficulty === value;
+        const topics =
+          value === "all"
+            ? THEORY_TOPICS
+            : THEORY_TOPICS.filter(({ difficulty }) => difficulty === value);
+
+        return (
+          <div
+            key={value}
+            role="tabpanel"
+            id={`difficulty-panel-${value}`}
+            aria-labelledby={`difficulty-tab-${value}`}
+            hidden={!isActive}
+            tabIndex={isActive ? 0 : -1}
+          >
+            {isActive && (
+              <div className="card-grid">
+                {topics?.map(({ title, items, difficulty }) => (
+                  <article
+                    key={title}
+                    className="card theory-card"
+                    data-difficulty={difficulty}
+                  >
+                    <h2>{title}</h2>
+                    <ul className="list theory-list">
+                      {items
+                        .filter(({ difficulty: d }) =>
+                          value === "all" ? true : d === value
+                        )
+                        .map(({ label, summary, resources, difficulty: d }) => (
+                          <li key={label}>
+                            <details>
+                              <summary>
+                                <span className="summary-content">
+                                  <span>{label}</span>
+                                  <span
+                                    className={`difficulty-badge difficulty-${d}`}
+                                    aria-label={`Difficoltà ${DIFFICULTY_LABELS[d]}`}
+                                  >
+                                    {DIFFICULTY_LABELS[d]}
+                                  </span>
+                                </span>
+                              </summary>
+                              <p>{summary}</p>
+                              {resources?.length ? (
+                                <ul className="resource-links">
+                                  {resources.map(
+                                    ({ label: rLabel, href, external }) => (
+                                      <li key={rLabel}>
+                                        {external ? (
+                                          <a
+                                            href={href}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                          >
+                                            {rLabel}
+                                          </a>
+                                        ) : (
+                                          <Link href={href}>{rLabel}</Link>
+                                        )}
+                                      </li>
+                                    )
+                                  )}
+                                </ul>
+                              ) : null}
+                            </details>
+                          </li>
+                        ))}
+                    </ul>
+                  </article>
+                ))}
+              </div>
+            )}
+          </div>
+        );
+      })}
+    </section>
   );
+}
 
+export default function Teoria() {
   return (
     <Layout
       title="Teoria attuariale"
       eyebrow="Libreria didattica"
       intro="Una libreria digitale per consolidare le basi quantitative dell’attuario. Ogni modulo offre spiegazioni progressive, esempi numerici scaricabili e quiz auto-valutativi per monitorare il livello di comprensione."
     >
-      <section className="section">
-        <h2 className="visually-hidden">Filtra per livello di difficoltà</h2>
-        <div
-          className="difficulty-controls"
-          role="group"
-          aria-label="Filtra contenuti per livello di difficoltà"
-        >
-          {DIFFICULTY_OPTIONS.map(({ value, label }) => {
-            const isActive = value === activeDifficulty;
-            return (
-              <button
-                key={value}
-                type="button"
-                className={`difficulty-button${isActive ? " is-active" : ""}`}
-                aria-pressed={isActive}
-                onClick={() => setActiveDifficulty(value)}
-              >
-                {label}
-              </button>
-            );
-          })}
-        </div>
-      </section>
-
-      <section className="card-grid">
-        {filteredTopics.map(({ title, items, level }) => (
-          <article key={title} className="card theory-card">
-            <div className="theory-card__header">
-              <h2>{title}</h2>
-              {level ? (
-                <span className={`difficulty-badge difficulty-${level}`}>
-                  {DIFFICULTY_LABELS[level] ?? level}
-                </span>
-              ) : null}
-            </div>
-            <ul className="list theory-list">
-              {items.map(({ label, summary, resources, difficulty }) => (
-                <li key={label}>
-                  <details>
-                    <summary>
-                      <span className="summary-content">
-                        <span>{label}</span>
-                        {difficulty ? (
-                          <span className={`difficulty-badge difficulty-${difficulty}`}>
-                            {DIFFICULTY_LABELS[difficulty] ?? difficulty}
-                          </span>
-                        ) : null}
-                      </span>
-                    </summary>
-                    <p>{summary}</p>
-                    {resources?.length ? (
-                      <ul className="resource-links">
-                        {resources.map(({ label: resourceLabel, href, external }) => (
-                          <li key={resourceLabel}>
-                            {external ? (
-                              <a href={href} target="_blank" rel="noopener noreferrer">
-                                {resourceLabel}
-                              </a>
-                            ) : (
-                              <Link href={href}>{resourceLabel}</Link>
-                            )}
-                          </li>
-                        ))}
-                      </ul>
-                    ) : null}
-                  </details>
-                </li>
-              ))}
-            </ul>
-          </article>
-        ))}
-      </section>
+      <TheoryTopicsContent />
 
       <section className="section">
         <h2>Quadri teorici fondamentali</h2>
@@ -169,53 +217,44 @@ export default function Teoria() {
       </section>
 
       <style jsx>{`
-        .visually-hidden {
-          border: 0;
-          clip: rect(0 0 0 0);
-          height: 1px;
-          margin: -1px;
-          overflow: hidden;
-          padding: 0;
-          position: absolute;
-          width: 1px;
+        .difficulty-filter {
+          margin-bottom: 2rem;
         }
 
-        .difficulty-controls {
-          display: flex;
-          flex-wrap: wrap;
+        .difficulty-tabs {
+          display: inline-flex;
           gap: 0.5rem;
-          margin-bottom: 1.5rem;
-        }
-
-        .difficulty-button {
-          background: #fff;
-          border: 1px solid rgba(15, 23, 42, 0.2);
+          border: 1px solid rgba(15, 23, 42, 0.1);
           border-radius: 999px;
+          padding: 0.25rem;
+          background: rgba(15, 23, 42, 0.05);
+        }
+
+        .difficulty-tab {
+          border: none;
+          background: transparent;
           color: #0f172a;
-          cursor: pointer;
-          font-size: 0.95rem;
-          font-weight: 600;
           padding: 0.5rem 1rem;
-          transition: all 0.2s ease;
+          border-radius: 999px;
+          font-weight: 600;
+          cursor: pointer;
+          transition: background 0.2s ease, color 0.2s ease;
         }
 
-        .difficulty-button:focus-visible {
-          outline: 3px solid rgba(37, 99, 235, 0.45);
-          outline-offset: 2px;
-        }
-
-        .difficulty-button.is-active {
-          background: #1d4ed8;
-          border-color: #1d4ed8;
+        .difficulty-tab.is-active {
+          background: #2563eb;
           color: #fff;
         }
 
-        .theory-card__header {
-          align-items: center;
-          display: flex;
-          gap: 0.75rem;
-          justify-content: space-between;
-          margin-bottom: 0.75rem;
+        .card-grid {
+          display: grid;
+          gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+          .card-grid {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          }
         }
 
         .theory-card details {
@@ -229,6 +268,10 @@ export default function Teoria() {
           cursor: pointer;
           font-weight: 600;
           outline: none;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 0.75rem;
         }
 
         .theory-card summary::-webkit-details-marker {
@@ -254,10 +297,6 @@ export default function Teoria() {
           justify-content: space-between;
         }
 
-        .theory-card p {
-          margin: 0.5rem 0 0.75rem;
-        }
-
         .resource-links {
           display: flex;
           flex-wrap: wrap;
@@ -273,12 +312,10 @@ export default function Teoria() {
         }
 
         .difficulty-badge {
-          align-items: center;
           border-radius: 999px;
           display: inline-flex;
           font-size: 0.75rem;
           font-weight: 700;
-          letter-spacing: 0.02em;
           padding: 0.2rem 0.65rem;
           text-transform: uppercase;
         }
