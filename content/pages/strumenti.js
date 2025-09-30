@@ -44,6 +44,27 @@ export const TOOL_RESOURCES = [
         external: true,
       },
       {
+        label: "actuar (R package)",
+        summary:
+          "Manuale CRAN con funzioni per teoria del rischio, premi netti, simulazione di perdite e modelli di credibilità Bayesiana.",
+        href: "https://cran.r-project.org/package=actuar",
+        external: true,
+      },
+      {
+        label: "lifecontingencies (R package)",
+        summary:
+          "Toolkit per costruire tavole di mortalità, valorizzare assicurazioni vita e rendite e calcolare sensitività demografiche.",
+        href: "https://cran.r-project.org/package=lifecontingencies",
+        external: true,
+      },
+      {
+        label: "StMoMo (R package)",
+        summary:
+          "Framework per modellare la mortalità con approcci Lee-Carter, Cairns-Blake-Dowd e varianti coortali per proiezioni LOB.",
+        href: "https://github.com/amvillegas/StMoMo",
+        external: true,
+      },
+      {
         label: "chainladder-python",
         summary:
           "Libreria ufficiale CAS per la riservazione in Python con esempi di Mack, Bornhuetter-Ferguson e modelli Bayesian.",
@@ -139,6 +160,27 @@ export const TOOL_RESOURCES = [
         summary:
           "Notebook su dataset OMS con pulizia dati, regressioni e visualizzazioni per individuare i driver della longevità.",
         href: "https://github.com/aarohip28/Life-Expectancy-Analysis",
+        external: true,
+      },
+      {
+        label: "actxps experience studies",
+        summary:
+          "Script R per costruire pipeline di experience study vita con estrazione dati, calcolo di tassi osservati/attesi e benchmark interattivi.",
+        href: "https://github.com/ActuarialVo/actxps",
+        external: true,
+      },
+      {
+        label: "ESGtoolkit (R)",
+        summary:
+          "Notebook e funzioni per generare scenari stocastici multi-fattore, calibrati a curve risk-free e volatilità storiche.",
+        href: "https://github.com/fcasados/ESGtoolkit",
+        external: true,
+      },
+      {
+        label: "StMoMo demo scripts",
+        summary:
+          "Esempi pratici per stimare modelli di mortalità, estrarre indicatori di longevità e produrre grafici di sensitività.",
+        href: "https://github.com/amvillegas/StMoMo/tree/master/vignettes",
         external: true,
       },
     ],
