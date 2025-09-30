@@ -130,6 +130,16 @@ export default function ChiSiamo() {
           Preferisci un contatto diretto? Visita la pagina <Link href="/contatti">Contatti</Link> per inviarci un messaggio e ricevere risposta entro pochi giorni lavorativi.
         </p>
       </section>
+
+      <section
+        className="section info-panel"
+        aria-labelledby="chi-siamo-proprieta-intellettuale"
+      >
+        <h2 id="chi-siamo-proprieta-intellettuale">Proprietà intellettuale</h2>
+        <p>
+          Tutti i materiali originali pubblicati su attuario.eu, inclusi testi, grafiche e format redazionali, sono riconducibili alla mia persona e restano di mia esclusiva proprietà intellettuale. Qualsiasi riutilizzo o adattamento richiede un’autorizzazione esplicita.
+        </p>
+      </section>
     </Layout>
   );
 }
