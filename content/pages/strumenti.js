@@ -27,34 +27,34 @@ export const TOOL_RESOURCES = [
   {
     title: "R e Python",
     description:
-      "Notebook e repository open source per implementare simulazioni Monte Carlo, modelli GLM/GLMM e pipeline di data science attuariale.",
+      "Toolkit verificati per la modellazione attuariale in R e Python, con link a documentazione ufficiale, vignette e paper accademici citati.",
     resources: [
       {
-        label: "Vignette ChainLadder (R)",
+        label: "ChainLadder (R)",
         summary:
-          "Documentazione ufficiale del pacchetto ChainLadder con esempi completi di metodi deterministici e stocastici per il calcolo delle riserve.",
-        href: "https://cran.r-project.org/web/packages/ChainLadder/vignettes/ChainLadder.pdf",
+          "Vignette ufficiali per il pacchetto leader nella riservazione sinistri: Chain Ladder deterministico, Mack e Bootstrap con esempi riproducibili.",
+        href: "https://cran.r-project.org/web/packages/ChainLadder/vignettes/ChainLadder.html",
         external: true,
       },
       {
-        label: "insurancerating (R package)",
+        label: "insurancerating (R)",
         summary:
-          "Pacchetto R per il pricing assicurativo con workflow riproducibili, regressioni generalizzate e metriche di performance integrate.",
-        href: "https://github.com/MHaringa/insurancerating",
+          "Documentazione del pacchetto per il pricing con GLM, funzioni per l’esplorazione dati e tutorial su metriche di performance tariffaria.",
+        href: "https://insurancerating.readthedocs.io/",
         external: true,
       },
       {
         label: "actuar (R package)",
         summary:
-          "Manuale CRAN con funzioni per teoria del rischio, premi netti, simulazione di perdite e modelli di credibilità Bayesiana.",
-        href: "https://cran.r-project.org/package=actuar",
+          "Codice sorgente e documentazione per tariffe collettive, distribuzioni attuariali e calcolo di premi di rischio e credibilità.",
+        href: "https://github.com/boennecd/actuar",
         external: true,
       },
       {
         label: "lifecontingencies (R package)",
         summary:
-          "Toolkit per costruire tavole di mortalità, valorizzare assicurazioni vita e rendite e calcolare sensitività demografiche.",
-        href: "https://cran.r-project.org/package=lifecontingencies",
+          "Funzioni R per tavole di mortalità, valorizzazione di assicurazioni vita, rendite e misure di sensitività demografica.",
+        href: "https://github.com/spedygiorgio/lifecontingencies",
         external: true,
       },
       {
@@ -67,8 +67,8 @@ export const TOOL_RESOURCES = [
       {
         label: "chainladder-python",
         summary:
-          "Libreria ufficiale CAS per la riservazione in Python con esempi di Mack, Bornhuetter-Ferguson e modelli Bayesian.",
-        href: "https://github.com/casact/chainladder-python",
+          "Manuale CAS per portare i metodi Chain Ladder in Python, completo di API reference e notebook su Mack, Bornhuetter-Ferguson e Bayesian reserving.",
+        href: "https://chainladder-python.readthedocs.io/",
         external: true,
       },
       {
@@ -83,6 +83,21 @@ export const TOOL_RESOURCES = [
         summary:
           "Framework modulare per proiettare passività vita, calcolare BEL e CSM IFRS 17 con esempi in notebook Jupyter.",
         href: "https://github.com/lifelib-dev/lifelib",
+        external: true,
+      },
+      {
+        label: "GEMAct (Python)",
+        summary:
+          "Libreria per modelli collettivi, copule e riserve stocastiche con tutorial su fitting, simulazione e valutazione della variabilità.",
+        href: "https://gemact.readthedocs.io/",
+        external: true,
+      },
+      {
+        label: "PyMC & ArviZ actuarial workflows",
+        summary:
+          "Guida PyMC con esempi di regressioni Poisson, MCMC e diagnostica ArviZ per modellare frequenza e severità in chiave Bayesiana.",
+        href: "https://www.pymc.io/projects/examples/en/latest/case_studies/insurance_claims.html",
+
         external: true,
       },
     ],
@@ -139,7 +154,7 @@ export const TOOL_RESOURCES = [
   {
     title: "Script e notebook automation",
     description:
-      "Script pronti per generare scenari economici, calcolare indicatori IFRS 17 e analizzare dati demografici con workflow ripetibili.",
+      "Script pronti per generare scenari economici, calcolare indicatori IFRS 17 e analizzare dati demografici con workflow ripetibili (uso didattico: validare sempre prima dell’impiego professionale).",
     resources: [
       {
         label: "pyesg – Economic Scenario Generator",
@@ -181,6 +196,62 @@ export const TOOL_RESOURCES = [
         summary:
           "Esempi pratici per stimare modelli di mortalità, estrarre indicatori di longevità e produrre grafici di sensitività.",
         href: "https://github.com/amvillegas/StMoMo/tree/master/vignettes",
+        external: true,
+      },
+      {
+        label: "Systemorph IFRS17 Calculation Engine",
+        summary:
+          "Motore open source per valutazione IFRS 17 con moduli per calcolo cash flow, CSM e reporting, accompagnato da documentazione tecnica completa.",
+        href: "https://github.com/Systemorph/IFRS17CalculationEngine",
+        external: true,
+      },
+      {
+        label: "IFRS-17 PAA Implementation",
+        summary:
+          "Notebook e script per implementare passo-passo il Premium Allocation Approach, con esempi numerici commentati in lingua inglese e cinese.",
+        href: "https://github.com/YenLinWu/IFRS-17-PAA-Implementation",
+        external: true,
+      },
+      {
+        label: "CAS Consumer Vehicle Toolkit",
+        summary:
+          "Repository CAS con workflow di pricing auto personale: esplorazione dati, fitting GLM e tecniche machine learning per tariffe competitive.",
+        href: "https://github.com/casact/consumer_vehicle_toolkit",
+        external: true,
+      },
+      {
+        label: "experienceAnalytics (longevity studies)",
+        summary:
+          "Collezione di script R per analisi di esperienze vita: preparazione dati, credibilità Bayesiana e visualizzazioni interattive con flexdashboard.",
+        href: "https://github.com/ActuarialVol/experienceAnalytics",
+        external: true,
+      },
+    ],
+  },
+  {
+    title: "Approfondimenti e risorse aperte",
+    description:
+      "Testi open access, dataset e raccolte di progetti per ampliare le competenze attuariali e connettere teoria e pratica.",
+    resources: [
+      {
+        label: "Loss Data Analytics (open textbook)",
+        summary:
+          "Manuale gratuito dell’International Actuarial Association con esempi in R/Python su credibilità, frequenza-severità e gestione del rischio.",
+        href: "https://openacttexts.github.io/Loss-Data-Analytics/",
+        external: true,
+      },
+      {
+        label: "Statistical Foundations of Actuarial Learning",
+        summary:
+          "Testo accademico con appendici computazionali su modelli predittivi, machine learning e validazione per assicurazioni danni.",
+        href: "https://cfasociety.org/texas/Documents/Statistical%20Foundations%20of%20Actuarial%20Learning.pdf",
+        external: true,
+      },
+      {
+        label: "GitHub – progetti attuariali open",
+        summary:
+          "Lista curata di repository attuariali (R, Python, Julia) per pricing, riservazione e longevity modelling con licenza open source.",
+        href: "https://github.com/topics/actuarial-science",
         external: true,
       },
     ],
