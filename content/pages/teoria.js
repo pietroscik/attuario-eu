@@ -141,8 +141,12 @@ export const THEORY_TOPICS = [
         difficulty: "intermedio",
         resources: [
           {
-            label: "Esempio di workbook per model point",
-            href: "https://github.com/attuario-eu/model-points-template",
+            label: "Template model point (CSV)",
+            href: "/toolkit/model-points-template.csv",
+          },
+          {
+            label: "SOA – Model Points Working Group",
+            href: "https://www.soa.org/resources/research-reports/2015/research-2015-model-points/",
             external: true,
           },
         ],
@@ -154,8 +158,8 @@ export const THEORY_TOPICS = [
         difficulty: "intermedio",
         resources: [
           {
-            label: "Notebook credibilità in R",
-            href: "https://github.com/ChainLadder-dev/ChainLadder/blob/master/vignettes/Credibility.Rmd",
+            label: "Vignetta ChainLadder sulla credibilità",
+            href: "https://cran.r-project.org/web/packages/ChainLadder/vignettes/Credibility.pdf",
             external: true,
           },
         ],

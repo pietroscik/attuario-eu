@@ -215,15 +215,15 @@ export const TOOL_RESOURCES = [
         label: "actxps experience studies",
         summary:
           "Script R per costruire pipeline di experience study vita con estrazione dati, calcolo di tassi osservati/attesi e benchmark interattivi.",
-        href: "https://github.com/ActuarialVo/actxps",
+        href: "https://github.com/mattheaphy/actxps",
         external: true,
         languages: ["R"],
       },
       {
-        label: "experienceAnalytics (longevity studies)",
+        label: "expstudy (R experience studies)",
         summary:
-          "Collezione di script R per analisi di esperienze vita: preparazione dati, credibilità Bayesiana e dashboard interattive.",
-        href: "https://github.com/ActuarialVol/experienceAnalytics",
+          "Collezione di script R per automatizzare le analisi di esperienza: preparazione dati, esposizioni e reporting con pacchetti tidy.",
+        href: "https://github.com/cb12991/expstudy",
         external: true,
         languages: ["R"],
       },

@@ -74,9 +74,9 @@ export const RESOURCE_SECTIONS = [
         note: "Dataset demografici open source per analisi di longevità e demografia.",
       },
       {
-        name: "GitHub – attuario-eu",
-        url: "https://github.com/attuario-eu",
-        note: "Repository sperimentali con codice aperto per modelli attuariali, strumenti didattici e tutorial.",
+        name: "GitHub – actuarialopensource",
+        url: "https://github.com/actuarialopensource",
+        note: "Collezione collaborativa di progetti open source su modelli attuariali, reserving e analisi di rischio.",
       },
     ],
   },
