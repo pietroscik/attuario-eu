@@ -25,24 +25,39 @@ const DIFFICULTY_OPTIONS = [
   { value: "avanzato", label: DIFFICULTY_LABELS.avanzato },
 ];
 
+const TOPICS_BY_DIFFICULTY = DIFFICULTY_OPTIONS.reduce((groups, { value }) => {
+  if (value === "all") {
+    groups[value] = THEORY_TOPICS;
+  } else {
+    groups[value] = THEORY_TOPICS.filter(({ difficulty }) => difficulty === value);
+  }
+
+  return groups;
+}, {});
+
 export function TheoryTopicsContent() {
   const [selectedDifficulty, setSelectedDifficulty] = useState("all");
   const tabRefs = useRef([]);
 
   const handleKeyDown = (event, index) => {
-    if (!tabRefs.current.length) return;
-    if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") return;
+    if (!tabRefs.current.length) {
+      return;
+    }
+
+    if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") {
+      return;
+    }
 
     event.preventDefault();
+
     const direction = event.key === "ArrowRight" ? 1 : -1;
-    const nextIndex =
-      (index + direction + DIFFICULTY_OPTIONS.length) % DIFFICULTY_OPTIONS.length;
+    const nextIndex = (index + direction + DIFFICULTY_OPTIONS.length) % DIFFICULTY_OPTIONS.length;
     tabRefs.current[nextIndex]?.focus();
   };
 
   return (
     <section aria-labelledby="difficulty-tablist" className="section">
-      <div className="difficulty-filter" role="navigation">
+      <div className="difficulty-filter" role="navigation" aria-label="Filtra per livello di difficoltà">
         <div
           id="difficulty-tablist"
           role="tablist"
@@ -77,10 +92,7 @@ export function TheoryTopicsContent() {
 
       {DIFFICULTY_OPTIONS.map(({ value }) => {
         const isActive = selectedDifficulty === value;
-        const topics =
-          value === "all"
-            ? THEORY_TOPICS
-            : THEORY_TOPICS.filter(({ difficulty }) => difficulty === value);
+        const topics = TOPICS_BY_DIFFICULTY[value];
 
         return (
           <div
@@ -91,54 +103,42 @@ export function TheoryTopicsContent() {
             hidden={!isActive}
             tabIndex={isActive ? 0 : -1}
           >
-            {isActive && (
+            {isActive ? (
               <div className="card-grid">
                 {topics?.map(({ title, items, difficulty }) => (
-                  <article
-                    key={title}
-                    className="card theory-card"
-                    data-difficulty={difficulty}
-                  >
+                  <article key={title} className="card theory-card" data-difficulty={difficulty}>
                     <h2>{title}</h2>
                     <ul className="list theory-list">
                       {items
-                        .filter(({ difficulty: d }) =>
-                          value === "all" ? true : d === value
+                        .filter(({ difficulty: itemDifficulty }) =>
+                          value === "all" ? true : itemDifficulty === value,
                         )
-                        .map(({ label, summary, resources, difficulty: d }) => (
-                          <li key={label}>
+                        .map(({ label: itemLabel, summary, resources, difficulty: itemDifficulty }) => (
+                          <li key={itemLabel}>
                             <details>
                               <summary>
-                                <span className="summary-content">
-                                  <span>{label}</span>
-                                  <span
-                                    className={`difficulty-badge difficulty-${d}`}
-                                    aria-label={`Difficoltà ${DIFFICULTY_LABELS[d]}`}
-                                  >
-                                    {DIFFICULTY_LABELS[d]}
-                                  </span>
+                                <span>{itemLabel}</span>
+                                <span
+                                  className={`difficulty-badge difficulty-${itemDifficulty}`}
+                                  aria-label={`Difficoltà ${DIFFICULTY_LABELS[itemDifficulty]}`}
+                                >
+                                  {DIFFICULTY_LABELS[itemDifficulty]}
                                 </span>
                               </summary>
                               <p>{summary}</p>
                               {resources?.length ? (
                                 <ul className="resource-links">
-                                  {resources.map(
-                                    ({ label: rLabel, href, external }) => (
-                                      <li key={rLabel}>
-                                        {external ? (
-                                          <a
-                                            href={href}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                          >
-                                            {rLabel}
-                                          </a>
-                                        ) : (
-                                          <Link href={href}>{rLabel}</Link>
-                                        )}
-                                      </li>
-                                    )
-                                  )}
+                                  {resources.map(({ label: resourceLabel, href, external }) => (
+                                    <li key={resourceLabel}>
+                                      {external ? (
+                                        <a href={href} target="_blank" rel="noopener noreferrer">
+                                          {resourceLabel}
+                                        </a>
+                                      ) : (
+                                        <Link href={href}>{resourceLabel}</Link>
+                                      )}
+                                    </li>
+                                  ))}
                                 </ul>
                               ) : null}
                             </details>
@@ -148,7 +148,7 @@ export function TheoryTopicsContent() {
                   </article>
                 ))}
               </div>
-            )}
+            ) : null}
           </div>
         );
       })}
@@ -241,6 +241,11 @@ export default function Teoria() {
           transition: background 0.2s ease, color 0.2s ease;
         }
 
+        .difficulty-tab:focus {
+          outline: 2px solid #2563eb;
+          outline-offset: 2px;
+        }
+
         .difficulty-tab.is-active {
           background: #2563eb;
           color: #fff;
@@ -289,12 +294,35 @@ export default function Teoria() {
           content: "−";
         }
 
-        .summary-content {
-          align-items: center;
-          display: flex;
-          flex-wrap: wrap;
-          gap: 0.5rem;
-          justify-content: space-between;
+        .difficulty-badge {
+          background: rgba(37, 99, 235, 0.12);
+          border-radius: 999px;
+          color: #2563eb;
+          font-size: 0.75rem;
+          font-weight: 700;
+          letter-spacing: 0.02em;
+          padding: 0.25rem 0.75rem;
+          text-transform: uppercase;
+          white-space: nowrap;
+        }
+
+        .difficulty-base {
+          background: rgba(16, 185, 129, 0.15);
+          color: #047857;
+        }
+
+        .difficulty-intermedio {
+          background: rgba(234, 179, 8, 0.18);
+          color: #92400e;
+        }
+
+        .difficulty-avanzato {
+          background: rgba(79, 70, 229, 0.15);
+          color: #3730a3;
+        }
+
+        .theory-card p {
+          margin: 0.5rem 0 0.75rem;
         }
 
         .resource-links {

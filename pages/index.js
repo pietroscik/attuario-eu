@@ -1,12 +1,14 @@
 import Link from "next/link";
 
 import Layout from "../components/Layout";
+import SectionAuditBoard from "../components/SectionAuditBoard";
 
 import {
   HOME_HIGHLIGHTS,
   HOME_PERSONAS,
   HOME_UPDATES,
 } from "../content/pages/home";
+import { SECTION_AUDIT } from "../content/sections-audit";
 
 export default function Home() {
   return (
@@ -69,6 +71,15 @@ export default function Home() {
             <li key={item}>{item}</li>
           ))}
         </ul>
+      </section>
+
+      <section className="section" aria-labelledby="content-audit">
+        <h2 id="content-audit">Panoramica delle sezioni principali</h2>
+        <p>
+          Consulta lo stato editoriale delle sezioni del sito: per ogni area trovi livello di
+          copertura, collegamenti rilevanti e note sulle attività da completare.
+        </p>
+        <SectionAuditBoard sections={SECTION_AUDIT} />
       </section>
 
       <section className="section info-panel">
