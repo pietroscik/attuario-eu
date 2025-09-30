@@ -14,6 +14,7 @@
 - Il canale Telegram resta attivo come canale principale per gli aggiornamenti. Nella pagina community sono riportate anche indicazioni per utilizzare client alternativi (es. `tg`) specificando che il progetto non è più mantenuto.
 - Le call one-to-one vengono fissate su richiesta via mail, con slot di 20 minuti per confrontarsi su iniziative divulgative e onboarding dei volontari.
 
+
 ## Raccomandazioni operative
 - Monitorare periodicamente le consegne Getform dalle dashboard per verificare che gli inoltri generati dall'API siano recapitati (log HTTP 200) e che non ci siano blocchi anti-spam.
 - Valutare, appena pronti i nuovi workflow di moderazione, se ripristinare il link diretto a Discord oppure sostituirlo con un form di candidatura per i moderatori.

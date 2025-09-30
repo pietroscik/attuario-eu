@@ -4,11 +4,11 @@ import Layout from "../components/Layout";
 
 const COMMUNITY_CHANNELS = [
   {
-    name: "Server Discord",
+    name: "Server Discord (in manutenzione)",
     description:
-      "Spazio principale per chat tematiche, stand-up settimanali e canali vocali. Richiedi l'invito indicando il tuo ambito di interesse e riceverai l'accesso in 24 ore lavorative.",
-    action: "Richiedi invito",
-    href: "mailto:community@attuario.eu?subject=Invito%20Discord&body=Indica%20brevemente%20chi%20sei%20e%20gli%20argomenti%20che%20ti%20interessano%20per%20personalizzare%20l'onboarding.",
+      "Il server pubblico è temporaneamente offline mentre rivediamo moderazione e automazioni. Iscriviti alla lista di attesa per ricevere l'invito non appena riapre.",
+    action: "Richiedi aggiornamenti",
+    href: "mailto:community@attuario.eu?subject=Aggiornamenti%20Discord",
   },
   {
     name: "Canale Telegram",
