@@ -9,7 +9,10 @@ export const THEORY_TOPICS = [
           "Richiamo dei fattori di sconto, del tasso tecnico e delle basi demografiche da impiegare per calcolare premi unici o periodici in equilibrio attuariale.",
         difficulty: "base",
         resources: [
-          { label: "Calcolatore di premio puro", href: "/calcolatori/premio-puro" },
+          {
+            label: "Calcolatore di premio puro",
+            href: "/calcolatori/premio-puro",
+          },
           {
             label: "Dispense Open Actuarial Text – Life Contingencies",
             href: "https://openacttexts.github.io/LifeContingencies/Intro.html",
@@ -23,7 +26,11 @@ export const THEORY_TOPICS = [
           "Come ricavare lx, dx e qx da tavole ufficiali, interpolare i valori continui e gestire l’aggiornamento periodico per garantire basi coerenti.",
         difficulty: "base",
         resources: [
-          { label: "Human Mortality Database", href: "https://www.mortality.org", external: true },
+          {
+            label: "Human Mortality Database",
+            href: "https://www.mortality.org",
+            external: true,
+          },
           {
             label: "Linea guida Ordine Attuari su tavole generazionali",
             href: "https://www.ordineattuari.it/public/files/Linee_guida_tavole_generazionali.pdf",
@@ -37,7 +44,10 @@ export const THEORY_TOPICS = [
           "Formula generale delle rendite, conversione tra rendite immediate e differite e gestione di ratei anticipati/posticipati con esempi numerici.",
         difficulty: "base",
         resources: [
-          { label: "Calcolatore rendite attuariali", href: "/calcolatori/annuity" },
+          {
+            label: "Calcolatore rendite attuariali",
+            href: "/calcolatori/annuity",
+          },
           {
             label: "Notebook Python su rendite vita",
             href: "https://colab.research.google.com/github/insightactuaries/notebooks/blob/main/annuity-illustrations.ipynb",
@@ -51,7 +61,6 @@ export const THEORY_TOPICS = [
           "Ripasso dei caricamenti di sicurezza, spese e utile, con esempi di analisi di sensitività e margini secondo Solvency II.",
         difficulty: "base",
         resources: [
-          { label: "Calcolatore premio unico", href: "/calcolatori/premio-unico" },
           {
             label: "Calcolatore premio unico",
             href: "/calcolatori/premio-unico",
@@ -144,7 +153,6 @@ export const THEORY_TOPICS = [
           "Passaggi pratici per costruire triangoli cumulati/incorsi e utilizzare fattori di sviluppo, con confronto tra metodi classici.",
         difficulty: "intermedio",
         resources: [
-          { label: "Sintesi Solvency II", href: "/wiki#normativa-spiegata-semplice" },
           {
             label: "Notebook Chain Ladder in Python",
             href: "https://colab.research.google.com/github/casact/chainladder-python/blob/master/examples/Chainladder_Workflow.ipynb",
@@ -226,12 +234,6 @@ export const THEORY_TOPICS = [
           },
         ],
       },
-    ],
-  },
-  {
-    title: "Approfondimenti avanzati",
-    level: "avanzato",
-    items: [
       {
         label: "Inferenza bayesiana e stima parametrica/non parametrica",
         summary:
@@ -246,40 +248,40 @@ export const THEORY_TOPICS = [
         ],
       },
       {
-        label: "Probabilità congiunte e copule per rischi multipli",
+        label: "Distribuzioni per sinistri danni e riassicurazione",
         summary:
           "Scelta delle distribuzioni heavy-tail, confronto tra stop-loss e quota-parte e introduzione ai trattati di riassicurazione proporzionale.",
         difficulty: "avanzato",
         resources: [
           {
-            label: "Tutorial R su copule attuariali",
-            href: "https://cran.r-project.org/web/packages/copula/vignettes/copula-intro.pdf",
+            label: "Dispensa CAS Loss Models",
+            href: "https://www.casact.org/sites/default/files/2021-07/loss-models-study-note.pdf",
             external: true,
           },
         ],
       },
       {
-        label: "Inferenza bayesiana e stima parametrica/non parametrica",
+        label: "Riserve sinistri con modelli GLM e GLMM",
         summary:
           "Confronto fra catene deterministiche e approcci stocastici, includendo esempi di implementazione con ChainLadder e Pymer.",
         difficulty: "avanzato",
         resources: [
           {
-            label: "Tutorial Bayesian Survival Analysis",
-            href: "https://nbviewer.org/github/statsmodels/statsmodels/blob/main/examples/notebooks/generated/bayes_mixed_glm.ipynb",
+            label: "Tutorial ChainLadder stocastico",
+            href: "https://cran.r-project.org/web/packages/ChainLadder/vignettes/GeneralizedLinearModels.pdf",
             external: true,
           },
         ],
       },
       {
-        label: "Distribuzioni per sinistri danni e riassicurazione",
+        label: "Catene di Markov per sinistri vita",
         summary:
           "Costruzione di matrici di transizione, gestione degli stati assorbenti e calcolo delle riserve prospettiche in presenza di opzioni contrattuali.",
         difficulty: "avanzato",
         resources: [
           {
-            label: "Dispensa CAS Loss Models",
-            href: "https://www.casact.org/sites/default/files/2021-07/loss-models-study-note.pdf",
+            label: "Lecture note su Markov e riserve",
+            href: "https://openacttexts.github.io/LifeContingencies/Markov.html",
             external: true,
           },
         ],
@@ -310,40 +312,52 @@ export const THEORY_TOPICS = [
         ],
       },
       {
-        label: "Analisi di scenario climatico",
+        label: "Gestione integrata del rischio con metriche VaR / TVaR",
         summary:
           "Confronto tra misure coerenti e non coerenti, con esempi di applicazione a portafogli assicurativi multi-linea.",
         difficulty: "avanzato",
         resources: [
           {
-            label: "NGFS Scenario Explorer",
-            href: "https://www.ngfs.net/ngfs-scenario-guide",
+            label: "Calcolatore portafoglio variabile",
+            href: "/calcolatori/portafoglio-variabile",
+          },
+          {
+            label: "Paper su rischio finanziario",
+            href: "https://www.soa.org/Files/Research/Projects/research-2015-financial-risk.pdf",
             external: true,
           },
         ],
       },
       {
-        label: "Valutazione ORSA e capital management",
+        label: "Opzioni incorporate e replicating portfolio",
         summary:
           "Identificazione delle garanzie implicite nei prodotti vita e danni, tecniche di replica con strumenti derivati e verifica della copertura.",
         difficulty: "avanzato",
         resources: [
           {
-            label: "EIOPA ORSA Guidelines",
-            href: "https://www.eiopa.europa.eu/sites/default/files/publications/eiopa_guidelines/eiopa_guidelines_orsa_en.pdf",
+            label: "Calcolatore Black-Scholes",
+            href: "/calcolatori/black-scholes",
+          },
+          {
+            label: "Dispensa replicating portfolios",
+            href: "https://www.actuaries.org/IAA/Documents/ASTIN/Colloquia/Cologne/Session5/5.1.Richter.pdf",
             external: true,
           },
         ],
       },
       {
-        label: "Metriche di fairness e bias mitigation",
+        label: "IFRS 17: modelli di valutazione e disclosure",
         summary:
           "Confronto tra approcci BBA, VFA e PAA, struttura del CSM e implicazioni sulla reportistica trimestrale.",
         difficulty: "avanzato",
         resources: [
           {
-            label: "SOA – Fairness in Insurance Pricing",
-            href: "https://www.soa.org/globalassets/assets/files/resources/research-report/2022/fairness-insurance-pricing.pdf",
+            label: "Approfondimento IFRS 17",
+            href: "/wiki#ifrs-17-per-i-bilanci-assicurativi",
+          },
+          {
+            label: "IASB – Risorse IFRS 17",
+            href: "https://www.ifrs.org/issued-standards/list-of-standards/ifrs-17-insurance-contracts/",
             external: true,
           },
         ],
