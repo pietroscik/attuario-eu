@@ -1,11 +1,13 @@
 export const THEORY_TOPICS = [
   {
-    title: "Matematica attuariale di base",
+    title: "Livello base · Fondamenti attuariali",
+    difficulty: "base",
     items: [
       {
         label: "Valore attuale atteso e criteri di equivalenza",
         summary:
           "Richiamo dei fattori di sconto, del tasso tecnico e delle basi demografiche da impiegare per calcolare premi unici o periodici in equilibrio attuariale.",
+        difficulty: "base",
         resources: [
           {
             label: "Calcolatore di premio puro",
@@ -22,6 +24,7 @@ export const THEORY_TOPICS = [
         label: "Tavole di mortalità discrete e continue",
         summary:
           "Come ricavare lx, dx e qx da tavole ufficiali, interpolare i valori continui e gestire l’aggiornamento periodico per garantire basi coerenti.",
+        difficulty: "base",
         resources: [
           {
             label: "Human Mortality Database",
@@ -39,6 +42,7 @@ export const THEORY_TOPICS = [
         label: "Rendite temporanee, vitalizie e differite",
         summary:
           "Formula generale delle rendite, conversione tra rendite immediate e differite e gestione di ratei anticipati/posticipati con esempi numerici.",
+        difficulty: "base",
         resources: [
           {
             label: "Calcolatore rendite attuariali",
@@ -52,79 +56,10 @@ export const THEORY_TOPICS = [
         ],
       },
       {
-        label: "Modelli a tempo continuo e discreto per il calcolo delle prime",
-        summary:
-          "Differenze operative fra modelli basati su integrali continui e versioni a passi discreti, con focus su ipotesi di intensità di uscita costante o variabile.",
-        resources: [
-          {
-            label: "Guida su premium calculation principles",
-            href: "https://link.springer.com/chapter/10.1007/978-1-4471-2355-3_3",
-            external: true,
-          },
-        ],
-      },
-    ],
-  },
-  {
-    title: "Modelli di sopravvivenza e rischio",
-    items: [
-      {
-        label: "Leggi di mortalità (Makeham, Gompertz)",
-        summary:
-          "Costruzione delle funzioni di sopravvivenza partendo dalle intensità di mortalità e analisi delle deviazioni rispetto ai dati empirici.",
-        resources: [
-          {
-            label: "Dispensa su modelli di mortalità",
-            href: "https://openacttexts.github.io/LifeContingencies/MortalityLaws.html",
-            external: true,
-          },
-        ],
-      },
-      {
-        label: "Model point e costruzione di tavole generazionali",
-        summary:
-          "Definizione di cluster omogenei per portafogli assicurativi, scelta delle covariate e metodi per generare proiezioni generazionali coerenti.",
-        resources: [
-          {
-            label: "Esempio di workbook per model point",
-            href: "https://github.com/attuario-eu/model-points-template",
-            external: true,
-          },
-        ],
-      },
-      {
-        label: "Probabilità congiunte e copule per rischi multipli",
-        summary:
-          "Quando usare approcci comonotoni vs copule Archimede, con esempi di pricing di rendite reversibili e portafogli multirischio.",
-        resources: [
-          {
-            label: "Tutorial R su copule attuariali",
-            href: "https://cran.r-project.org/web/packages/copula/vignettes/copula-intro.pdf",
-            external: true,
-          },
-        ],
-      },
-      {
-        label: "Inferenza bayesiana e stima parametrica/non parametrica",
-        summary:
-          "Uso di MCMC e smoothing per stimare intensità di uscita, confronto con approcci frequentisti e criteri di validazione.",
-        resources: [
-          {
-            label: "Tutorial Bayesian Survival Analysis",
-            href: "https://nbviewer.org/github/statsmodels/statsmodels/blob/main/examples/notebooks/generated/bayes_mixed_glm.ipynb",
-            external: true,
-          },
-        ],
-      },
-    ],
-  },
-  {
-    title: "Teoria delle assicurazioni",
-    items: [
-      {
         label: "Premi puri, caricamenti e equilibrio tecnico",
         summary:
           "Ripasso dei caricamenti di sicurezza, spese e utile, con esempi di analisi di sensitività e margini secondo Solvency II.",
+        difficulty: "base",
         resources: [
           {
             label: "Calcolatore premio unico",
@@ -138,102 +73,10 @@ export const THEORY_TOPICS = [
         ],
       },
       {
-        label: "Metodi di credibilità classici e Bayesiani",
-        summary:
-          "Dalla formula di Bühlmann-Straub agli approcci full Bayesian con esempi implementati in R e Python.",
-        resources: [
-          {
-            label: "Notebook credibilità in R",
-            href: "https://github.com/ChainLadder-dev/ChainLadder/blob/master/vignettes/Credibility.Rmd",
-            external: true,
-          },
-        ],
-      },
-      {
-        label: "Distribuzioni per sinistri danni e riassicurazione",
-        summary:
-          "Scelta delle distribuzioni heavy-tail, confronto tra stop-loss e quota-parte e introduzione ai trattati di riassicurazione proporzionale.",
-        resources: [
-          {
-            label: "Dispensa CAS Loss Models",
-            href: "https://www.casact.org/sites/default/files/2021-07/loss-models-study-note.pdf",
-            external: true,
-          },
-        ],
-      },
-      {
-        label: "Riserve sinistri con modelli GLM e GLMM",
-        summary:
-          "Confronto fra catene deterministiche e approcci stocastici, includendo esempi di implementazione con ChainLadder e Pymer.",
-        resources: [
-          {
-            label: "Tutorial ChainLadder stocastico",
-            href: "https://cran.r-project.org/web/packages/ChainLadder/vignettes/GeneralizedLinearModels.pdf",
-            external: true,
-          },
-        ],
-      },
-    ],
-  },
-  {
-    title: "Riserve tecniche",
-    items: [
-      {
-        label: "Catene di Markov per sinistri vita",
-        summary:
-          "Costruzione di matrici di transizione, gestione degli stati assorbenti e calcolo delle riserve prospettiche in presenza di opzioni contrattuali.",
-        resources: [
-          {
-            label: "Lecture note su Markov e riserve",
-            href: "https://openacttexts.github.io/LifeContingencies/Markov.html",
-            external: true,
-          },
-        ],
-      },
-      {
-        label: "Triangoli (Chain Ladder, Bornhuetter-Ferguson)",
-        summary:
-          "Passaggi pratici per costruire triangoli cumulati/incorsi e utilizzare fattori di sviluppo, con confronto tra metodi classici.",
-        resources: [
-          {
-            label: "Notebook Chain Ladder in Python",
-            href: "https://colab.research.google.com/github/casact/chainladder-python/blob/master/examples/Chainladder_Workflow.ipynb",
-            external: true,
-          },
-        ],
-      },
-      {
-        label: "Approccio stocastico con Bootstrap e Mack",
-        summary:
-          "Uso di simulazioni bootstrap per stimare la distribuzione delle riserve, calcolo dell’intervallo di confidenza e della deviazione standard dell’IBNR.",
-        resources: [
-          {
-            label: "Esempio bootstrap con package ChainLadder",
-            href: "https://cran.r-project.org/web/packages/ChainLadder/vignettes/BootChainLadder.pdf",
-            external: true,
-          },
-        ],
-      },
-      {
-        label: "Tecniche di aggregazione e granularità micro-level",
-        summary:
-          "Quando adottare modelli granulari su singolo sinistro rispetto alle tecniche aggregate, con cenni a metodi Bayesian e machine learning.",
-        resources: [
-          {
-            label: "Paper Antonio & Plat (2014)",
-            href: "/wiki#antonio-plat-2014",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    title: "Finanza attuariale",
-    items: [
-      {
         label: "Duration, convexity e immunizzazione",
         summary:
           "Misura della sensibilità ai tassi, costruzione di strategie di immunizzazione e valutazione dell’efficacia con metriche di gap duration.",
+        difficulty: "base",
         resources: [
           {
             label: "Calcolatore duration & convexity",
@@ -247,9 +90,81 @@ export const THEORY_TOPICS = [
         ],
       },
       {
+        label: "Principi attuariali professionali e standard IVASS/EIOPA",
+        summary:
+          "Panoramica sugli standard professionali italiani ed europei, con riferimenti alle norme di condotta e agli standard tecnici.",
+        difficulty: "base",
+        resources: [
+          {
+            label: "Standard professionali ONA",
+            href: "https://www.ordineattuari.it/professione/standard-attuariali/",
+            external: true,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Livello intermedio · Modelli e riserve",
+    difficulty: "intermedio",
+    items: [
+      {
+        label: "Modelli a tempo continuo e discreto per il calcolo delle prime",
+        summary:
+          "Differenze operative fra modelli basati su integrali continui e versioni a passi discreti, con focus su ipotesi di intensità di uscita costante o variabile.",
+        difficulty: "intermedio",
+        resources: [
+          {
+            label: "Guida su premium calculation principles",
+            href: "https://link.springer.com/chapter/10.1007/978-1-4471-2355-3_3",
+            external: true,
+          },
+        ],
+      },
+      {
+        label: "Leggi di mortalità (Makeham, Gompertz)",
+        summary:
+          "Costruzione delle funzioni di sopravvivenza partendo dalle intensità di mortalità e analisi delle deviazioni rispetto ai dati empirici.",
+        difficulty: "intermedio",
+        resources: [
+          {
+            label: "Dispensa su modelli di mortalità",
+            href: "https://openacttexts.github.io/LifeContingencies/MortalityLaws.html",
+            external: true,
+          },
+        ],
+      },
+      {
+        label: "Metodi di credibilità classici e Bayesiani",
+        summary:
+          "Dalla formula di Bühlmann-Straub agli approcci full Bayesian con esempi implementati in R e Python.",
+        difficulty: "intermedio",
+        resources: [
+          {
+            label: "Notebook credibilità in R",
+            href: "https://github.com/ChainLadder-dev/ChainLadder/blob/master/vignettes/Credibility.Rmd",
+            external: true,
+          },
+        ],
+      },
+      {
+        label: "Triangoli (Chain Ladder, Bornhuetter-Ferguson)",
+        summary:
+          "Passaggi pratici per costruire triangoli cumulati/incorsi e utilizzare fattori di sviluppo, con confronto tra metodi classici.",
+        difficulty: "intermedio",
+        resources: [
+          {
+            label: "Notebook Chain Ladder in Python",
+            href: "https://colab.research.google.com/github/casact/chainladder-python/blob/master/examples/Chainladder_Workflow.ipynb",
+            external: true,
+          },
+        ],
+      },
+      {
         label: "Asset Liability Management (ALM)",
         summary:
           "Metodi deterministici e stocastici per coordinare attivi e passivi, con esempi di cash-flow matching e gestione della liquidità.",
+        difficulty: "intermedio",
         resources: [
           {
             label: "Case study ALM nel wiki",
@@ -258,9 +173,149 @@ export const THEORY_TOPICS = [
         ],
       },
       {
+        label: "Framework Solvency II: moduli, SCR e ORSA",
+        summary:
+          "Schema modulare, requisiti quantitativi e uso dei parametri standard vs modelli interni. Include check-list per la documentazione ORSA.",
+        difficulty: "intermedio",
+        resources: [
+          {
+            label: "Sintesi Solvency II",
+            href: "/wiki#normativa-spiegata-semplice",
+          },
+          {
+            label: "EIOPA – Solvency II Overview",
+            href: "https://www.eiopa.europa.eu/content/solvency-ii_en",
+            external: true,
+          },
+        ],
+      },
+      {
+        label: "Enterprise Risk Management e framework di controllo interno",
+        summary:
+          "Linee guida per costruire matrici dei rischi, definire livelli di tolleranza e integrare il monitoring continuo.",
+        difficulty: "intermedio",
+        resources: [
+          {
+            label: "Linee guida ERM CRO Forum",
+            href: "https://www.thecroforum.org/2021/10/25/enterprise-risk-management-deep-dive/",
+            external: true,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Livello avanzato · Ricerca e specializzazioni",
+    difficulty: "avanzato",
+    items: [
+      {
+        label: "Model point e costruzione di tavole generazionali",
+        summary:
+          "Definizione di cluster omogenei per portafogli assicurativi, scelta delle covariate e metodi per generare proiezioni generazionali coerenti.",
+        difficulty: "avanzato",
+        resources: [
+          {
+            label: "Esempio di workbook per model point",
+            href: "https://github.com/attuario-eu/model-points-template",
+            external: true,
+          },
+        ],
+      },
+      {
+        label: "Probabilità congiunte e copule per rischi multipli",
+        summary:
+          "Quando usare approcci comonotoni vs copule Archimede, con esempi di pricing di rendite reversibili e portafogli multirischio.",
+        difficulty: "avanzato",
+        resources: [
+          {
+            label: "Tutorial R su copule attuariali",
+            href: "https://cran.r-project.org/web/packages/copula/vignettes/copula-intro.pdf",
+            external: true,
+          },
+        ],
+      },
+      {
+        label: "Inferenza bayesiana e stima parametrica/non parametrica",
+        summary:
+          "Uso di MCMC e smoothing per stimare intensità di uscita, confronto con approcci frequentisti e criteri di validazione.",
+        difficulty: "avanzato",
+        resources: [
+          {
+            label: "Tutorial Bayesian Survival Analysis",
+            href: "https://nbviewer.org/github/statsmodels/statsmodels/blob/main/examples/notebooks/generated/bayes_mixed_glm.ipynb",
+            external: true,
+          },
+        ],
+      },
+      {
+        label: "Distribuzioni per sinistri danni e riassicurazione",
+        summary:
+          "Scelta delle distribuzioni heavy-tail, confronto tra stop-loss e quota-parte e introduzione ai trattati di riassicurazione proporzionale.",
+        difficulty: "avanzato",
+        resources: [
+          {
+            label: "Dispensa CAS Loss Models",
+            href: "https://www.casact.org/sites/default/files/2021-07/loss-models-study-note.pdf",
+            external: true,
+          },
+        ],
+      },
+      {
+        label: "Riserve sinistri con modelli GLM e GLMM",
+        summary:
+          "Confronto fra catene deterministiche e approcci stocastici, includendo esempi di implementazione con ChainLadder e Pymer.",
+        difficulty: "avanzato",
+        resources: [
+          {
+            label: "Tutorial ChainLadder stocastico",
+            href: "https://cran.r-project.org/web/packages/ChainLadder/vignettes/GeneralizedLinearModels.pdf",
+            external: true,
+          },
+        ],
+      },
+      {
+        label: "Catene di Markov per sinistri vita",
+        summary:
+          "Costruzione di matrici di transizione, gestione degli stati assorbenti e calcolo delle riserve prospettiche in presenza di opzioni contrattuali.",
+        difficulty: "avanzato",
+        resources: [
+          {
+            label: "Lecture note su Markov e riserve",
+            href: "https://openacttexts.github.io/LifeContingencies/Markov.html",
+            external: true,
+          },
+        ],
+      },
+      {
+        label: "Approccio stocastico con Bootstrap e Mack",
+        summary:
+          "Uso di simulazioni bootstrap per stimare la distribuzione delle riserve, calcolo dell’intervallo di confidenza e della deviazione standard dell’IBNR.",
+        difficulty: "avanzato",
+        resources: [
+          {
+            label: "Esempio bootstrap con package ChainLadder",
+            href: "https://cran.r-project.org/web/packages/ChainLadder/vignettes/BootChainLadder.pdf",
+            external: true,
+          },
+        ],
+      },
+      {
+        label: "Tecniche di aggregazione e granularità micro-level",
+        summary:
+          "Quando adottare modelli granulari su singolo sinistro rispetto alle tecniche aggregate, con cenni a metodi Bayesian e machine learning.",
+        difficulty: "avanzato",
+        resources: [
+          {
+            label: "Paper Antonio & Plat (2014)",
+            href: "/wiki#antonio-plat-2014",
+          },
+        ],
+      },
+      {
         label: "Gestione integrata del rischio con metriche VaR / TVaR",
         summary:
           "Confronto tra misure coerenti e non coerenti, con esempi di applicazione a portafogli assicurativi multi-linea.",
+        difficulty: "avanzato",
         resources: [
           {
             label: "Calcolatore portafoglio variabile",
@@ -277,6 +332,7 @@ export const THEORY_TOPICS = [
         label: "Opzioni incorporate e replicating portfolio",
         summary:
           "Identificazione delle garanzie implicite nei prodotti vita e danni, tecniche di replica con strumenti derivati e verifica della copertura.",
+        difficulty: "avanzato",
         resources: [
           {
             label: "Calcolatore Black-Scholes",
@@ -289,31 +345,11 @@ export const THEORY_TOPICS = [
           },
         ],
       },
-    ],
-  },
-  {
-    title: "Normativa e governance",
-    items: [
-      {
-        label: "Framework Solvency II: moduli, SCR e ORSA",
-        summary:
-          "Schema modulare, requisiti quantitativi e uso dei parametri standard vs modelli interni. Include check-list per la documentazione ORSA.",
-        resources: [
-          {
-            label: "Sintesi Solvency II",
-            href: "/wiki#normativa-spiegata-semplice",
-          },
-          {
-            label: "EIOPA – Solvency II Overview",
-            href: "https://www.eiopa.europa.eu/content/solvency-ii_en",
-            external: true,
-          },
-        ],
-      },
       {
         label: "IFRS 17: modelli di valutazione e disclosure",
         summary:
           "Confronto tra approcci BBA, VFA e PAA, struttura del CSM e implicazioni sulla reportistica trimestrale.",
+        difficulty: "avanzato",
         resources: [
           {
             label: "Approfondimento IFRS 17",
@@ -322,30 +358,6 @@ export const THEORY_TOPICS = [
           {
             label: "IASB – Risorse IFRS 17",
             href: "https://www.ifrs.org/issued-standards/list-of-standards/ifrs-17-insurance-contracts/",
-            external: true,
-          },
-        ],
-      },
-      {
-        label: "Enterprise Risk Management e framework di controllo interno",
-        summary:
-          "Linee guida per costruire matrici dei rischi, definire livelli di tolleranza e integrare il monitoring continuo.",
-        resources: [
-          {
-            label: "Linee guida ERM CRO Forum",
-            href: "https://www.thecroforum.org/2021/10/25/enterprise-risk-management-deep-dive/",
-            external: true,
-          },
-        ],
-      },
-      {
-        label: "Principi attuariali professionali e standard IVASS/EIOPA",
-        summary:
-          "Panoramica sugli standard professionali italiani ed europei, con riferimenti alle norme di condotta e agli standard tecnici.",
-        resources: [
-          {
-            label: "Standard professionali ONA",
-            href: "https://www.ordineattuari.it/professione/standard-attuariali/",
             external: true,
           },
         ],
