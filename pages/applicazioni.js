@@ -49,6 +49,14 @@ export default function Applicazioni() {
           <li>Template di presentazione per raccontare i risultati a management e regulator.</li>
         </ul>
         <p className="small-print">Uso consentito esclusivamente a fini didattici e di studio.</p>
+        <div className="cta-row">
+          <Link className="button" href="/casi">
+            Esplora i case study operativi
+          </Link>
+          <Link className="button secondary" href="/strumenti">
+            Apri i calcolatori
+          </Link>
+        </div>
       </section>
 
       <style jsx>{`
@@ -85,6 +93,13 @@ export default function Applicazioni() {
         .application-card a {
           color: var(--link-color, #1d4ed8);
           font-weight: 600;
+        }
+
+        .cta-row {
+          margin-top: 24px;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 12px;
         }
       `}</style>
     </Layout>
