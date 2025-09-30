@@ -338,6 +338,30 @@ export default function Teoria() {
           color: var(--link-color, #1d4ed8);
           font-weight: 600;
         }
+
+        .difficulty-badge {
+          border-radius: 999px;
+          display: inline-flex;
+          font-size: 0.75rem;
+          font-weight: 700;
+          padding: 0.2rem 0.65rem;
+          text-transform: uppercase;
+        }
+
+        .difficulty-base {
+          background: rgba(16, 185, 129, 0.15);
+          color: #047857;
+        }
+
+        .difficulty-intermedio {
+          background: rgba(59, 130, 246, 0.15);
+          color: #1d4ed8;
+        }
+
+        .difficulty-avanzato {
+          background: rgba(139, 92, 246, 0.15);
+          color: #6d28d9;
+        }
       `}</style>
     </Layout>
   );

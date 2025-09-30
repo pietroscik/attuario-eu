@@ -12,7 +12,7 @@ Ogni file sotto `content/pages/` espone costanti tematiche richiamate dalla pagi
 
 - `applicazioni.js` → `APPLICATION_AREAS`
 - `attuario.js` → `ATTUARIO_ROLES`, `ATTUARIO_PATHWAYS`
-- `blog.js` → `BLOG_POSTS`
+- `blog.js` → `BLOG_POSTS` (titolo, sommario e metadati editoriali: `author`, `role`, `reviewedBy`, `updatedAt`)
 - `home.js` → `HOME_HIGHLIGHTS`, `HOME_PERSONAS`, `HOME_UPDATES`
 - `sections-audit.js` → `SECTION_AUDIT` (sintesi dello stato delle principali sezioni del sito)
 - `notizie.js` → `NEWS_UPDATES`
