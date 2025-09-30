@@ -8,7 +8,7 @@ export const APPLICATION_AREAS = [
         label: "Tariffazione temporanee caso morte",
         summary:
           "Usa il template valore attuale per stimare premi puri e confronta l’impatto delle basi demografiche IPS55 vs proiezioni generazionali.",
-        href: "/casi/assicurazioni-vita.html",
+        href: "/casi/assicurazioni-vita",
       },
       {
         label: "Sensitività tassi d’interesse",
@@ -20,7 +20,7 @@ export const APPLICATION_AREAS = [
         label: "Checklist POG & documentazione",
         summary:
           "Scarica la scheda con requisiti IDD/POG e integra il memorandum regolamentare nel fascicolo di prodotto.",
-        href: "/casi/assicurazioni-vita.html#output-attesi",
+        href: "/casi/assicurazioni-vita#output-attesi",
       },
     ],
   },
@@ -33,19 +33,19 @@ export const APPLICATION_AREAS = [
         label: "Workflow frequenza × severità",
         summary:
           "Implementa un modello GLM in R seguendo lo script di riferimento e genera mappe di rischio per la direzione tecnica.",
-        href: "/casi/assicurazioni-danni.html",
+        href: "/casi/assicurazioni-danni",
       },
       {
         label: "Stress test catastrofali",
         summary:
           "Applica scenari vento 1/100 agli exposure property per definire strategie riassicurative e capitali addizionali.",
-        href: "/casi/assicurazioni-danni.html#output-attesi",
+        href: "/casi/assicurazioni-danni#output-attesi",
       },
       {
         label: "Telematica e pricing dinamico",
         summary:
           "Integra variabili telematiche in un modello usage-based e costruisci offerte personalizzate con soglie di rischio.",
-        href: "/casi/data-science.html",
+        href: "/casi/data-science",
       },
     ],
   },
@@ -58,19 +58,19 @@ export const APPLICATION_AREAS = [
         label: "IAS 19 e passività attuariali",
         summary:
           "Calcola obbligazioni attuariali a benefici definiti e documenta le assunzioni economiche per la nota integrativa.",
-        href: "/casi/previdenza.html",
+        href: "/casi/previdenza",
       },
       {
         label: "Scenari di contribuzione",
         summary:
           "Confronta scenari ottimistici/pessimistici di rendimento e valuta l’adeguatezza delle posizioni individuali.",
-        href: "/casi/previdenza.html#proiezioni-sintetiche",
+        href: "/casi/previdenza#proiezioni-sintetiche",
       },
       {
         label: "Comunicazioni agli aderenti",
         summary:
           "Prepara una relazione periodica con KPI ESG, indicatori di adeguatezza e raccomandazioni personalizzate.",
-        href: "/casi/previdenza.html",
+        href: "/casi/previdenza",
       },
     ],
   },
@@ -83,7 +83,7 @@ export const APPLICATION_AREAS = [
         label: "ORSA semplificato",
         summary:
           "Costruisci una vista integrata di capitale disponibile/requisito e definisci trigger di escalation per il comitato rischi.",
-        href: "/casi/finanza-risk.html",
+        href: "/casi/finanza-risk",
       },
       {
         label: "VaR & TVaR multi-linea",
@@ -95,7 +95,7 @@ export const APPLICATION_AREAS = [
         label: "Gestione rischio climatico",
         summary:
           "Integra scenari NGFS e definisci KPI climatici da monitorare nel reporting periodico.",
-        href: "/casi/finanza-risk.html#kpi-da-monitorare",
+        href: "/casi/finanza-risk#kpi-da-monitorare",
       },
     ],
   },
@@ -108,19 +108,19 @@ export const APPLICATION_AREAS = [
         label: "Pipeline ETL & feature store",
         summary:
           "Implementa ingestion giornaliera con Airflow e gestisci la disponibilità delle feature con Feast.",
-        href: "/casi/data-science.html",
+        href: "/casi/data-science",
       },
       {
         label: "Monitoraggio drift modelli",
         summary:
           "Configura dashboard Evidently AI per analizzare il drift delle predizioni e aggiornare i modelli.",
-        href: "/casi/data-science.html#componenti-principali",
+        href: "/casi/data-science#componenti-principali",
       },
       {
         label: "Registro modelli EIOPA compliant",
         summary:
           "Documenta versioni, metriche e processi di governance per soddisfare le linee guida europee.",
-        href: "/casi/data-science.html",
+        href: "/casi/data-science",
       },
     ],
   },
@@ -133,19 +133,19 @@ export const APPLICATION_AREAS = [
         label: "Canvas value proposition",
         summary:
           "Compila il canvas per definire proposta di valore, segmenti di clientela e metriche di successo.",
-        href: "/casi/insurtech.html",
+        href: "/casi/insurtech",
       },
       {
         label: "Metriche MVP & sandbox",
         summary:
           "Stabilisci metriche di adozione e retention per sperimentazioni in sandbox regolamentare.",
-        href: "/casi/insurtech.html#backlog-mvp",
+        href: "/casi/insurtech#backlog-mvp",
       },
       {
         label: "Valutazione partner tecnologici",
         summary:
           "Verifica requisiti di sicurezza, SLA e compliance privacy dei fornitori InsurTech.",
-        href: "/casi/insurtech.html",
+        href: "/casi/insurtech",
       },
     ],
   },
