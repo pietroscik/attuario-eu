@@ -2,6 +2,10 @@ import Link from "next/link";
 
 import Layout from "../../components/Layout";
 
+import CaseNavigation from "../../components/casi/CaseNavigation";
+
+const RELATED_CASES = ["assicurazioni-danni", "data-science", "assicurazioni-vita"];
+
 const ASSETS = [
   {
     label: "Canvas value proposition",
@@ -71,6 +75,7 @@ export default function CaseInsurtech() {
       title="Case study · Innovazione InsurTech"
       eyebrow="Applicazioni attuariali"
       intro="Framework per progettare un prodotto assicurativo parametrico, strutturare il backlog MVP e valutare partner tecnologici in ottica di governance."
+      metaDescription="Case study InsurTech: canvas value proposition, backlog MVP, checklist vendor e link al toolkit per orchestrare discovery, test in sandbox e partnership tecnologiche."
     >
       <section className="info-panel">
         <h2>Scenario di riferimento</h2>
@@ -133,6 +138,8 @@ export default function CaseInsurtech() {
           ))}
         </ul>
       </section>
+
+      <CaseNavigation currentSlug="insurtech" relatedSlugs={RELATED_CASES} />
     </Layout>
   );
 }

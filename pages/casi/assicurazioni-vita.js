@@ -2,6 +2,10 @@ import Link from "next/link";
 
 import Layout from "../../components/Layout";
 
+import CaseNavigation from "../../components/casi/CaseNavigation";
+
+const RELATED_CASES = ["finanza-risk", "previdenza", "data-science"];
+
 const DATASETS = [
   {
     label: "Tavole IPS55 e proiezioni generazionali",
@@ -76,6 +80,8 @@ export default function CaseAssicurazioniVita() {
       title="Case study · Assicurazioni vita"
       eyebrow="Applicazioni attuariali"
       intro="Esempio operativo per aggiornare premi, riserve e documentazione di un portafoglio temporanee caso morte con partecipazione agli utili."
+
+      metaDescription="Case study vita: dataset IPS55, workflow di calcolo premi e riserve, analisi di sensitività ai tassi e checklist IDD/POG da adattare alla propria compagnia."
     >
       <section className="info-panel">
         <h2>Scenario di riferimento</h2>
@@ -147,6 +153,8 @@ export default function CaseAssicurazioniVita() {
           ))}
         </ul>
       </section>
+
+      <CaseNavigation currentSlug="assicurazioni-vita" relatedSlugs={RELATED_CASES} />
     </Layout>
   );
 }
