@@ -2,55 +2,40 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 
 import Layout from "../components/Layout";
-
 import { TOOL_RESOURCES } from "../content/pages/strumenti";
 
-const LANGUAGE_LABELS = {
-  R: "R",
-  Python: "Python",
-};
-
-const LANGUAGE_OPTIONS = [
-  { value: "R", label: "Risorse R" },
-  { value: "Python", label: "Risorse Python" },
-];
+const LANGUAGE_OPTIONS = ["R", "Python"];
 
 export default function Strumenti() {
-  const [activeLanguages, setActiveLanguages] = useState(() => new Set());
-
-  const toggleLanguage = (language) => {
-    setActiveLanguages((prev) => {
-      const next = new Set(prev);
-      if (next.has(language)) {
-        next.delete(language);
-      } else {
-        next.add(language);
-      }
-      return next;
-    });
-  };
-
-  const clearFilters = () => {
-    setActiveLanguages(new Set());
-  };
+  const [selectedLanguages, setSelectedLanguages] = useState([]);
 
   const filteredSections = useMemo(() => {
-    const hasFilter = activeLanguages.size > 0;
-    return TOOL_RESOURCES.map((section) => ({
-      ...section,
-      resources: section.resources.filter(({ languages = [] }) => {
-        if (!hasFilter) {
+    return TOOL_RESOURCES.map((section) => {
+      const matchingResources = section.resources.filter((resource) => {
+        if (selectedLanguages.length === 0) {
           return true;
         }
-        if (!languages.length) {
+        if (!resource.languages || resource.languages.length === 0) {
           return false;
         }
-        return languages.some((language) => activeLanguages.has(language));
-      }),
-    })).filter((section) => section.resources.length > 0);
-  }, [activeLanguages]);
+        return resource.languages.some((language) =>
+          selectedLanguages.includes(language)
+        );
+      });
+      return { ...section, resources: matchingResources };
+    }).filter((section) => section.resources.length > 0);
+  }, [selectedLanguages]);
 
-  const hasActiveFilter = activeLanguages.size > 0;
+  const hasResults = filteredSections.length > 0;
+
+  const toggleLanguage = (language) => {
+    setSelectedLanguages((current) => {
+      if (current.includes(language)) {
+        return current.filter((item) => item !== language);
+      }
+      return [...current, language];
+    });
+  };
 
   return (
     <Layout
@@ -58,76 +43,82 @@ export default function Strumenti() {
       eyebrow="Toolkit operativo"
       intro="Tutorial, esempi di codice e risorse aperte per esercitarsi con modelli attuariali. Gli strumenti sono pensati a fini educativi e non sostituiscono attività professionale."
     >
-      <section className="section">
-        <h2 className="visually-hidden">Filtra risorse per linguaggio</h2>
-        <div
-          className="language-controls"
-          role="group"
-          aria-label="Filtra le risorse per linguaggio di scripting"
-        >
-          <button
-            type="button"
-            className={`language-button reset${hasActiveFilter ? "" : " is-disabled"}`}
-            onClick={clearFilters}
-            disabled={!hasActiveFilter}
-          >
-            Mostra tutte
-          </button>
-          {LANGUAGE_OPTIONS.map(({ value, label }) => {
-            const isActive = activeLanguages.has(value);
-            return (
-              <button
-                key={value}
-                type="button"
-                className={`language-button${isActive ? " is-active" : ""}`}
-                aria-pressed={isActive}
-                onClick={() => toggleLanguage(value)}
-              >
-                {label}
-              </button>
-            );
-          })}
-        </div>
+      <section className="filter-bar" aria-label="Filtra le risorse per linguaggio">
+        <fieldset>
+          <legend>Filtra per linguaggio</legend>
+          <div className="filter-options">
+            {LANGUAGE_OPTIONS.map((language) => {
+              const id = `language-${language.toLowerCase()}`;
+              const isChecked = selectedLanguages.includes(language);
+
+              return (
+                <label
+                  key={language}
+                  className={`filter-pill ${isChecked ? "is-active" : ""}`}
+                >
+                  <input
+                    id={id}
+                    type="checkbox"
+                    value={language}
+                    checked={isChecked}
+                    onChange={() => toggleLanguage(language)}
+                  />
+                  <span aria-hidden="true">{language}</span>
+                  <span className="sr-only">{`Filtra per ${language}`}</span>
+                </label>
+              );
+            })}
+          </div>
+        </fieldset>
       </section>
 
       <section className="card-grid">
-        {filteredSections.map(({ title, description, resources }) => (
-          <article key={title} className="card toolkit-card">
-            <h2>{title}</h2>
-            <p>{description}</p>
-            <ul className="list">
-              {resources.map(({ label, summary, href, external, languages = [] }) => (
-                <li key={label}>
-                  <details>
-                    <summary>
-                      <span className="summary-content">
-                        <span>{label}</span>
-                        <span className="language-badges">
-                          {languages.map((language) => (
-                            <span
-                              key={`${label}-${language}`}
-                              className={`language-badge language-${language.toLowerCase()}`}
-                            >
-                              {LANGUAGE_LABELS[language] ?? language}
+        {(selectedLanguages.length === 0 ? TOOL_RESOURCES : filteredSections).map(
+          ({ title, description, resources }) => (
+            <article key={title} className="card toolkit-card">
+              <h2>{title}</h2>
+              <p>{description}</p>
+              <ul className="list">
+                {resources.map(({ label, summary, href, external, languages }) => (
+                  <li key={label}>
+                    <details>
+                      <summary>
+                        <span className="summary-content">
+                          <span className="resource-label">{label}</span>
+                          {Array.isArray(languages) && languages.length > 0 && (
+                            <span className="language-badges">
+                              {languages.map((language) => (
+                                <span
+                                  key={`${label}-${language}`}
+                                  className="language-badge"
+                                >
+                                  {language}
+                                </span>
+                              ))}
                             </span>
-                          ))}
+                          )}
                         </span>
-                      </span>
-                    </summary>
-                    <p>{summary}</p>
-                    {external ? (
-                      <a href={href} target="_blank" rel="noopener noreferrer">
-                        Apri la risorsa
-                      </a>
-                    ) : (
-                      <Link href={href}>Apri la risorsa</Link>
-                    )}
-                  </details>
-                </li>
-              ))}
-            </ul>
-          </article>
-        ))}
+                      </summary>
+                      <p>{summary}</p>
+                      {external ? (
+                        <a href={href} target="_blank" rel="noopener noreferrer">
+                          Apri la risorsa
+                        </a>
+                      ) : (
+                        <Link href={href}>Apri la risorsa</Link>
+                      )}
+                    </details>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          )
+        )}
+        {!hasResults && (
+          <p className="empty-state">
+            Nessuna risorsa corrisponde ai filtri selezionati. Prova a modificare le opzioni.
+          </p>
+        )}
       </section>
 
       <section className="section info-panel">
@@ -142,7 +133,73 @@ export default function Strumenti() {
       </section>
 
       <style jsx>{`
-        .visually-hidden {
+        .filter-bar {
+          background: rgba(148, 163, 184, 0.18);
+          border-radius: 14px;
+          margin-bottom: 2rem;
+          padding: 1rem 1.25rem;
+        }
+
+        .filter-bar fieldset {
+          border: 0;
+          margin: 0;
+          padding: 0;
+        }
+
+        .filter-bar legend {
+          font-size: 1rem;
+          font-weight: 600;
+          margin-bottom: 0.75rem;
+        }
+
+        .filter-options {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.75rem;
+        }
+
+        .filter-pill {
+          align-items: center;
+          background: white;
+          border: 1px solid rgba(15, 23, 42, 0.15);
+          border-radius: 999px;
+          color: #0f172a;
+          cursor: pointer;
+          display: inline-flex;
+          font-weight: 600;
+          letter-spacing: 0.01em;
+          padding: 0.35rem 0.9rem;
+          position: relative;
+          transition: all 0.2s ease;
+        }
+
+        .filter-pill input {
+          appearance: none;
+          height: 100%;
+          left: 0;
+          margin: 0;
+          position: absolute;
+          top: 0;
+          width: 100%;
+        }
+
+        .filter-pill span:first-of-type {
+          pointer-events: none;
+        }
+
+        .filter-pill:is(:hover, :focus-within) {
+          border-color: rgba(37, 99, 235, 0.5);
+          box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+        }
+
+        .filter-pill.is-active {
+          background: #1d4ed8;
+          border-color: #1d4ed8;
+          color: white;
+          box-shadow: 0 0 0 4px rgba(29, 78, 216, 0.25);
+        }
+
+        .sr-only {
           border: 0;
           clip: rect(0 0 0 0);
           height: 1px;
@@ -151,45 +208,6 @@ export default function Strumenti() {
           padding: 0;
           position: absolute;
           width: 1px;
-        }
-
-        .language-controls {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 0.5rem;
-          margin-bottom: 1.5rem;
-        }
-
-        .language-button {
-          background: #fff;
-          border: 1px solid rgba(15, 23, 42, 0.2);
-          border-radius: 999px;
-          color: #0f172a;
-          cursor: pointer;
-          font-size: 0.95rem;
-          font-weight: 600;
-          padding: 0.5rem 1rem;
-          transition: all 0.2s ease;
-        }
-
-        .language-button.reset {
-          background: rgba(15, 23, 42, 0.05);
-        }
-
-        .language-button.is-disabled {
-          cursor: not-allowed;
-          opacity: 0.6;
-        }
-
-        .language-button:focus-visible {
-          outline: 3px solid rgba(14, 116, 144, 0.4);
-          outline-offset: 2px;
-        }
-
-        .language-button.is-active {
-          background: #0ea5e9;
-          border-color: #0ea5e9;
-          color: #fff;
         }
 
         .toolkit-card details {
@@ -225,45 +243,49 @@ export default function Strumenti() {
           justify-content: space-between;
         }
 
-        .summary-content span:first-child {
+        .resource-label {
           flex: 1;
+          min-width: 0;
         }
 
         .language-badges {
-          display: flex;
+          display: inline-flex;
           flex-wrap: wrap;
           gap: 0.4rem;
           justify-content: flex-end;
         }
 
-        .toolkit-card p {
-          margin: 0.5rem 0 0.75rem;
-        }
-
-        .toolkit-card a {
-          color: var(--link-color, #1d4ed8);
-          font-weight: 600;
-        }
-
         .language-badge {
-          align-items: center;
+          background: rgba(37, 99, 235, 0.1);
+          border: 1px solid rgba(37, 99, 235, 0.25);
           border-radius: 999px;
-          display: inline-flex;
-          font-size: 0.7rem;
-          font-weight: 700;
-          letter-spacing: 0.02em;
-          padding: 0.2rem 0.65rem;
-          text-transform: uppercase;
-        }
-
-        .language-r {
-          background: rgba(59, 130, 246, 0.15);
           color: #1d4ed8;
+          font-size: 0.75rem;
+          font-weight: 600;
+          letter-spacing: 0.04em;
+          padding: 0.2rem 0.55rem;
+          text-transform: uppercase;
+          white-space: nowrap;
         }
 
-        .language-python {
-          background: rgba(234, 179, 8, 0.18);
-          color: #b45309;
+        .empty-state {
+          color: #475569;
+          font-style: italic;
+          padding: 1.5rem 0;
+          text-align: center;
+          width: 100%;
+        }
+
+        @media (max-width: 640px) {
+          .summary-content {
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 0.5rem;
+          }
+
+          .language-badges {
+            justify-content: flex-start;
+          }
         }
       `}</style>
     </Layout>

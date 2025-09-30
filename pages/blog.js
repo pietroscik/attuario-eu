@@ -36,8 +36,10 @@ export default function Blog() {
                 <span className="post-author__name">{author}</span>
                 <span className="post-author__role">{role}</span>
               </p>
-              <p className="post-review">Revisionato da {reviewedBy}</p>
-              <p className="post-date">Aggiornato il {formatUpdatedAt(updatedAt)}</p>
+              {reviewedBy && <p className="post-review">Revisionato da {reviewedBy}</p>}
+              {updatedAt && (
+                <p className="post-date">Aggiornato il {formatUpdatedAt(updatedAt)}</p>
+              )}
             </div>
           </article>
         ))}

@@ -31,7 +31,7 @@ export const BLOG_POSTS = [
     summary:
       "Approccio divulgativo ai scenari climatici NGFS 2023 e alle raccomandazioni dell’UNEP FI per integrare KPI ESG nei modelli attuariali.",
     author: "Luca Ferri",
-    role: "Climate risk analyst",
+    role: "Climate Risk Analyst",
     reviewedBy: "Giulia Bianchi (Editor scientifico)",
     updatedAt: "2024-05-02",
   },
@@ -40,7 +40,7 @@ export const BLOG_POSTS = [
     summary:
       "Panoramica delle linee guida CAS 2022 e dei white paper SOA per coniugare algoritmi complessi, interpretabilità e governance dei dati.",
     author: "Marco Rinaldi",
-    role: "Data science lead",
+    role: "Data Science Lead",
     reviewedBy: "Sara Conti (Consulente ERM)",
     updatedAt: "2024-04-24",
   },
@@ -59,7 +59,7 @@ export const BLOG_POSTS = [
       "Checklist per censire le fonti informative, definire data owner, stabilire controlli di qualità e favorire la collaborazione tra attuari e data engineer.",
     author: "Giulia Bianchi",
     role: "Editor scientifico",
-    reviewedBy: "Marco Rinaldi (Data science lead)",
+    reviewedBy: "Marco Rinaldi (Data Science Lead)",
     updatedAt: "2024-04-05",
   },
   {

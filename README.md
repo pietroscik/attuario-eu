@@ -16,6 +16,15 @@ Sito divulgativo per `attuario.eu` dedicato alla scienza attuariale con sezioni:
 - I contenuti statici delle principali pagine editoriali sono raccolti in `content/pages/*.js`, rendendo più semplice aggiornare testi e liste senza scorrere JSX lungo.
 - Gli stili principali vivono in `styles/globals.css` con utility per griglie, card, bottoni e form coerenti fra le sezioni.
 
+## Processo editoriale blog
+- I post del blog sono definiti in `content/pages/blog.js` con i campi `title`, `summary`, `author`, `role`, `reviewedBy` e `updatedAt` concordati con la redazione.
+- `updatedAt` è espresso in formato ISO (`YYYY-MM-DD`) ed è utilizzato in pagina per mostrare la data localizzata e un badge "Revisionato" quando è valorizzato `reviewedBy`.
+- L'endpoint `pages/api/blog-feed.js` esporta lo stesso payload (`posts: BLOG_POSTS`) per alimentare feed JSON esterni senza duplicare i contenuti.
+- Per pubblicare un nuovo articolo:
+  1. Aggiungi l'oggetto in `BLOG_POSTS` indicando autore, ruolo e revisore.
+  2. Aggiorna la data `updatedAt` alla chiusura della revisione.
+  3. Verifica localmente (`npm run dev`) che il badge e le informazioni di metadato vengano visualizzate correttamente.
+
 ## Avvio locale
 ```bash
 npm i
