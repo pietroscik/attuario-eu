@@ -1,85 +1,20 @@
 import Link from "next/link";
 
 import Layout from "../../components/Layout";
-
-const CASES = [
-  {
-    slug: "assicurazioni-vita",
-    title: "Assicurazioni vita",
-    summary:
-      "Pricing, riserve e comunicazione regolamentare per prodotti caso morte, caso vita e partecipazioni agli utili.",
-    highlights: [
-      "Template per premi puri e analisi sensitività tassi",
-      "Linee guida IDD/POG per la documentazione",
-      "Suggerimenti per deliverable verso attuari incaricati e funzioni finance",
-    ],
-  },
-  {
-    slug: "assicurazioni-danni",
-    title: "Assicurazioni danni e salute",
-    summary:
-      "Segmentazione portafogli, stress test catastrofali e uso di variabili telematiche in ottica data-driven.",
-    highlights: [
-      "Workflow frequenza × severità in R",
-      "Check-list per stress e riassicurazione",
-      "Spunti per pricing dinamico e governance dei dati",
-    ],
-  },
-  {
-    slug: "previdenza",
-    title: "Previdenza complementare",
-    summary:
-      "Valutazioni IAS 19, scenari di contribuzione e comunicazioni agli aderenti di fondi pensione e casse.",
-    highlights: [
-      "Dataset sintetici per passività attuariali",
-      "Proiezioni scenari rendimento/costo",
-      "Indicatori ESG e di adeguatezza per i report",
-    ],
-  },
-  {
-    slug: "finanza-risk",
-    title: "Finanza e risk management",
-    summary:
-      "ORSA, misurazione del capitale economico e integrazione del rischio climatico nei framework di governance.",
-    highlights: [
-      "Template ORSA semplificato",
-      "Calcolo VaR/TVaR multi-linea",
-      "KPI climatici per reporting periodico",
-    ],
-  },
-  {
-    slug: "data-science",
-    title: "Data science attuariale",
-    summary:
-      "Automazione dei processi, MLOps e monitoraggio modelli per team attuariali e di advanced analytics.",
-    highlights: [
-      "Pipeline ETL con Airflow",
-      "Monitoraggio drift con Evidently",
-      "Requisiti di governance per registri modello",
-    ],
-  },
-  {
-    slug: "insurtech",
-    title: "Innovazione prodotti e InsurTech",
-    summary:
-      "Canvas strategici, backlog MVP e valutazione partner tecnologici per soluzioni parametriche e on-demand.",
-    highlights: [
-      "Modelli di discovery prodotto",
-      "Metriche di adozione e retention",
-      "Questionari vendor assessment",
-    ],
-  },
-];
-
+import { CASE_STUDIES } from "../../content/pages/casi";
+      
 export default function Casi() {
   return (
     <Layout
       title="Case study operativi"
       eyebrow="Esempi guidati"
       intro="Una raccolta di percorsi pratici per applicare la teoria attuariale. Ogni case study include dataset di supporto, note metodologiche e deliverable pronti per essere adattati al proprio contesto."
+
+      metaDescription="Elenco di case study attuariali con dataset, workflow e checklist normative su vita, danni, previdenza, risk management, data science e InsurTech."
     >
       <section className="card-grid">
-        {CASES.map(({ slug, title, summary, highlights }) => (
+        {CASE_STUDIES.map(({ slug, title, summary, highlights }) => (
+
           <article key={slug} className="card">
             <h2>{title}</h2>
             <p>{summary}</p>
@@ -104,6 +39,37 @@ export default function Casi() {
           I contenuti sono pensati per studio e divulgazione: non costituiscono consulenza professionale né sostituiscono il giudizio di un attuario abilitato.
         </p>
       </section>
+
+      <section className="section" aria-labelledby="supporto-operativo">
+        <h2 id="supporto-operativo">Collega teoria, strumenti e case reali</h2>
+        <p>
+          Ogni percorso è pensato per integrarsi con le sezioni <Link href="/applicazioni">Applicazioni</Link> e
+          <Link href="/strumenti"> Strumenti</Link>: parti dalle checklist, apri i calcolatori dedicati e combina i dataset
+          per creare deliverable coerenti con le normative vigenti.
+        </p>
+        <ul className="list">
+          <li>Imposta le ipotesi di lavoro con le guide sintetiche della sezione Applicazioni.</li>
+          <li>Esegui i calcoli con i tool online o i notebook open source suggeriti.</li>
+          <li>Adatta i template di comunicazione per stakeholder tecnici, management e regulator.</li>
+        </ul>
+        <div className="cta-row">
+          <Link className="button" href="/applicazioni">
+            Vai alle Applicazioni
+          </Link>
+          <Link className="button secondary" href="/strumenti">
+            Apri gli Strumenti
+          </Link>
+        </div>
+      </section>
+
+      <style jsx>{`
+        .cta-row {
+          margin-top: 24px;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 12px;
+        }
+      `}</style>
     </Layout>
   );
 }

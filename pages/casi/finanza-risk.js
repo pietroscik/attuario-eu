@@ -1,6 +1,9 @@
 import Link from "next/link";
 
 import Layout from "../../components/Layout";
+import CaseNavigation from "../../components/casi/CaseNavigation";
+
+const RELATED_CASES = ["assicurazioni-danni", "assicurazioni-vita", "previdenza"];
 
 const RESOURCES = [
   {
@@ -93,6 +96,7 @@ export default function CaseFinanzaRisk() {
       title="Case study · Finanza e risk management"
       eyebrow="Applicazioni attuariali"
       intro="Percorso per costruire un ORSA sintetico, stimare il capitale economico e integrare indicatori climatici nel framework di monitoraggio."
+      metaDescription="Case study risk management: template ORSA, simulazioni VaR/TVaR, scenari climatici NGFS, deliverable e KPI da monitorare per board e funzioni di controllo."
     >
       <section className="info-panel">
         <h2>Scenario di riferimento</h2>
@@ -155,6 +159,8 @@ export default function CaseFinanzaRisk() {
           ))}
         </div>
       </section>
+
+      <CaseNavigation currentSlug="finanza-risk" relatedSlugs={RELATED_CASES} />
     </Layout>
   );
 }

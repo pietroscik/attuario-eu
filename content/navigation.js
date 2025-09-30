@@ -2,6 +2,7 @@ export const NAV_LINKS = [
   { href: "/corso", label: "Corso" },
   { href: "/teoria", label: "Teoria" },
   { href: "/applicazioni", label: "Applicazioni" },
+  { href: "/casi", label: "Case study" },
   { href: "/attuario", label: "Attuari" },
   { href: "/chi-siamo", label: "Chi siamo" },
   { href: "/risorse", label: "Risorse" },

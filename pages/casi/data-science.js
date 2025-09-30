@@ -1,5 +1,9 @@
 import Layout from "../../components/Layout";
 
+import CaseNavigation from "../../components/casi/CaseNavigation";
+
+const RELATED_CASES = ["assicurazioni-danni", "finanza-risk", "insurtech"];
+
 const RESOURCES = [
   {
     label: "Repository pipeline Airflow",
@@ -86,6 +90,7 @@ export default function CaseDataScience() {
       title="Case study · Data science attuariale"
       eyebrow="Applicazioni attuariali"
       intro="Blueprint per industrializzare modelli attuariali con pipeline dati affidabili, MLOps e monitoraggio continuo del drift."
+      metaDescription="Case study data science attuariale: repository Airflow, template Evidently, model registry e deliverable per orchestrare pipeline, deploy e monitoraggio dei modelli."
     >
       <section className="info-panel">
         <h2>Scenario di riferimento</h2>
@@ -145,6 +150,8 @@ export default function CaseDataScience() {
           ))}
         </ul>
       </section>
+
+      <CaseNavigation currentSlug="data-science" relatedSlugs={RELATED_CASES} />
     </Layout>
   );
 }

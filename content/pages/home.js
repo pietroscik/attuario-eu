@@ -11,7 +11,7 @@ export const HOME_HIGHLIGHTS = [
   },
   {
     title: "Applicazioni pratiche",
-    text: "Dalla tariffazione vita e danni alla gestione delle riserve: workflow replicabili, dataset commentati e suggerimenti per presentare i risultati al management.",
+    text: "Dalla tariffazione vita e danni alla gestione delle riserve: workflow replicabili, case study guidati con dataset commentati e suggerimenti per presentare i risultati al management.",
     link: "/applicazioni",
   },
   {
@@ -70,6 +70,7 @@ export const HOME_PERSONAS = [
 ];
 
 export const HOME_UPDATES = [
+  "Nuova sezione Case study operativi con collegamenti diretti a applicazioni, strumenti e deliverable scaricabili.",
   "Nuove schede su IFRS 17, interazione con Solvency II e impatti contabili nella sezione Notizie.",
   "Script Python e R per simulare tavole di mortalità generazionali e scenari climatico-finanziari nella sezione Strumenti.",
   "Serie “Attuario nel mondo reale”: focus su ruoli in previdenza complementare, InsurTech e consulenza quantitativa.",

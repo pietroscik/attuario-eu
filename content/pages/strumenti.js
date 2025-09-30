@@ -97,6 +97,7 @@ export const TOOL_RESOURCES = [
         summary:
           "Guida PyMC con esempi di regressioni Poisson, MCMC e diagnostica ArviZ per modellare frequenza e severità in chiave Bayesiana.",
         href: "https://www.pymc.io/projects/examples/en/latest/case_studies/insurance_claims.html",
+
         external: true,
       },
     ],

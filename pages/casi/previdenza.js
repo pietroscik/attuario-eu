@@ -2,6 +2,10 @@ import Link from "next/link";
 
 import Layout from "../../components/Layout";
 
+import CaseNavigation from "../../components/casi/CaseNavigation";
+
+const RELATED_CASES = ["assicurazioni-vita", "finanza-risk", "data-science"];
+
 const DATASETS = [
   {
     label: "Dataset IAS 19 sintetico",
@@ -76,6 +80,7 @@ export default function CasePrevidenza() {
       title="Case study · Previdenza complementare"
       eyebrow="Applicazioni attuariali"
       intro="Guida operativa per valutare obbligazioni IAS 19, costruire scenari di contribuzione e predisporre la comunicazione verso aderenti e stakeholder interni."
+      metaDescription="Case study previdenza: dataset IAS 19, workflow di calcolo, scenari di contribuzione, proiezioni sintetiche e checklist di governance per fondi e casse."
     >
       <section className="info-panel">
         <h2>Scenario di riferimento</h2>
@@ -157,6 +162,8 @@ export default function CasePrevidenza() {
           ))}
         </ul>
       </section>
+
+      <CaseNavigation currentSlug="previdenza" relatedSlugs={RELATED_CASES} />
     </Layout>
   );
 }

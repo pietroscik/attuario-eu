@@ -2,6 +2,12 @@ import Link from "next/link";
 
 import Layout from "../../components/Layout";
 
+import CaseNavigation from "../../components/casi/CaseNavigation";
+
+const RELATED_CASES = ["data-science", "finanza-risk", "insurtech"];
+
+
+
 const RESOURCES = [
   {
     label: "Dataset sinistri auto anonimizzati",
@@ -76,6 +82,7 @@ export default function CaseAssicurazioniDanni() {
       title="Case study · Assicurazioni danni"
       eyebrow="Applicazioni attuariali"
       intro="Percorso guidato per costruire tariffe auto/property data-driven, valutare scenari catastrofali e impostare un framework di pricing dinamico conforme."
+      metaDescription="Case study danni: dataset sinistri anonimizzati, script GLM, stress test catastrofali, deliverable e controlli di governance per pricing dinamico e riassicurazione."
     >
       <section className="info-panel">
         <h2>Scenario di riferimento</h2>
@@ -135,6 +142,8 @@ export default function CaseAssicurazioniDanni() {
           ))}
         </ul>
       </section>
+
+      <CaseNavigation currentSlug="assicurazioni-danni" relatedSlugs={RELATED_CASES} />
     </Layout>
   );
 }
