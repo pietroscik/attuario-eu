@@ -1,4 +1,5 @@
 export const NAV_LINKS = [
+  { href: "/corso", label: "Corso" },
   { href: "/teoria", label: "Teoria" },
   { href: "/applicazioni", label: "Applicazioni" },
   { href: "/attuario", label: "Attuari" },
