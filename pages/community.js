@@ -4,16 +4,16 @@ import Layout from "../components/Layout";
 
 const COMMUNITY_CHANNELS = [
   {
-    name: "Server Discord",
+    name: "Server Discord (in manutenzione)",
     description:
-      "Canale principale per confrontarsi in tempo reale su esami, carriera e novità normative. Include stanze vocali, canali tematici e bacheche per gruppi studio.",
-    action: "Accedi a Discord",
-    href: "https://discord.attuario.eu",
+      "Il server pubblico è temporaneamente offline mentre rivediamo moderazione e automazioni. Iscriviti alla lista di attesa per ricevere l'invito non appena riapre.",
+    action: "Richiedi aggiornamenti",
+    href: "mailto:community@attuario.eu?subject=Aggiornamenti%20Discord",
   },
   {
     name: "Canale Telegram",
     description:
-      "Aggiornamenti rapidi su eventi, uscite editoriali e call for paper. Perfetto se preferisci ricevere notifiche push senza perdere i thread principali.",
+      "Aggiornamenti rapidi su eventi, uscite editoriali e call for paper. Puoi seguirci dall'app ufficiale oppure da client CLI come tg (Linux), tenendo conto che il progetto open source non è più attivamente mantenuto.",
     action: "Iscriviti su Telegram",
     href: "https://t.me/attuarioeu",
   },

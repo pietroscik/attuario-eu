@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Link from "next/link";
 
 import Layout from "../components/Layout";
@@ -18,6 +19,42 @@ const CONTACT_METHODS = [
 ];
 
 export default function Contatti() {
+  const [status, setStatus] = useState("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const payload = Object.fromEntries(formData.entries());
+
+    setStatus("loading");
+    setErrorMessage("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        const data = await response.json().catch(() => ({}));
+        const message = data?.message || "Invio non riuscito. Riprova più tardi.";
+        throw new Error(message);
+      }
+
+      setStatus("success");
+      form.reset();
+    } catch (error) {
+      setStatus("error");
+      setErrorMessage(error.message || "Si è verificato un errore imprevisto.");
+    }
+  };
+
   return (
     <Layout
       title="Contatti & collaborazioni"
@@ -25,7 +62,11 @@ export default function Contatti() {
       intro="attuario.eu non offre consulenza professionale o servizi commerciali. Puoi però proporre articoli, segnalare eventi, condividere dataset o suggerire risorse utili alla community."
       width="narrow"
     >
-      <form action="https://getform.io/f/akkpxgpa" method="POST" className="form-grid">
+      <form
+        noValidate
+        className="form-grid"
+        onSubmit={handleSubmit}
+      >
         <input
           className="input"
           type="text"
@@ -50,9 +91,15 @@ export default function Contatti() {
           required
         />
         <input type="hidden" name="_gotcha" aria-hidden="true" />
-        <button className="button" type="submit">
+        <button className="button" type="submit" disabled={status === "loading"}>
           Invia
         </button>
+        <div className="small-print" role="status" aria-live="polite">
+          {status === "loading" && "Invio in corso..."}
+          {status === "success" &&
+            "Messaggio inviato correttamente. Riceverai una conferma via email a breve."}
+          {status === "error" && errorMessage}
+        </div>
       </form>
       <section className="section info-panel" aria-labelledby="contatti-email">
         <h2 id="contatti-email">Contatti diretti</h2>
