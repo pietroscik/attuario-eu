@@ -1,0 +1,11 @@
+PolicyID,Product,Age,Gender,SumAssured,AnnualPremium,DurationYears,Status
+1001,WholeLife,42,F,150000,820,5,InForce
+1002,AnnuityDeferred,55,M,90000,0,12,Annuitant
+1003,TermLife,38,M,100000,410,3,InForce
+1004,WholeLife,47,F,200000,1090,9,InForce
+1005,UnitLinked,33,F,75000,620,2,InForce
+1006,TermLife,61,M,80000,0,15,Claim
+1007,CriticalIllness,45,F,50000,540,6,InForce
+1008,WholeLife,58,M,120000,1310,18,Surrendered
+1009,TermLife,29,F,60000,280,1,InForce
+1010,PensionImmediate,67,M,0,0,20,Annuitant
