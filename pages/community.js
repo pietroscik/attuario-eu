@@ -25,6 +25,13 @@ const COMMUNITY_CHANNELS = [
     href: "https://cal.attuario.eu/community",
   },
   {
+    name: "Call individuale con il team",
+    description:
+      "Vuoi confrontarti su un progetto divulgativo o proporre una nuova iniziativa? Scrivici e fissiamo una call conoscitiva di 20 minuti.",
+    action: "Richiedi una call",
+    href: "mailto:community@attuario.eu?subject=Richiesta%20call%20conoscitiva&body=Raccontaci%20in%20pochi%20punti%20l'iniziativa%20o%20le%20domande%20che%20vorresti%20approfondire.",
+  },
+  {
     name: "Newsletter collaboratori",
     description:
       "Aggiornamenti dietro le quinte con call for paper, idee editoriali e opportunità di mentorship tra membri senior e junior.",

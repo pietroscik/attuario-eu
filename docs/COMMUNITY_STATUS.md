@@ -10,8 +10,10 @@
 - L'API server-side restituisce codici espliciti per errori di validazione (400) e per problemi di rete/upstream (502) così da poter registrare i casi critici su Vercel (tramite log) o strumenti di osservabilità.
 
 ## Stato canali community
-- Il server Discord pubblico è stato messo in manutenzione mentre si revisionano automazioni e linee guida. La pagina community indirizza ora gli utenti verso la lista di attesa via email.
+- Il server Discord pubblico è nuovamente operativo. Gli inviti vengono gestiti via email (`community@attuario.eu`) per personalizzare l’onboarding in base agli interessi dichiarati.
 - Il canale Telegram resta attivo come canale principale per gli aggiornamenti. Nella pagina community sono riportate anche indicazioni per utilizzare client alternativi (es. `tg`) specificando che il progetto non è più mantenuto.
+- Le call one-to-one vengono fissate su richiesta via mail, con slot di 20 minuti per confrontarsi su iniziative divulgative e onboarding dei volontari.
+
 
 ## Raccomandazioni operative
 - Monitorare periodicamente le consegne Getform dalle dashboard per verificare che gli inoltri generati dall'API siano recapitati (log HTTP 200) e che non ci siano blocchi anti-spam.
