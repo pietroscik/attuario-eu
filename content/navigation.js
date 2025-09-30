@@ -4,6 +4,7 @@ export const NAV_LINKS = [
   { href: "/applicazioni", label: "Applicazioni" },
   { href: "/casi", label: "Case study" },
   { href: "/attuario", label: "Attuari" },
+  { href: "/chi-siamo", label: "Chi siamo" },
   { href: "/risorse", label: "Risorse" },
   { href: "/community", label: "Community" },
   { href: "/wiki", label: "Wiki" },

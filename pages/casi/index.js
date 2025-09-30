@@ -2,17 +2,19 @@ import Link from "next/link";
 
 import Layout from "../../components/Layout";
 import { CASE_STUDIES } from "../../content/pages/casi";
-
+      
 export default function Casi() {
   return (
     <Layout
       title="Case study operativi"
       eyebrow="Esempi guidati"
       intro="Una raccolta di percorsi pratici per applicare la teoria attuariale. Ogni case study include dataset di supporto, note metodologiche e deliverable pronti per essere adattati al proprio contesto."
+
       metaDescription="Elenco di case study attuariali con dataset, workflow e checklist normative su vita, danni, previdenza, risk management, data science e InsurTech."
     >
       <section className="card-grid">
         {CASE_STUDIES.map(({ slug, title, summary, highlights }) => (
+
           <article key={slug} className="card">
             <h2>{title}</h2>
             <p>{summary}</p>

@@ -1,9 +1,12 @@
 import Link from "next/link";
 
 import Layout from "../../components/Layout";
+
 import CaseNavigation from "../../components/casi/CaseNavigation";
 
 const RELATED_CASES = ["data-science", "finanza-risk", "insurtech"];
+
+
 
 const RESOURCES = [
   {

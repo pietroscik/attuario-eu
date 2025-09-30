@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import Layout from "../../components/Layout";
+
 import CaseNavigation from "../../components/casi/CaseNavigation";
 
 const RELATED_CASES = ["assicurazioni-danni", "data-science", "assicurazioni-vita"];
