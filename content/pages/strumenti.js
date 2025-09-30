@@ -30,21 +30,38 @@ export const TOOL_RESOURCES = [
       "Notebook e repository open source per implementare simulazioni Monte Carlo, modelli GLM/GLMM e pipeline di data science attuariale.",
     resources: [
       {
-        label: "Esempi ChainLadder in R",
-        summary: "Vignette ufficiali del pacchetto ChainLadder con script per riserve deterministiche e stocastiche.",
+        label: "Vignette ChainLadder (R)",
+        summary:
+          "Documentazione ufficiale del pacchetto ChainLadder con esempi completi di metodi deterministici e stocastici per il calcolo delle riserve.",
         href: "https://cran.r-project.org/web/packages/ChainLadder/vignettes/ChainLadder.pdf",
         external: true,
       },
       {
-        label: "Notebook Monte Carlo longevity",
-        summary: "Simulazione di scenari di sopravvivenza con modelli Lee-Carter e Cairns-Blake-Dowd.",
-        href: "https://nbviewer.org/github/openactuaries/notebooks/blob/main/longevity-scenarios.ipynb",
+        label: "insurancerating (R package)",
+        summary:
+          "Pacchetto R per il pricing assicurativo con workflow riproducibili, regressioni generalizzate e metriche di performance integrate.",
+        href: "https://github.com/MHaringa/insurancerating",
         external: true,
       },
       {
-        label: "Pipeline pricing usage-based",
-        summary: "Repository con esempio di data cleaning, feature engineering e modello GLM per telematica auto.",
-        href: "https://github.com/actuarialopensource/usage-based-pricing-pipeline",
+        label: "chainladder-python",
+        summary:
+          "Libreria ufficiale CAS per la riservazione in Python con esempi di Mack, Bornhuetter-Ferguson e modelli Bayesian.",
+        href: "https://github.com/casact/chainladder-python",
+        external: true,
+      },
+      {
+        label: "lifelines survival analysis",
+        summary:
+          "Toolkit Python per l’analisi di sopravvivenza con Cox PH, Kaplan-Meier e strumenti per la calibrazione di tassi di decadenza.",
+        href: "https://github.com/CamDavidsonPilon/lifelines",
+        external: true,
+      },
+      {
+        label: "lifelib – modelli vita open source",
+        summary:
+          "Framework modulare per proiettare passività vita, calcolare BEL e CSM IFRS 17 con esempi in notebook Jupyter.",
+        href: "https://github.com/lifelib-dev/lifelib",
         external: true,
       },
     ],
@@ -94,6 +111,34 @@ export const TOOL_RESOURCES = [
         label: "Template rubrica valutazione",
         summary: "Foglio di lavoro per assegnare punteggi a progetti didattici con criteri qualitativi e quantitativi.",
         href: "https://www.credential.net/resources/assessment-rubric-template",
+        external: true,
+      },
+    ],
+  },
+  {
+    title: "Script e notebook automation",
+    description:
+      "Script pronti per generare scenari economici, calcolare indicatori IFRS 17 e analizzare dati demografici con workflow ripetibili.",
+    resources: [
+      {
+        label: "pyesg – Economic Scenario Generator",
+        summary:
+          "Motore Python per simulare curve dei tassi, inflazione e rendimenti azionari con modelli stocastici standard (GBM, CIR, Vasicek).",
+        href: "https://github.com/jason-ash/pyesg",
+        external: true,
+      },
+      {
+        label: "IFRS17 Calculation Engine (Python)",
+        summary:
+          "Traduzione in Python del motore lifelib per calcolare cash flow attesi, CSM e analisi di sensibilità su portafogli assicurativi.",
+        href: "https://github.com/lifelib-dev/IFRS17CalculationEnginePython",
+        external: true,
+      },
+      {
+        label: "Life Expectancy Analysis notebook",
+        summary:
+          "Notebook su dataset OMS con pulizia dati, regressioni e visualizzazioni per individuare i driver della longevità.",
+        href: "https://github.com/aarohip28/Life-Expectancy-Analysis",
         external: true,
       },
     ],
