@@ -7,9 +7,12 @@ function buildRelatedCases(currentSlug, relatedSlugs = []) {
     return CASE_STUDIES.filter(({ slug }) => slug !== currentSlug).slice(0, 3);
   }
 
-  return relatedSlugs
+  const uniqueSlugs = Array.from(new Set(relatedSlugs)).filter((slug) => slug !== currentSlug);
+
+  return uniqueSlugs
     .map((slug) => CASE_STUDIES.find((caseStudy) => caseStudy.slug === slug))
-    .filter(Boolean);
+    .filter(Boolean)
+    .slice(0, 3);
 }
 
 export default function CaseNavigation({ currentSlug, relatedSlugs }) {
@@ -19,8 +22,8 @@ export default function CaseNavigation({ currentSlug, relatedSlugs }) {
     <section className="section info-panel" aria-labelledby="case-nav-heading">
       <h2 id="case-nav-heading">Continua con altri case study</h2>
       <p>
-        Approfondisci percorsi affini oppure torna all’elenco completo per scegliere un nuovo scenario operativo da
-        esplorare.
+        Approfondisci percorsi affini, apri gli strumenti operativi dedicati oppure torna all’elenco completo per
+        scegliere un nuovo scenario da esplorare.
       </p>
       <div className="case-nav__links">
         {relatedCases.map(({ slug, title, summary }) => (
@@ -37,6 +40,9 @@ export default function CaseNavigation({ currentSlug, relatedSlugs }) {
         <Link className="button secondary" href="/applicazioni">
           Rivedi le Applicazioni
         </Link>
+        <Link className="button secondary" href="/strumenti">
+          Apri gli Strumenti
+        </Link>
       </div>
 
       <style jsx>{`
@@ -51,6 +57,12 @@ export default function CaseNavigation({ currentSlug, relatedSlugs }) {
           display: flex;
           flex-wrap: wrap;
           gap: 12px;
+        }
+
+        @media (min-width: 768px) {
+          .case-nav__cta {
+            justify-content: flex-start;
+          }
         }
       `}</style>
     </section>
