@@ -138,6 +138,10 @@ export default function Shop() {
           <Link href="/contatti">Contatti</Link>{" "}
           indicando obiettivi e requisiti funzionali.
         </p>
+        <p>
+          Per assistenza sugli acquisti o per ricevere fattura puoi anche contattarci via email a{" "}
+          <a href="mailto:shop@attuario.eu">shop@attuario.eu</a>.
+        </p>
         <p className="small-print">
           Tutti i materiali sono pensati per fini educativi e divulgativi. Non costituiscono consulenza professionale né sostituiscono le verifiche richieste da regolatori o auditor.
         </p>
