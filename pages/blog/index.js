@@ -1,19 +1,57 @@
-import Layout from "../../components/Layout";
 import Link from "next/link";
 
-export default function BlogIndex() {
+import Layout from "../../components/Layout";
+
+import { BLOG_POSTS } from "../../content/pages/blog";
+
+export default function Blog() {
   return (
     <Layout
-      title="Archivio blog"
-      eyebrow="Ricerca articoli"
-      intro="Area dedicata alla raccolta degli articoli pubblicati. Integra un CMS o aggiungi file Markdown per popolare automaticamente i contenuti."
+      title="Blog & approfondimenti"
+      eyebrow="Editoriale"
+      intro="Articoli divulgativi, casi studio e rubriche mensili per avvicinare la scienza attuariale a un pubblico più ampio. Nessuna consulenza, solo condivisione di conoscenza."
     >
-      <p>
-        Vai alla panoramica principale del blog per leggere gli ultimi pezzi:
-      </p>
-      <Link href="/blog" className="button secondary">
-        Apri il blog
-      </Link>
+      <section className="card-grid">
+        {BLOG_POSTS.map(({ title, summary }) => (
+          <article key={title} className="card">
+            <h2>{title}</h2>
+            <p>{summary}</p>
+          </article>
+        ))}
+      </section>
+
+      <section className="section info-panel">
+        <h2>Newsletter “Spiegato semplice”</h2>
+        <p>
+          Una email al mese con il riassunto degli articoli pubblicati, link agli eventi e anticipazioni sui nuovi
+          strumenti.
+        </p>
+        <Link className="button" href="/newsletter">
+          Iscriviti
+        </Link>
+      </section>
+
+      <section className="section info-panel">
+        <h2>Mini-corso gratuito: IFRS 17 Essentials</h2>
+        <p>
+          Tre lezioni on-demand per ripercorrere il framework IASB, esempi numerici e materiali di approfondimento
+          consigliati da EFRAG e actuarial task force internazionali.
+        </p>
+        <Link className="button" href="/risorse/ifrs17-essentials">
+          Accedi al mini-corso
+        </Link>
+      </section>
+
+      <section className="section info-panel">
+        <h2>Accedi all’archivio storico</h2>
+        <p>
+          Consulta la struttura completa del blog, integra un CMS o aggiungi file Markdown per automatizzare la
+          pubblicazione degli articoli nel tempo.
+        </p>
+        <Link className="button secondary" href="/blog/archivio">
+          Vai all’archivio
+        </Link>
+      </section>
     </Layout>
   );
 }

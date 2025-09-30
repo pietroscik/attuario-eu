@@ -14,17 +14,19 @@ Ogni file sotto `content/pages/` espone costanti tematiche richiamate dalla pagi
 - `attuario.js` → `ATTUARIO_ROLES`, `ATTUARIO_PATHWAYS`
 - `blog.js` → `BLOG_POSTS`
 - `home.js` → `HOME_HIGHLIGHTS`, `HOME_PERSONAS`, `HOME_UPDATES`
+- `sections-audit.js` → `SECTION_AUDIT` (sintesi dello stato delle principali sezioni del sito)
 - `notizie.js` → `NEWS_UPDATES`
 - `risorse.js` → `RESOURCE_SECTIONS`
 - `servizi.js` → `SERVICE_REDIRECTS`
 - `strumenti.js` → `TOOL_RESOURCES`
-- `teoria.js` → `THEORY_TOPICS`, `THEORY_RESEARCH_HIGHLIGHTS`
+- `teoria.js` → `THEORY_TOPICS`, `THEORY_RESEARCH_HIGHLIGHTS`. `THEORY_TOPICS` raccoglie i moduli per livello (`difficulty: "base" | "intermedio" | "avanzato"`) e ogni item riporta il campo per alimentare i filtri di difficoltà della pagina.
 
 La suddivisione rende più rapido:
 
 1. Aggiornare copy e link senza scrollare JSX lungo.
 2. Riutilizzare gli stessi blocchi in API o future pagine dinamiche.
 3. Aggiungere test (es. snapshot) sui contenuti editoriali.
+4. Alimentare il componente `SectionAuditBoard` con dati aggiornati per mantenere trasparenza sulla copertura dei contenuti.
 
 Per aggiungere una nuova sezione:
 
