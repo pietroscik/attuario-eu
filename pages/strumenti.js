@@ -2,7 +2,6 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 
 import Layout from "../components/Layout";
-
 import { TOOL_RESOURCES } from "../content/pages/strumenti";
 
 const LANGUAGE_OPTIONS = ["R", "Python"];
@@ -16,16 +15,13 @@ export default function Strumenti() {
         if (selectedLanguages.length === 0) {
           return true;
         }
-
         if (!resource.languages || resource.languages.length === 0) {
           return false;
         }
-
         return resource.languages.some((language) =>
           selectedLanguages.includes(language)
         );
       });
-
       return { ...section, resources: matchingResources };
     }).filter((section) => section.resources.length > 0);
   }, [selectedLanguages]);
@@ -37,7 +33,6 @@ export default function Strumenti() {
       if (current.includes(language)) {
         return current.filter((item) => item !== language);
       }
-
       return [...current, language];
     });
   };
@@ -80,44 +75,45 @@ export default function Strumenti() {
       <section className="card-grid">
         {(selectedLanguages.length === 0 ? TOOL_RESOURCES : filteredSections).map(
           ({ title, description, resources }) => (
-          <article key={title} className="card toolkit-card">
-            <h2>{title}</h2>
-            <p>{description}</p>
-            <ul className="list">
-              {resources.map(({ label, summary, href, external, languages }) => (
-                <li key={label}>
-                  <details>
-                    <summary>
-                      <span className="summary-content">
-                        <span className="resource-label">{label}</span>
-                        {Array.isArray(languages) && languages.length > 0 && (
-                          <span className="language-badges">
-                            {languages.map((language) => (
-                              <span
-                                key={`${label}-${language}`}
-                                className="language-badge"
-                              >
-                                {language}
-                              </span>
-                            ))}
-                          </span>
-                        )}
-                      </span>
-                    </summary>
-                    <p>{summary}</p>
-                    {external ? (
-                      <a href={href} target="_blank" rel="noopener noreferrer">
-                        Apri la risorsa
-                      </a>
-                    ) : (
-                      <Link href={href}>Apri la risorsa</Link>
-                    )}
-                  </details>
-                </li>
-              ))}
-            </ul>
-          </article>
-        ))}
+            <article key={title} className="card toolkit-card">
+              <h2>{title}</h2>
+              <p>{description}</p>
+              <ul className="list">
+                {resources.map(({ label, summary, href, external, languages }) => (
+                  <li key={label}>
+                    <details>
+                      <summary>
+                        <span className="summary-content">
+                          <span className="resource-label">{label}</span>
+                          {Array.isArray(languages) && languages.length > 0 && (
+                            <span className="language-badges">
+                              {languages.map((language) => (
+                                <span
+                                  key={`${label}-${language}`}
+                                  className="language-badge"
+                                >
+                                  {language}
+                                </span>
+                              ))}
+                            </span>
+                          )}
+                        </span>
+                      </summary>
+                      <p>{summary}</p>
+                      {external ? (
+                        <a href={href} target="_blank" rel="noopener noreferrer">
+                          Apri la risorsa
+                        </a>
+                      ) : (
+                        <Link href={href}>Apri la risorsa</Link>
+                      )}
+                    </details>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          )
+        )}
         {!hasResults && (
           <p className="empty-state">
             Nessuna risorsa corrisponde ai filtri selezionati. Prova a modificare le opzioni.
@@ -203,11 +199,6 @@ export default function Strumenti() {
           box-shadow: 0 0 0 4px rgba(29, 78, 216, 0.25);
         }
 
-        .filter-pill input:focus-visible + span:first-of-type,
-        .filter-pill input:focus-visible ~ .sr-only {
-          outline: none;
-        }
-
         .sr-only {
           border: 0;
           clip: rect(0 0 0 0);
@@ -217,14 +208,6 @@ export default function Strumenti() {
           padding: 0;
           position: absolute;
           width: 1px;
-        }
-
-        .empty-state {
-          color: #475569;
-          font-style: italic;
-          padding: 1.5rem 0;
-          text-align: center;
-          width: 100%;
         }
 
         .toolkit-card details {
@@ -285,13 +268,12 @@ export default function Strumenti() {
           white-space: nowrap;
         }
 
-        .toolkit-card p {
-          margin: 0.5rem 0 0.75rem;
-        }
-
-        .toolkit-card a {
-          color: var(--link-color, #1d4ed8);
-          font-weight: 600;
+        .empty-state {
+          color: #475569;
+          font-style: italic;
+          padding: 1.5rem 0;
+          text-align: center;
+          width: 100%;
         }
 
         @media (max-width: 640px) {

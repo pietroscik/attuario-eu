@@ -9,21 +9,21 @@ export const TOOL_RESOURCES = [
         summary:
           "Tabella con probabilità, importi e fattori di sconto per ricostruire il valore attuale atteso di rendite temporanee o vitalizie.",
         href: "/toolkit/valore-attuale.csv",
-        languages: [],
+        languages: ["R", "Python"],
       },
       {
         label: "Dashboard sinistri pivot",
         summary:
           "Dataset di esempio per costruire tabelle pivot e grafici dinamici su premi, sinistri e combined ratio per ramo.",
         href: "/toolkit/dashboard-sinistri.csv",
-        languages: [],
+        languages: ["R", "Python"],
       },
       {
         label: "Scheduler flussi ALM",
         summary:
           "Foglio con cash flow attivi/passivi e calcolo della differenza attualizzata utile per analisi di immunizzazione.",
         href: "/toolkit/alm-scheduler.csv",
-        languages: [],
+        languages: ["R", "Python"],
       },
     ],
   },
@@ -51,23 +51,23 @@ export const TOOL_RESOURCES = [
       {
         label: "actuar (R package)",
         summary:
-          "Codice sorgente e documentazione per tariffe collettive, distribuzioni attuariali e calcolo di premi di rischio e credibilità.",
-        href: "https://github.com/boennecd/actuar",
+          "Funzioni per tariffe collettive, distribuzioni attuariali, rischio/rovina, simulazioni e credibilità.",
+        href: "https://cran.r-project.org/package=actuar",
         external: true,
         languages: ["R"],
       },
       {
         label: "lifecontingencies (R package)",
         summary:
-          "Funzioni R per tavole di mortalità, valorizzazione di assicurazioni vita, rendite e misure di sensitività demografica.",
-        href: "https://github.com/spedygiorgio/lifecontingencies",
+          "Funzioni per tavole di mortalità, valorizzazione di assicurazioni vita, rendite e sensibilità demografica.",
+        href: "https://cran.r-project.org/package=lifecontingencies",
         external: true,
         languages: ["R"],
       },
       {
         label: "StMoMo (R package)",
         summary:
-          "Framework per modellare la mortalità con approcci Lee-Carter, Cairns-Blake-Dowd e varianti coortali per proiezioni LOB.",
+          "Framework per modellare la mortalità (Lee–Carter, Cairns–Blake–Dowd, APC, varianti coortali) e proiezioni.",
         href: "https://github.com/amvillegas/StMoMo",
         external: true,
         languages: ["R"],
@@ -77,12 +77,12 @@ export const TOOL_RESOURCES = [
   {
     title: "Toolkit Python",
     description:
-      "Librerie e manuali per modellazione attuariale, riservazione e analisi di sopravvivenza in Python.",
+      "Librerie e workflow Python per pricing, riservazione, IFRS 17 e analisi di sopravvivenza.",
     resources: [
       {
         label: "chainladder-python",
         summary:
-          "Manuale CAS per portare i metodi Chain Ladder in Python, completo di API reference e notebook su Mack, Bornhuetter-Ferguson e Bayesian reserving.",
+          "Porting dei metodi Chain Ladder in Python, con API reference e notebook su Mack, Bornhuetter–Ferguson e reserving Bayesiano.",
         href: "https://chainladder-python.readthedocs.io/",
         external: true,
         languages: ["Python"],
@@ -90,7 +90,7 @@ export const TOOL_RESOURCES = [
       {
         label: "lifelines survival analysis",
         summary:
-          "Toolkit Python per l’analisi di sopravvivenza con Cox PH, Kaplan-Meier e strumenti per la calibrazione di tassi di decadenza.",
+          "Toolkit per l’analisi di sopravvivenza (Kaplan–Meier, Cox PH, modelli parametrici) con esempi e API.",
         href: "https://github.com/CamDavidsonPilon/lifelines",
         external: true,
         languages: ["Python"],
@@ -98,7 +98,7 @@ export const TOOL_RESOURCES = [
       {
         label: "lifelib – modelli vita open source",
         summary:
-          "Framework modulare per proiettare passività vita, calcolare BEL e CSM IFRS 17 con esempi in notebook Jupyter.",
+          "Framework modulare per proiettare passività vita, calcolare BEL e CSM IFRS 17 con notebook Jupyter.",
         href: "https://github.com/lifelib-dev/lifelib",
         external: true,
         languages: ["Python"],
@@ -106,7 +106,7 @@ export const TOOL_RESOURCES = [
       {
         label: "GEMAct (Python)",
         summary:
-          "Libreria per modelli collettivi, copule e riserve stocastiche con tutorial su fitting, simulazione e valutazione della variabilità.",
+          "Libreria per modelli collettivi, copule e riserve stocastiche con tutorial su fitting, simulazione e variabilità.",
         href: "https://gemact.readthedocs.io/",
         external: true,
         languages: ["Python"],
@@ -114,10 +114,41 @@ export const TOOL_RESOURCES = [
       {
         label: "PyMC & ArviZ actuarial workflows",
         summary:
-          "Guida PyMC con esempi di regressioni Poisson, MCMC e diagnostica ArviZ per modellare frequenza e severità in chiave Bayesiana.",
+          "Esempi Bayesiani per frequenza/severità e diagnostica con ArviZ (GLM Poisson, MCMC, best-practice di modellazione).",
         href: "https://www.pymc.io/projects/examples/en/latest/case_studies/insurance_claims.html",
         external: true,
         languages: ["Python"],
+      },
+    ],
+  },
+  {
+    title: "Dataset e repository",
+    description:
+      "Fonti ufficiali e comunitarie per dati su mortalità, sinistri, clima e mercati finanziari, con suggerimenti per la documentazione.",
+    resources: [
+      {
+        label: "Human Mortality Database",
+        summary:
+          "Serie storiche demografiche internazionali per analisi di longevità e costruzione tavole generazionali.",
+        href: "https://www.mortality.org",
+        external: true,
+        languages: ["R", "Python"],
+      },
+      {
+        label: "CAS Loss Reserving Database",
+        summary:
+          "Dataset open per riserve danni (Schedule P), utili a esercitazioni e benchmarking.",
+        href: "https://www.casact.org/publications-research/research/research-resources/loss-reserving-data-pulled-naic-schedule-p",
+        external: true,
+        languages: ["R", "Python"],
+      },
+      {
+        label: "Eurostat/EIOPA – Insurance statistics",
+        summary:
+          "Indicatori su premi, sinistri, bilanci e investimenti del settore assicurativo europeo.",
+        href: "https://www.eiopa.europa.eu/tools-and-data/insurance-statistics_en",
+        external: true,
+        languages: ["R", "Python"],
       },
     ],
   },
@@ -128,20 +159,23 @@ export const TOOL_RESOURCES = [
     resources: [
       {
         label: "Checklist workshop attuariale",
-        summary: "Sequenza di attività e deliverable per condurre un laboratorio di 90 minuti con follow-up strutturato.",
+        summary:
+          "Sequenza di attività e deliverable per condurre un laboratorio di 90 minuti con follow-up strutturato.",
         href: "/toolkit/workshop-checklist.md",
         languages: [],
       },
       {
         label: "Guida quiz Moodle",
-        summary: "Documentazione su come creare question bank, randomizzare item e configurare feedback adattivi.",
+        summary:
+          "Documentazione ufficiale su creazione question bank, randomizzazione item e feedback adattivi.",
         href: "https://docs.moodle.org/402/it/Quiz",
         external: true,
         languages: [],
       },
       {
         label: "Template rubrica valutazione",
-        summary: "Foglio di lavoro per assegnare punteggi a progetti didattici con criteri qualitativi e quantitativi.",
+        summary:
+          "Template e best practice per rubriche di valutazione pronte all’uso.",
         href: "https://www.credential.net/resources/assessment-rubric-template",
         external: true,
         languages: [],
@@ -156,7 +190,7 @@ export const TOOL_RESOURCES = [
       {
         label: "actxps experience studies",
         summary:
-          "Script R per costruire pipeline di experience study vita con estrazione dati, calcolo di tassi osservati/attesi e benchmark interattivi.",
+          "Pipeline R per experience study vita con tassi osservati/attesi e benchmark interattivi.",
         href: "https://github.com/ActuarialVo/actxps",
         external: true,
         languages: ["R"],
@@ -164,7 +198,7 @@ export const TOOL_RESOURCES = [
       {
         label: "ESGtoolkit (R)",
         summary:
-          "Notebook e funzioni per generare scenari stocastici multi-fattore, calibrati a curve risk-free e volatilità storiche.",
+          "Funzioni e notebook per generare scenari stocastici multi-fattore calibrati a curve risk-free e volatilità storiche.",
         href: "https://github.com/fcasados/ESGtoolkit",
         external: true,
         languages: ["R"],
@@ -172,7 +206,7 @@ export const TOOL_RESOURCES = [
       {
         label: "StMoMo demo scripts",
         summary:
-          "Esempi pratici per stimare modelli di mortalità, estrarre indicatori di longevità e produrre grafici di sensitività.",
+          "Esempi pratici per stimare modelli di mortalità e produrre grafici di sensitività.",
         href: "https://github.com/amvillegas/StMoMo/tree/master/vignettes",
         external: true,
         languages: ["R"],
@@ -180,7 +214,7 @@ export const TOOL_RESOURCES = [
       {
         label: "CAS Consumer Vehicle Toolkit",
         summary:
-          "Repository CAS con workflow di pricing auto personale: esplorazione dati, fitting GLM e tecniche machine learning per tariffe competitive.",
+          "Workflow R per pricing auto personale: EDA, GLM e tecniche ML per confronti tariffari.",
         href: "https://github.com/casact/consumer_vehicle_toolkit",
         external: true,
         languages: ["R"],
@@ -188,7 +222,7 @@ export const TOOL_RESOURCES = [
       {
         label: "experienceAnalytics (longevity studies)",
         summary:
-          "Collezione di script R per analisi di esperienze vita: preparazione dati, credibilità Bayesiana e visualizzazioni interattive con flexdashboard.",
+          "Script R per analisi di esperienza vita: credibilità Bayesiana e dashboard interattivi.",
         href: "https://github.com/ActuarialVol/experienceAnalytics",
         external: true,
         languages: ["R"],
@@ -203,7 +237,7 @@ export const TOOL_RESOURCES = [
       {
         label: "pyesg – Economic Scenario Generator",
         summary:
-          "Motore Python per simulare curve dei tassi, inflazione e rendimenti azionari con modelli stocastici standard (GBM, CIR, Vasicek).",
+          "Motore per simulare curve dei tassi, inflazione e rendimenti con modelli GBM/CIR/Vasicek.",
         href: "https://github.com/jason-ash/pyesg",
         external: true,
         languages: ["Python"],
@@ -211,62 +245,26 @@ export const TOOL_RESOURCES = [
       {
         label: "IFRS17 Calculation Engine (Python)",
         summary:
-          "Traduzione in Python del motore lifelib per calcolare cash flow attesi, CSM e analisi di sensibilità su portafogli assicurativi.",
-        href: "https://github.com/lifelib-dev/IFRS17CalculationEnginePython",
+          "Motori e template open per calcolo cash flow, CSM e reporting IFRS 17 con notebook.",
+        href: "https://github.com/Systemorph/IFRS17CalculationEngine",
         external: true,
         languages: ["Python"],
       },
       {
         label: "Life Expectancy Analysis notebook",
         summary:
-          "Notebook su dataset OMS con pulizia dati, regressioni e visualizzazioni per individuare i driver della longevità.",
+          "Notebook su dataset OMS con pulizia dati, regressioni e visualizzazioni per driver di longevità.",
         href: "https://github.com/aarohip28/Life-Expectancy-Analysis",
         external: true,
         languages: ["Python"],
       },
       {
-        label: "Systemorph IFRS17 Calculation Engine",
-        summary:
-          "Motore open source per valutazione IFRS 17 con moduli per calcolo cash flow, CSM e reporting, accompagnato da documentazione tecnica completa.",
-        href: "https://github.com/Systemorph/IFRS17CalculationEngine",
-        external: true,
-        languages: [],
-      },
-      {
         label: "IFRS-17 PAA Implementation",
         summary:
-          "Notebook e script per implementare passo-passo il Premium Allocation Approach, con esempi numerici commentati in lingua inglese e cinese.",
+          "Notebook e script per implementare passo-passo il Premium Allocation Approach (EN/ZH).",
         href: "https://github.com/YenLinWu/IFRS-17-PAA-Implementation",
         external: true,
         languages: ["Python"],
-      },
-    ],
-  },
-  {
-    title: "Dataset e repository",
-    description:
-      "Fonti ufficiali e comunitarie per reperire dati su mortalità, sinistri, clima e mercati finanziari, con suggerimenti per la documentazione.",
-    resources: [
-      {
-        label: "Human Mortality Database",
-        summary: "Serie storiche demografiche internazionali per analisi di longevità e costruzione tavole generazionali.",
-        href: "https://www.mortality.org",
-        external: true,
-        languages: [],
-      },
-      {
-        label: "CAS Loss Reserving Database",
-        summary: "Dataset open source per esercitazioni su riserve danni, disponibilie in formato Excel e CSV.",
-        href: "https://www.casact.org/data-management/database-queries/loss-reserving-database",
-        external: true,
-        languages: [],
-      },
-      {
-        label: "Eurostat – Insurance statistics",
-        summary: "Indicatori su premi, sinistri e investimenti delle compagnie assicurative in Europa.",
-        href: "https://ec.europa.eu/eurostat/web/insurance",
-        external: true,
-        languages: [],
       },
     ],
   },
@@ -278,7 +276,7 @@ export const TOOL_RESOURCES = [
       {
         label: "Loss Data Analytics (open textbook)",
         summary:
-          "Manuale gratuito dell’International Actuarial Association con esempi in R/Python su credibilità, frequenza-severità e gestione del rischio.",
+          "Manuale gratuito dell’IAA con esempi in R/Python su credibilità, frequenza-severità e gestione del rischio.",
         href: "https://openacttexts.github.io/Loss-Data-Analytics/",
         external: true,
         languages: ["R", "Python"],
@@ -286,15 +284,15 @@ export const TOOL_RESOURCES = [
       {
         label: "Statistical Foundations of Actuarial Learning",
         summary:
-          "Testo accademico con appendici computazionali su modelli predittivi, machine learning e validazione per assicurazioni danni.",
+          "Testo con appendici computazionali su modelli predittivi, machine learning e validazione per assicurazioni danni.",
         href: "https://cfasociety.org/texas/Documents/Statistical%20Foundations%20of%20Actuarial%20Learning.pdf",
         external: true,
-        languages: [],
+        languages: ["R", "Python"],
       },
       {
         label: "GitHub – progetti attuariali open",
         summary:
-          "Lista curata di repository attuariali (R, Python, Julia) per pricing, riservazione e longevity modelling con licenza open source.",
+          "Lista curata di repository (R, Python, Julia) per pricing, riservazione e longevity modelling.",
         href: "https://github.com/topics/actuarial-science",
         external: true,
         languages: ["R", "Python"],
