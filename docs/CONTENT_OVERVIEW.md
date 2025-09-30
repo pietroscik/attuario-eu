@@ -12,13 +12,13 @@ Ogni file sotto `content/pages/` espone costanti tematiche richiamate dalla pagi
 
 - `applicazioni.js` → `APPLICATION_AREAS`
 - `attuario.js` → `ATTUARIO_ROLES`, `ATTUARIO_PATHWAYS`
-- `blog.js` → `BLOG_POSTS`
+- `blog.js` → `BLOG_POSTS` (titolo, sommario e metadati editoriali: `author`, `role`, `reviewedBy`, `updatedAt`)
 - `home.js` → `HOME_HIGHLIGHTS`, `HOME_PERSONAS`, `HOME_UPDATES`
 - `notizie.js` → `NEWS_UPDATES`
 - `risorse.js` → `RESOURCE_SECTIONS`
 - `servizi.js` → `SERVICE_REDIRECTS`
-- `strumenti.js` → `TOOL_RESOURCES`
-- `teoria.js` → `THEORY_TOPICS`, `THEORY_RESEARCH_HIGHLIGHTS`
+- `strumenti.js` → `TOOL_RESOURCES` (sezioni con risorse e campo `languages` per filtrare tra stack R e Python)
+- `teoria.js` → `THEORY_TOPICS` (raggruppati per livello con `difficulty` per ciascun item), `THEORY_RESEARCH_HIGHLIGHTS`
 
 La suddivisione rende più rapido:
 
