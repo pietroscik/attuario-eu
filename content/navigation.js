@@ -3,6 +3,7 @@ export const NAV_LINKS = [
   { href: "/teoria", label: "Teoria" },
   { href: "/applicazioni", label: "Applicazioni" },
   { href: "/attuario", label: "Attuari" },
+  { href: "/chi-siamo", label: "Chi siamo" },
   { href: "/risorse", label: "Risorse" },
   { href: "/community", label: "Community" },
   { href: "/wiki", label: "Wiki" },

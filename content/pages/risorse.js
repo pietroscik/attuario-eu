@@ -87,7 +87,7 @@ export const RESOURCE_SECTIONS = [
     items: [
       {
         name: "Actuaries Institute Podcast",
-        url: "https://www.actuaries.asn.au/podcast",
+        url: "https://www.actuaries.asn.au/search?contentTypes=Podcast/Vodcast/Audio",
         note: "Interviste su trend emergenti, policy e storie professionali dal panorama internazionale.",
       },
       {
