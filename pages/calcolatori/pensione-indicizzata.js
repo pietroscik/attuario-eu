@@ -1,5 +1,7 @@
 import Layout from "../../components/Layout";
 import PensioneIndicizzata from "../../components/calculators/PensioneIndicizzata";
+import KnowledgePanel from "../../components/calculators/KnowledgePanel";
+import { CALCULATOR_METADATA } from "../../content/calculators/metadata";
 
 export default function PensioneIndicizzataPage() {
   return (
@@ -11,6 +13,7 @@ export default function PensioneIndicizzataPage() {
       width="narrow"
     >
       <PensioneIndicizzata />
+      <KnowledgePanel metadata={CALCULATOR_METADATA["pensione-indicizzata"]} />
       <section className="section info-panel">
         <h2>Metodo di calcolo</h2>
         <p>

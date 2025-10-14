@@ -1,5 +1,7 @@
 import Layout from "../../components/Layout";
 import DurationConvexity from "../../components/calculators/DurationConvexity";
+import KnowledgePanel from "../../components/calculators/KnowledgePanel";
+import { CALCULATOR_METADATA } from "../../content/calculators/metadata";
 
 export default function DurationConvexityPage() {
   return (
@@ -11,6 +13,7 @@ export default function DurationConvexityPage() {
       width="narrow"
     >
       <DurationConvexity />
+      <KnowledgePanel metadata={CALCULATOR_METADATA["duration-convexity"]} />
       <section className="section info-panel">
         <h2>Formula e ipotesi utilizzate</h2>
         <p>

@@ -1,5 +1,7 @@
 import Layout from "../../components/Layout";
 import PremioUnico from "../../components/calculators/PremioUnico";
+import KnowledgePanel from "../../components/calculators/KnowledgePanel";
+import { CALCULATOR_METADATA } from "../../content/calculators/metadata";
 
 export default function PremioUnicoPage() {
   return (
@@ -11,6 +13,7 @@ export default function PremioUnicoPage() {
       width="narrow"
     >
       <PremioUnico />
+      <KnowledgePanel metadata={CALCULATOR_METADATA["premio-unico"]} />
       <section className="section info-panel">
         <h2>Passaggi del calcolo</h2>
         <ol className="list">

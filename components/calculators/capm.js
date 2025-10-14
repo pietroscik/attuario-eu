@@ -1,30 +1,108 @@
 // pages/calcolatori/capm.js
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
-export default function CAPM(){
-  const [rf,setRf]=useState(0.02);      // risk-free annuo
-  const [rm,setRm]=useState(0.08);      // market expected return
-  const [beta,setBeta]=useState(1.0);   // asset beta
-  const [rp,setRp]=useState(0.10);      // optional: portfolio expected return for Sharpe
+const clampNumber = (value, fallback = 0) => {
+  if (Number.isNaN(value) || !Number.isFinite(value)) {
+    return fallback;
+  }
+  return value;
+};
 
-  const er = rf + beta*(rm - rf);       // CAPM
-  const sharpe = (rp - rf) / Math.max(1e-9, Math.sqrt(1)); // assume stdev=1 if not provided
+export default function CAPM() {
+  const [riskFree, setRiskFree] = useState(0.02);
+  const [marketReturn, setMarketReturn] = useState(0.08);
+  const [beta, setBeta] = useState(1);
+  const [portfolioVolatility, setPortfolioVolatility] = useState(0.12);
+  const [portfolioReturn, setPortfolioReturn] = useState(0.1);
+
+  const results = useMemo(() => {
+    const rf = clampNumber(riskFree, 0);
+    const rm = clampNumber(marketReturn, 0.08);
+    const betaValue = clampNumber(beta, 1);
+    const sigma = Math.max(0.0001, clampNumber(portfolioVolatility, 0.12));
+    const rp = clampNumber(portfolioReturn, rm);
+
+    const expectedReturn = rf + betaValue * (rm - rf);
+    const sharpe = (rp - rf) / sigma;
+
+    return { expectedReturn, sharpe, sigma };
+  }, [riskFree, marketReturn, beta, portfolioVolatility, portfolioReturn]);
 
   return (
-    <main style={{maxWidth:720, margin:"2rem auto", padding:"1rem"}}>
-      <h1>CAPM & Indice di Sharpe</h1>
-      <p style={{opacity:0.8}}>Rendimento atteso via CAPM e indice di Sharpe (semplificato).</p>
-      <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(180px,1fr))",gap:12}}>
-        <label>r<sub>f</sub><input type="number" step="0.001" value={rf} onChange={e=>setRf(+e.target.value)} /></label>
-        <label>r<sub>m</sub><input type="number" step="0.001" value={rm} onChange={e=>setRm(+e.target.value)} /></label>
-        <label>β<input type="number" step="0.01" value={beta} onChange={e=>setBeta(+e.target.value)} /></label>
-        <label>r<sub>p</sub> (per Sharpe)<input type="number" step="0.001" value={rp} onChange={e=>setRp(+e.target.value)} /></label>
+    <div className="calculator">
+      <h3>CAPM & indice di Sharpe</h3>
+      <p className="calculator-note">
+        Stima il rendimento atteso di un titolo assicurativo tramite CAPM e calcola uno Sharpe ratio coerente con la volatilità
+        ipotizzata del portafoglio. Gli input sono annualizzati.
+      </p>
+      <div className="calculator-grid">
+        <label>
+          Tasso risk-free r<sub>f</sub>
+          <input
+            type="number"
+            step="0.0005"
+            value={riskFree}
+            onChange={(event) => setRiskFree(Number(event.target.value))}
+          />
+        </label>
+        <label>
+          Rendimento di mercato r<sub>m</sub>
+          <input
+            type="number"
+            step="0.0005"
+            value={marketReturn}
+            onChange={(event) => setMarketReturn(Number(event.target.value))}
+          />
+        </label>
+        <label>
+          Beta del titolo
+          <input
+            type="number"
+            step="0.01"
+            value={beta}
+            onChange={(event) => setBeta(Number(event.target.value))}
+          />
+        </label>
+        <label>
+          Volatilità portafoglio σ<sub>p</sub>
+          <input
+            type="number"
+            step="0.005"
+            value={portfolioVolatility}
+            min="0"
+            onChange={(event) => setPortfolioVolatility(Number(event.target.value))}
+          />
+        </label>
+        <label>
+          Rendimento portafoglio r<sub>p</sub>
+          <input
+            type="number"
+            step="0.0005"
+            value={portfolioReturn}
+            onChange={(event) => setPortfolioReturn(Number(event.target.value))}
+          />
+        </label>
       </div>
-      <div style={{marginTop:16}}>
-        <div><b>E[r<sub>i</sub>]:</b> {er.toFixed(4)}</div>
-        <div><b>Sharpe (sempl.):</b> {(rp - rf).toFixed(4)}</div>
-        <p style={{opacity:0.7, fontSize:14, marginTop:8}}>Nota: per uno Sharpe corretto servono deviazione standard e/o tracking error. Qui è una stima grezza (solo premio per il rischio).</p>
+      <div className="calculator-result" style={{ marginTop: "1rem" }}>
+        <p>
+          Rendimento atteso CAPM ≈ <strong>{(results.expectedReturn * 100).toFixed(2)}%</strong>
+        </p>
+        <p>
+          Sharpe ratio (annuo) ≈ <strong>{results.sharpe.toFixed(3)}</strong>
+        </p>
+        <p className="calculator-note">
+          Lo Sharpe utilizza la volatilità impostata come denominatore. Per ORSA e IFRS 17 documenta come è stata stimata la
+          deviazione standard del portafoglio.
+        </p>
       </div>
-    </main>
+
+      <style jsx>{`
+        .calculator-grid {
+          display: grid;
+          gap: 0.75rem;
+          grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        }
+      `}</style>
+    </div>
   );
 }
