@@ -1,88 +1,175 @@
 // pages/calcolatori/black-scholes.js
 import { useState, useMemo } from "react";
 
-// approssimazione numerica della funzione di ripartizione normale standard
-function cdf(x){
-  var sign = x < 0 ? -1 : 1;
-  x = Math.abs(x)/Math.sqrt(2);
-  const t = 1/(1+0.3275911*x);
-  const a1=0.254829592, a2=-0.284496736, a3=1.421413741, a4=-1.453152027, a5=1.061405429;
-  const erf = 1 - (((((a5*t+a4)*t)+a3)*t+a2)*t+a1)*t*Math.exp(-x*x);
-  return 0.5*(1+sign*erf);
-}
+const normalCdf = (value) => {
+  const sign = value < 0 ? -1 : 1;
+  const x = Math.abs(value) / Math.sqrt(2);
+  const t = 1 / (1 + 0.3275911 * x);
+  const a1 = 0.254829592;
+  const a2 = -0.284496736;
+  const a3 = 1.421413741;
+  const a4 = -1.453152027;
+  const a5 = 1.061405429;
+  const erf =
+    1 - (((((a5 * t + a4) * t + a3) * t + a2) * t + a1) * t * Math.exp(-x * x));
+  return 0.5 * (1 + sign * erf);
+};
 
-function pdf(x){ return Math.exp(-0.5*x*x)/Math.sqrt(2*Math.PI); }
+const normalPdf = (value) => Math.exp(-0.5 * value * value) / Math.sqrt(2 * Math.PI);
 
-export default function BlackScholes(){
-  const [S,setS]=useState(100);
-  const [K,setK]=useState(100);
-  const [r,setR]=useState(0.02);
-  const [sigma,setSigma]=useState(0.2);
-  const [T,setT]=useState(1);
+export default function BlackScholes() {
+  const [spot, setSpot] = useState(100);
+  const [strike, setStrike] = useState(100);
+  const [rate, setRate] = useState(0.02);
+  const [volatility, setVolatility] = useState(0.2);
+  const [maturity, setMaturity] = useState(1);
 
-  const out = useMemo(()=>{
-    if (S<=0 || K<=0 || sigma<=0 || T<=0) return null;
-    const sqrtT = Math.sqrt(T);
-    const d1 = (Math.log(S/K)+(r+0.5*sigma*sigma)*T)/(sigma*sqrtT);
-    const d2 = d1 - sigma*sqrtT;
-    const Nd1 = cdf(d1), Nd2 = cdf(d2);
-    const Nmd1 = cdf(-d1), Nmd2 = cdf(-d2);
-    const discK = K*Math.exp(-r*T);
+  const output = useMemo(() => {
+    if (spot <= 0 || strike <= 0 || volatility <= 0 || maturity <= 0) {
+      return null;
+    }
 
-    const call = S*Nd1 - discK*Nd2;
-    const put  = discK*Nmd2 - S*Nmd1;
+    const sqrtT = Math.sqrt(maturity);
+    const d1 =
+      (Math.log(spot / strike) + (rate + 0.5 * volatility * volatility) * maturity) /
+      (volatility * sqrtT);
+    const d2 = d1 - volatility * sqrtT;
+    const Nd1 = normalCdf(d1);
+    const Nd2 = normalCdf(d2);
+    const Nmd1 = normalCdf(-d1);
+    const Nmd2 = normalCdf(-d2);
+    const discountedStrike = strike * Math.exp(-rate * maturity);
 
-    // Greeks (per unit of underlying, per 1.0 of sigma; Theta per day)
-    const n_d1 = pdf(d1);
-    const callDelta = Nd1, putDelta = Nd1 - 1;
-    const gamma = n_d1/(S*sigma*sqrtT);
-    const vega  = S*n_d1*sqrtT;            // per unit of vol (e.g., 0.01 = 1% ⇒ vega*0.01)
-    const callTheta = (-S*n_d1*sigma/(2*sqrtT) - r*discK*Nd2)/365.0;
-    const putTheta  = (-S*n_d1*sigma/(2*sqrtT) + r*discK*Nmd2)/365.0;
-    const callRho =  discK*T*Nd2;
-    const putRho  = -discK*T*Nmd2;
+    const call = spot * Nd1 - discountedStrike * Nd2;
+    const put = discountedStrike * Nmd2 - spot * Nmd1;
 
-    return { d1, d2, call, put, callDelta, putDelta, gamma, vega, callTheta, putTheta, callRho, putRho };
-  }, [S,K,r,sigma,T]);
+    const pdfD1 = normalPdf(d1);
+    const gamma = pdfD1 / (spot * volatility * sqrtT);
+    const vega = spot * pdfD1 * sqrtT;
+    const callDelta = Nd1;
+    const putDelta = Nd1 - 1;
+    const callTheta = (-spot * pdfD1 * volatility) / (2 * sqrtT) - rate * discountedStrike * Nd2;
+    const putTheta = (-spot * pdfD1 * volatility) / (2 * sqrtT) + rate * discountedStrike * Nmd2;
+    const callRho = discountedStrike * maturity * Nd2;
+    const putRho = -discountedStrike * maturity * Nmd2;
+
+    return {
+      call,
+      put,
+      callDelta,
+      putDelta,
+      gamma,
+      vega,
+      callTheta: callTheta / 365,
+      putTheta: putTheta / 365,
+      callRho,
+      putRho,
+    };
+  }, [spot, strike, rate, volatility, maturity]);
 
   return (
-    <main style={{maxWidth:960,margin:"2rem auto",padding:"1rem"}}>
-      <h1>Black–Scholes: Prezzo & Greche</h1>
-      <p style={{opacity:0.8}}>Prezzi europei con tasso annuo continuo <code>r</code>, volatilità <code>σ</code> e scadenza <code>T</code> (anni).</p>
-
-      <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(180px,1fr))",gap:12}}>
-        <label>S<input type="number" value={S} onChange={e=>setS(+e.target.value)} /></label>
-        <label>K<input type="number" value={K} onChange={e=>setK(+e.target.value)} /></label>
-        <label>r<input type="number" step="0.001" value={r} onChange={e=>setR(+e.target.value)} /></label>
-        <label>σ<input type="number" step="0.01" value={sigma} onChange={e=>setSigma(+e.target.value)} /></label>
-        <label>T<input type="number" step="0.1" value={T} onChange={e=>setT(+e.target.value)} /></label>
+    <div className="calculator">
+      <h3>Black–Scholes: prezzo e greche</h3>
+      <p className="calculator-note">
+        Calcola prezzo teorico e sensibilità di opzioni europee assumendo volatilità costante e mercato privo di
+        arbitraggio. Le greche sono espresse per unità di sottostante, con Theta riportato su base giornaliera.
+      </p>
+      <div className="calculator-grid">
+        <label>
+          Spot S
+          <input
+            type="number"
+            value={spot}
+            min="0"
+            step="0.5"
+            onChange={(event) => setSpot(Number(event.target.value))}
+          />
+        </label>
+        <label>
+          Strike K
+          <input
+            type="number"
+            value={strike}
+            min="0"
+            step="0.5"
+            onChange={(event) => setStrike(Number(event.target.value))}
+          />
+        </label>
+        <label>
+          Tasso risk-free r
+          <input
+            type="number"
+            step="0.0005"
+            value={rate}
+            onChange={(event) => setRate(Number(event.target.value))}
+          />
+        </label>
+        <label>
+          Volatilità σ
+          <input
+            type="number"
+            step="0.005"
+            value={volatility}
+            min="0"
+            onChange={(event) => setVolatility(Number(event.target.value))}
+          />
+        </label>
+        <label>
+          Scadenza T (anni)
+          <input
+            type="number"
+            step="0.1"
+            value={maturity}
+            min="0"
+            onChange={(event) => setMaturity(Number(event.target.value))}
+          />
+        </label>
       </div>
 
-      {out && (
-        <section style={{marginTop:16, display:"grid", gridTemplateColumns:"repeat(auto-fit, minmax(240px,1fr))", gap:16}}>
-          <div style={{border:"1px solid #eee",borderRadius:10,padding:12}}>
-            <h3>Prezzi</h3>
-            <div><b>Call:</b> {out.call.toFixed(4)}</div>
-            <div><b>Put:</b> {out.put.toFixed(4)}</div>
+      {output && (
+        <div className="calculator-result" style={{ display: "grid", gap: "1rem" }}>
+          <div className="metric-card">
+            <h4>Prezzi</h4>
+            <p>Call: {output.call.toFixed(4)}</p>
+            <p>Put: {output.put.toFixed(4)}</p>
           </div>
-          <div style={{border:"1px solid #eee",borderRadius:10,padding:12}}>
-            <h3>Greche (Call)</h3>
-            <div>Δ: {out.callDelta.toFixed(4)}</div>
-            <div>Γ: {out.gamma.toFixed(6)}</div>
-            <div>Vega: {out.vega.toFixed(4)}</div>
-            <div>Θ (al dì): {out.callTheta.toFixed(4)}</div>
-            <div>ρ: {out.callRho.toFixed(4)}</div>
+          <div className="metric-card">
+            <h4>Greche Call</h4>
+            <p>Δ: {output.callDelta.toFixed(4)}</p>
+            <p>Γ: {output.gamma.toFixed(6)}</p>
+            <p>Vega: {output.vega.toFixed(4)}</p>
+            <p>Θ (giornaliero): {output.callTheta.toFixed(4)}</p>
+            <p>ρ: {output.callRho.toFixed(4)}</p>
           </div>
-          <div style={{border:"1px solid #eee",borderRadius:10,padding:12}}>
-            <h3>Greche (Put)</h3>
-            <div>Δ: {out.putDelta.toFixed(4)}</div>
-            <div>Γ: {out.gamma.toFixed(6)}</div>
-            <div>Vega: {out.vega.toFixed(4)}</div>
-            <div>Θ (al dì): {out.putTheta.toFixed(4)}</div>
-            <div>ρ: {out.putRho.toFixed(4)}</div>
+          <div className="metric-card">
+            <h4>Greche Put</h4>
+            <p>Δ: {output.putDelta.toFixed(4)}</p>
+            <p>Γ: {output.gamma.toFixed(6)}</p>
+            <p>Vega: {output.vega.toFixed(4)}</p>
+            <p>Θ (giornaliero): {output.putTheta.toFixed(4)}</p>
+            <p>ρ: {output.putRho.toFixed(4)}</p>
           </div>
-        </section>
+        </div>
       )}
-    </main>
+
+      <style jsx>{`
+        .calculator-grid {
+          display: grid;
+          gap: 0.75rem;
+          grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        }
+
+        .metric-card {
+          background: rgba(15, 23, 42, 0.04);
+          border-radius: 12px;
+          padding: 0.9rem 1rem;
+        }
+
+        .metric-card h4 {
+          margin: 0 0 0.5rem;
+          font-size: 1rem;
+        }
+      `}</style>
+    </div>
   );
 }

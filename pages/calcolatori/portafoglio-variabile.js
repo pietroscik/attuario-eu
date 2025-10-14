@@ -1,5 +1,7 @@
 import Layout from "../../components/Layout";
 import PortafoglioAssicurativo from "../../components/calculators/PortafoglioAssicurativo";
+import KnowledgePanel from "../../components/calculators/KnowledgePanel";
+import { CALCULATOR_METADATA } from "../../content/calculators/metadata";
 
 export default function PortafoglioVariabilePage() {
   return (
@@ -11,6 +13,7 @@ export default function PortafoglioVariabilePage() {
       width="narrow"
     >
       <PortafoglioAssicurativo />
+      <KnowledgePanel metadata={CALCULATOR_METADATA["portafoglio-variabile"]} />
       <section className="section info-panel">
         <h2>Impostazione del modello</h2>
         <p>

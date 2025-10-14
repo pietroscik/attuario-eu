@@ -1,5 +1,7 @@
 import Layout from "../../components/Layout";
 import RiservaSemplice from "../../components/calculators/RiservaSemplice";
+import KnowledgePanel from "../../components/calculators/KnowledgePanel";
+import { CALCULATOR_METADATA } from "../../content/calculators/metadata";
 
 export default function RiservaSemplicePage() {
   return (
@@ -11,6 +13,7 @@ export default function RiservaSemplicePage() {
       width="narrow"
     >
       <RiservaSemplice />
+      <KnowledgePanel metadata={CALCULATOR_METADATA["riserva-semplice"]} />
       <section className="section info-panel">
         <h2>Come interpretare i risultati</h2>
         <p>

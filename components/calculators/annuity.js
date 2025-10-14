@@ -1,59 +1,136 @@
-// pages/calcolatori/annuity.js
-import { useState, useMemo } from "react";
+import { useMemo, useState } from "react";
 
-function pow1p(x,n){ return Math.pow(1+x, n); }
+export default function Annuity() {
+  const [payment, setPayment] = useState(1000);
+  const [rate, setRate] = useState(0.03);
+  const [periods, setPeriods] = useState(10);
+  const [isDue, setIsDue] = useState(false);
 
-export default function Annuity(){
-  const [P,setP]=useState(1000);    // pagamento periodico
-  const [i,setI]=useState(0.03);    // tasso per periodo
-  const [n,setN]=useState(10);      // numero di periodi
-  const [due,setDue]=useState(false); // anticipata?
+  const results = useMemo(() => {
+    if (rate <= -1 || periods <= 0) {
+      return null;
+    }
 
-  const out = useMemo(()=>{
-    if (i<=-1 || n<=0) return null;
-    const v = 1/(1+i);
-    const a_immediate = (1 - Math.pow(v, n))/i;
-    const a_due = a_immediate*(1+i);
-    const s_immediate = (pow1p(i,n) - 1)/i;
-    const s_due = s_immediate*(1+i);
+    const v = 1 / (1 + rate);
+    const aImmediate = (1 - Math.pow(v, periods)) / rate;
+    const aDue = aImmediate * (1 + rate);
+    const sImmediate = (Math.pow(1 + rate, periods) - 1) / rate;
+    const sDue = sImmediate * (1 + rate);
 
-    const a = due ? a_due : a_immediate;
-    const s = due ? s_due : s_immediate;
+    const presentValue = payment * (isDue ? aDue : aImmediate);
+    const futureValue = payment * (isDue ? sDue : sImmediate);
 
-    const PV = P * a;
-    const FV = P * s;
-
-    return { a_immediate, a_due, s_immediate, s_due, PV, FV };
-  }, [P,i,n,due]);
+    return {
+      aImmediate,
+      aDue,
+      sImmediate,
+      sDue,
+      presentValue,
+      futureValue,
+    };
+  }, [payment, rate, periods, isDue]);
 
   return (
-    <main style={{maxWidth:800, margin:"2rem auto", padding:"1rem"}}>
-      <h1>Rendite (Annuity): Valore Attuale e Futuro</h1>
-      <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(200px,1fr))",gap:12}}>
-        <label>Pagamento P<input type="number" value={P} onChange={e=>setP(+e.target.value)} /></label>
-        <label>Tasso i<input type="number" step="0.001" value={i} onChange={e=>setI(+e.target.value)} /></label>
-        <label>Periodi n<input type="number" value={n} onChange={e=>setN(+e.target.value)} /></label>
-        <label style={{display:"flex",alignItems:"center",gap:8}}>
-          <input type="checkbox" checked={due} onChange={e=>setDue(e.target.checked)} />
-          Anticipata (due)
+    <div className="calculator">
+      <h3>Rendite: valore attuale e futuro</h3>
+      <p className="calculator-note">
+        Calcola i coefficienti a<sub>n|i</sub> e s<sub>n|i</sub> di una rendita a rate costanti con pagamenti posticipati o
+        anticipati. I risultati sono utili per quotare trasformazioni in rendita nei fondi pensione e nelle polizze vita.
+      </p>
+      <div className="calculator-grid">
+        <label>
+          Pagamento per periodo
+          <input
+            type="number"
+            value={payment}
+            min="0"
+            step="10"
+            onChange={(event) => setPayment(Number(event.target.value))}
+          />
+        </label>
+        <label>
+          Tasso per periodo i
+          <input
+            type="number"
+            value={rate}
+            step="0.0005"
+            onChange={(event) => setRate(Number(event.target.value))}
+          />
+        </label>
+        <label>
+          Numero di periodi n
+          <input
+            type="number"
+            value={periods}
+            min="1"
+            step="1"
+            onChange={(event) => setPeriods(Number(event.target.value))}
+          />
+        </label>
+        <label className="checkbox-field">
+          <input
+            type="checkbox"
+            checked={isDue}
+            onChange={(event) => setIsDue(event.target.checked)}
+          />
+          <span>Rendita anticipata (ä)</span>
         </label>
       </div>
-      {out && (
-        <section style={{marginTop:16, display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(240px,1fr))",gap:16}}>
-          <div style={{border:"1px solid #eee",borderRadius:10,padding:12}}>
-            <h3>Coefficienti</h3>
-            <div>a<sub>n|i</sub>: {out.a_immediate.toFixed(6)}</div>
-            <div>ä<sub>n|i</sub>: {out.a_due.toFixed(6)}</div>
-            <div>s<sub>n|i</sub>: {out.s_immediate.toFixed(6)}</div>
-            <div>ś<sub>n|i</sub>: {out.s_due.toFixed(6)}</div>
+
+      {results && (
+        <div className="calculator-result" style={{ display: "grid", gap: "1rem" }}>
+          <div className="metric-card">
+            <h4>Coefficienti attuariali</h4>
+            <p>
+              a<sub>n|i</sub>: {results.aImmediate.toFixed(6)}
+            </p>
+            <p>
+              ä<sub>n|i</sub>: {results.aDue.toFixed(6)}
+            </p>
+            <p>
+              s<sub>n|i</sub>: {results.sImmediate.toFixed(6)}
+            </p>
+            <p>
+              ś<sub>n|i</sub>: {results.sDue.toFixed(6)}
+            </p>
           </div>
-          <div style={{border:"1px solid #eee",borderRadius:10,padding:12}}>
-            <h3>Valori</h3>
-            <div><b>PV:</b> {out.PV.toFixed(2)}</div>
-            <div><b>FV:</b> {out.FV.toFixed(2)}</div>
+          <div className="metric-card">
+            <h4>Valori economici</h4>
+            <p>
+              Valore attuale: <strong>€ {results.presentValue.toFixed(2)}</strong>
+            </p>
+            <p>
+              Valore futuro: <strong>€ {results.futureValue.toFixed(2)}</strong>
+            </p>
           </div>
-        </section>
+        </div>
       )}
-    </main>
+
+      <style jsx>{`
+        .calculator-grid {
+          display: grid;
+          gap: 0.75rem;
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+
+        .checkbox-field {
+          align-items: center;
+          display: flex;
+          gap: 0.5rem;
+          padding-top: 0.5rem;
+        }
+
+        .metric-card {
+          background: rgba(15, 23, 42, 0.04);
+          border-radius: 12px;
+          padding: 1rem;
+        }
+
+        .metric-card h4 {
+          margin: 0 0 0.5rem;
+          font-size: 1rem;
+        }
+      `}</style>
+    </div>
   );
 }
