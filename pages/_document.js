@@ -13,6 +13,10 @@ class MyDocument extends Document {
       <Html lang="it">
         <Head>
           <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1"
+          />
+          <meta
             name="google-adsense-account"
             content="ca-pub-8531177897035530"
           />

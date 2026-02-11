@@ -29,7 +29,7 @@ branches=()
 if $has_origin; then
   git fetch origin
   git pull --ff-only origin main
-  mapfile -t branches < <(git for-each-ref --format='%(refname:strip=2)' refs/remotes/origin/codex)
+  mapfile -t branches < <(git for-each-ref --format='%(refname:strip=3)' refs/remotes/origin/codex)
 else
   mapfile -t branches < <(git for-each-ref --format='%(refname:strip=2)' refs/heads/codex)
 fi

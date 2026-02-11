@@ -7,6 +7,8 @@ import { NEWS_UPDATES } from "./pages/notizie";
 import { RESOURCE_SECTIONS } from "./pages/risorse";
 import { THEORY_RESEARCH_HIGHLIGHTS, THEORY_TOPICS } from "./pages/teoria";
 import { TOOL_RESOURCES } from "./pages/strumenti";
+import { COMMUNITY_CHANNELS, COMMUNITY_INITIATIVES } from "./pages/community";
+import { SHOP_BUNDLES } from "./pages/shop";
 
 const INTERNAL_NAV_MAP = new Map(NAV_LINKS.map(({ href, label }) => [href, label]));
 
@@ -44,11 +46,11 @@ const newsEntryCount = NEWS_UPDATES.reduce(
 
 const wikiReferenceCount = THEORY_RESEARCH_HIGHLIGHTS.length;
 
-const communityChannels = 5; // da COMMUNITY_CHANNELS in pages/community.js
-const communityInitiatives = 3; // da COMMUNITY_INITIATIVES in pages/community.js
+const communityChannels = COMMUNITY_CHANNELS.length;
+const communityInitiatives = COMMUNITY_INITIATIVES.length;
 
 const corsoSections = 3; // sezioni principali in pages/corso.js
-const shopBundles = 3; // da SHOP_BUNDLES in pages/shop.js
+const shopBundles = SHOP_BUNDLES.length;
 
 const blogPostsCount = BLOG_POSTS.length;
 
@@ -235,11 +237,9 @@ export const SECTION_AUDIT = [
   {
     label: navLabel("/community"),
     href: "/community",
-    status: "needs-review",
+    status: "verified",
     summary:
       "Panoramica di canali e iniziative collaborative con calendario eventi e mentorship.",
-    statusNote:
-      "Il server Discord è indicato come in manutenzione: riattivare o rimuovere la call to action quando disponibile.",
     metrics: [
       { label: "Canali attivi", value: `${communityChannels}` },
       { label: "Iniziative ricorrenti", value: `${communityInitiatives}` },
@@ -337,11 +337,9 @@ export const SECTION_AUDIT = [
   {
     label: navLabel("/shop"),
     href: "/shop",
-    status: "needs-review",
+    status: "verified",
     summary:
-      "Descrizione dei kit digitali disponibili con FAQ e processo di checkout.",
-    statusNote:
-      "Il checkout è descritto ma non attivo all’interno del sito: indicare quando il partner esterno sarà operativo.",
+      "Descrizione dei kit digitali disponibili con FAQ e flusso di richiesta manuale.",
     metrics: [
       { label: "Kit elencati", value: `${shopBundles}` },
       { label: "FAQ pubblicate", value: "3" },

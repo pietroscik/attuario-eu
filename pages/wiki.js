@@ -1,47 +1,11 @@
 import { useState } from "react";
 import Layout from "../components/Layout";
 
-export default function Wiki() {
-  const researchPapers = [
-    {
-      id: "antonio-plat-2014",
-      title: "Micro-level stochastic loss reserving for general insurance",
-      authors: "Antonio & Plat (2014)",
-      sourceLabel: "Journal of Risk and Insurance",
-      sourceHref: "https://onlinelibrary.wiley.com/doi/10.1111/jori.12029",
-      summary:
-        "Propone modelli granulari su singolo sinistro che combinano componenti di frequenza e severità con covariate assicurative, riducendo la dipendenza da assunzioni aggregate.",
-      applications:
-        "Utile per compagnie con data warehouse strutturati che vogliono raffinare i triangoli di riserva tradizionali con tecniche micro-level e gradient boosting.",
-    },
-    {
-      id: "koijen-yogo-2016",
-      title: "The cost of financial frictions for life insurers",
-      authors: "Koijen & Yogo (2016)",
-      sourceLabel: "American Economic Review",
-      sourceHref: "https://www.aeaweb.org/articles?id=10.1257/aer.20130876",
-      summary:
-        "Analizza come le restrizioni di capitale e le frizioni finanziarie influenzino prezzi, offerta di prodotti vita e allocazioni di portafoglio nel lungo periodo.",
-      applications:
-        "Supporta stress test interni IFRS 17 e ORSA nel valutare scenari di liquidità e compressione dei margini in contesti di tassi bassi.",
-    },
-    {
-      id: "bauer-reuss-singer-2012",
-      title:
-        "On the calculation of the Solvency Capital Requirement based on nested simulations",
-      authors: "Bauer, Reuss & Singer (2012)",
-      sourceLabel: "ASTIN Bulletin",
-      sourceHref:
-        "https://www.cambridge.org/core/journals/astin-bulletin/article/on-the-calculation-of-the-solvency-capital-requirement-based-on-nested-simulations/",
-      summary:
-        "Approfondisce tecniche di simulazione annidata per il calcolo dello SCR, con focus su efficienza computazionale e accuratezza statistica.",
-      applications:
-        "Rilevante per i team di risk management che valutano modelli interni parziali o completi in contesti Solvency II.",
-    },
-  ];
+import { RESEARCH_PAPERS } from "../content/pages/wiki";
 
+export default function Wiki() {
   const [openCards, setOpenCards] = useState(() =>
-    researchPapers.reduce((acc, paper) => ({ ...acc, [paper.id]: false }), {})
+    RESEARCH_PAPERS.reduce((acc, paper) => ({ ...acc, [paper.id]: false }), {})
   );
 
   const handleToggle = (paperId) => {
@@ -320,7 +284,7 @@ export default function Wiki() {
         </p>
         <h3>Paper e studi da tenere d&apos;occhio</h3>
         <div className="research-grid" role="list">
-          {researchPapers.map((paper, index) => {
+          {RESEARCH_PAPERS.map((paper, index) => {
             const detailsId = `${paper.id}-details-${index}`;
             const isOpen = openCards[paper.id];
 

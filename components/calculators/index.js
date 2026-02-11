@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Layout from "../Layout";
 import PremioPuro from "./PremioPuro";
 import PremioUnico from "./PremioUnico";
@@ -80,10 +81,10 @@ export default function CalculatorDirectory() {
         <h2>Altri calcolatori sul sito</h2>
         <div className="card-grid">
           {otherTools.map(({ href, title, desc }) => (
-            <a key={href} className="link-card" href={href}>
+            <Link key={href} className="link-card" href={href}>
               <h3>{title}</h3>
               <p>{desc}</p>
-            </a>
+            </Link>
           ))}
         </div>
         <div className="calculator-grid" style={{ marginTop: "1.5rem" }}>

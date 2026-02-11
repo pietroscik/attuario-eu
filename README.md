@@ -16,6 +16,10 @@ Sito divulgativo per `attuario.eu` dedicato alla scienza attuariale con sezioni:
 - I contenuti statici delle principali pagine editoriali sono raccolti in `content/pages/*.js`, rendendo più semplice aggiornare testi e liste senza scorrere JSX lungo.
 - Gli stili principali vivono in `styles/globals.css` con utility per griglie, card, bottoni e form coerenti fra le sezioni.
 
+## SEO, sitemap e robots
+- `public/robots.txt` espone la sitemap all'URL `https://attuario.eu/sitemap.xml`.
+- La sitemap è generata da `pages/sitemap.xml.js`, che include le principali pagine editoriali, i case study, i calcolatori e le pagine legali.
+
 ## Processo editoriale blog
 - I post del blog sono definiti in `content/pages/blog.js` con i campi `title`, `summary`, `author`, `role`, `reviewedBy` e `updatedAt` concordati con la redazione.
 - `updatedAt` è espresso in formato ISO (`YYYY-MM-DD`) ed è utilizzato in pagina per mostrare la data localizzata e un badge "Revisionato" quando è valorizzato `reviewedBy`.
@@ -39,5 +43,6 @@ Apri http://localhost:3000
 4. Deploy.
 5. 
 ## Note
+- La pagina `pages/risorse/ifrs17-essentials.js` raccoglie il mini-corso IFRS 17 Essentials linkato dal blog: i contenuti sono esclusivamente divulgativi e non costituiscono consulenza professionale.
 - Footer include il disclaimer legale per l'uso divulgativo dei contenuti.
 - Le pagine sono pronte per essere popolate con contenuti didattici, dataset e calcolatori aggiuntivi.

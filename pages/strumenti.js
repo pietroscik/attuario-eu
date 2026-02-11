@@ -79,8 +79,8 @@ export default function Strumenti() {
               <h2>{title}</h2>
               <p>{description}</p>
               <ul className="list">
-                {resources.map(({ label, summary, href, external, languages }) => (
-                  <li key={label}>
+                {resources.map(({ label, summary, href, external, languages }, index) => (
+                  <li key={`${label}-${index}`}>
                     <details>
                       <summary>
                         <span className="summary-content">

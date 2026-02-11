@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Layout from "../components/Layout";
 
 import { SERVICE_REDIRECTS } from "../content/pages/servizi";
@@ -11,10 +12,10 @@ export default function Servizi() {
     >
       <div className="card-grid">
         {SERVICE_REDIRECTS.map(({ href, title, text }) => (
-          <a key={href} href={href} className="link-card">
+          <Link key={href} href={href} className="link-card">
             <h3>{title}</h3>
             <p>{text}</p>
-          </a>
+          </Link>
         ))}
       </div>
     </Layout>

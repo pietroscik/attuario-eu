@@ -13,10 +13,12 @@ Ogni file sotto `content/pages/` espone costanti tematiche richiamate dalla pagi
 - `applicazioni.js` → `APPLICATION_AREAS`
 - `attuario.js` → `ATTUARIO_ROLES`, `ATTUARIO_PATHWAYS`
 - `blog.js` → `BLOG_POSTS` (titolo, sommario e metadati editoriali: `author`, `role`, `reviewedBy`, `updatedAt`)
+- `community.js` → `COMMUNITY_CHANNELS`, `COMMUNITY_INITIATIVES`, `COMMUNITY_GUIDELINES`, `COMMUNITY_SUPPORT`
 - `home.js` → `HOME_HIGHLIGHTS`, `HOME_PERSONAS`, `HOME_UPDATES`
 - `sections-audit.js` → `SECTION_AUDIT` (sintesi dello stato delle principali sezioni del sito)
 - `notizie.js` → `NEWS_UPDATES`
 - `risorse.js` → `RESOURCE_SECTIONS`
+- `shop.js` → `SHOP_BUNDLES`, `SHOP_FAQ`, `SHOP_STEPS`
 - `servizi.js` → `SERVICE_REDIRECTS`
 - `strumenti.js` → `TOOL_RESOURCES`
 - `teoria.js` → `THEORY_TOPICS`, `THEORY_RESEARCH_HIGHLIGHTS`. `THEORY_TOPICS` raccoglie i moduli per livello (`difficulty: "base" | "intermedio" | "avanzato"`) e ogni item riporta il campo per alimentare i filtri di difficoltà della pagina.
