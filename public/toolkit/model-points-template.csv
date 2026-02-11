@@ -1,3 +1,7 @@
+"=== DOCUMENTO DIDATTICO - attuario.eu ==="
+"Laureato non iscritto all'Albo | Uso esclusivamente formativo"
+"Non utilizzabile per fini professionali o certificativi"
+"=========================================="
 PolicyID,Product,Age,Gender,SumAssured,AnnualPremium,DurationYears,Status
 1001,WholeLife,42,F,150000,820,5,InForce
 1002,AnnuityDeferred,55,M,90000,0,12,Annuitant

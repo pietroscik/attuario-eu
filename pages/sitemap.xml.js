@@ -33,7 +33,7 @@ function generateSitemapXml() {
     "/wiki",
     "/notizie",
     "/strumenti",
-    "/shop",
+    "/toolkit",
     "/blog",
     "/blog/archivio",
     "/calcolatori",

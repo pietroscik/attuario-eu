@@ -12,6 +12,11 @@ export default function CapmPage() {
       metaDescription="Calcolatore CAPM: rendimento atteso, premio per il rischio e Sharpe ratio con parametri personalizzabili per analisi Solvency II."
       width="narrow"
     >
+      <div className="alert alert-info">
+        <p>
+          ⚠️ Questo strumento è una simulazione didattica a scopo formativo. I risultati non costituiscono consulenza professionale e non devono essere utilizzati per decisioni finanziarie reali.
+        </p>
+      </div>
       <CAPM />
       <KnowledgePanel metadata={CALCULATOR_METADATA.capm} />
       <section className="section info-panel">

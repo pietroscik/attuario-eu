@@ -12,6 +12,11 @@ export default function DurationConvexityPage() {
       metaDescription="Strumento interattivo per calcolare prezzo, duration e convexity di un’obbligazione con grafico prezzo-yield in italiano."
       width="narrow"
     >
+      <div className="alert alert-info">
+        <p>
+          ⚠️ Questo strumento è una simulazione didattica a scopo formativo. I risultati non costituiscono consulenza professionale e non devono essere utilizzati per decisioni finanziarie reali.
+        </p>
+      </div>
       <DurationConvexity />
       <KnowledgePanel metadata={CALCULATOR_METADATA["duration-convexity"]} />
       <section className="section info-panel">

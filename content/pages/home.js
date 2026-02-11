@@ -15,9 +15,9 @@ export const HOME_HIGHLIGHTS = [
     link: "/applicazioni",
   },
   {
-    title: "Shop attuario.eu",
+    title: "Toolkit Open Source",
     text: "Kit digitali con template, script e guide operative per studiare, lavorare e formare team con materiali sempre aggiornati.",
-    link: "/shop",
+    link: "/toolkit",
   },
   {
     title: "Risorse autorevoli",

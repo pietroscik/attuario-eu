@@ -12,6 +12,11 @@ export default function PortafoglioVariabilePage() {
       metaDescription="Calcolatore portafoglio assicurativo: rendimento atteso, volatilità, VaR 99% e frontiera rischio-rendimento per asset allocation miste."
       width="narrow"
     >
+      <div className="alert alert-info">
+        <p>
+          ⚠️ Questo strumento è una simulazione didattica a scopo formativo. I risultati non costituiscono consulenza professionale e non devono essere utilizzati per decisioni finanziarie reali.
+        </p>
+      </div>
       <PortafoglioAssicurativo />
       <KnowledgePanel metadata={CALCULATOR_METADATA["portafoglio-variabile"]} />
       <section className="section info-panel">

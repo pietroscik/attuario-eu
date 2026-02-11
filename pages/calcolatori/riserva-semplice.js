@@ -12,6 +12,11 @@ export default function RiservaSemplicePage() {
       metaDescription="Riserva tecnica semplificata: RBNS, IBNR, inflazione e attualizzazione in linea con le raccomandazioni IVASS e Solvency II."
       width="narrow"
     >
+      <div className="alert alert-info">
+        <p>
+          ⚠️ Questo strumento è una simulazione didattica a scopo formativo. I risultati non costituiscono consulenza professionale e non devono essere utilizzati per decisioni finanziarie reali.
+        </p>
+      </div>
       <RiservaSemplice />
       <KnowledgePanel metadata={CALCULATOR_METADATA["riserva-semplice"]} />
       <section className="section info-panel">

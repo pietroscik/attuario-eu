@@ -1,3 +1,8 @@
+> === DOCUMENTO DIDATTICO - attuario.eu ===
+> Laureato non iscritto all'Albo | Uso esclusivamente formativo
+> Non utilizzabile per fini professionali o certificativi
+> ==========================================
+
 # Checklist workshop attuariale
 
 1. Definisci obiettivi formativi (max tre per sessione).

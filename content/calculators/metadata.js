@@ -176,7 +176,7 @@ export const CALCULATOR_METADATA = {
         type: "Normativa",
         description:
           "Rilevante per i test di sensitività tasso previsti da Solvency II e dal Regolamento IVASS n. 38/2018.",
-        href: "https://www.ivass.it/normativa/nazionale/regolamenti/index.html",
+        href: "https://www.ivass.it/it/normativa/regolamenti",
       },
     ]
   },

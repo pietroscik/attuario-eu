@@ -12,6 +12,11 @@ export default function PensioneIndicizzataPage() {
       metaDescription="Calcolatore pensione indicizzata: retribuzione finale, quota di maturazione, valore attuale e grafico dei primi anni di pensione."
       width="narrow"
     >
+      <div className="alert alert-info">
+        <p>
+          ⚠️ Questo strumento è una simulazione didattica a scopo formativo. I risultati non costituiscono consulenza professionale e non devono essere utilizzati per decisioni finanziarie reali.
+        </p>
+      </div>
       <PensioneIndicizzata />
       <KnowledgePanel metadata={CALCULATOR_METADATA["pensione-indicizzata"]} />
       <section className="section info-panel">

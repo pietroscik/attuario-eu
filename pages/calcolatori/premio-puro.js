@@ -12,6 +12,11 @@ export default function PremioPuroPage() {
       metaDescription="Calcolatore interattivo per il premio puro assicurativo: frequenza, severità, caricamenti e loss ratio atteso secondo le raccomandazioni IVASS."
       width="narrow"
     >
+      <div className="alert alert-info">
+        <p>
+          ⚠️ Questo strumento è una simulazione didattica a scopo formativo. I risultati non costituiscono consulenza professionale e non devono essere utilizzati per decisioni finanziarie reali.
+        </p>
+      </div>
       <PremioPuro />
       <KnowledgePanel metadata={CALCULATOR_METADATA["premio-puro"]} />
       <section className="section info-panel">

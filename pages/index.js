@@ -35,8 +35,8 @@ export default function Home() {
           <Link className="button secondary" href="/community">
             Entra nella community
           </Link>
-          <Link className="button secondary" href="/shop">
-            Scopri i kit digitali
+          <Link className="button secondary" href="/toolkit">
+            Scopri il toolkit
           </Link>
         </div>
       </section>

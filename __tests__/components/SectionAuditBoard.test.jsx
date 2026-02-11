@@ -25,7 +25,7 @@ const MOCK_SECTIONS = [
       { label: "Pagina Teoria", href: "/teoria", type: "internal", verified: true },
       {
         label: "Open Actuarial Text",
-        href: "https://openacttexts.github.io/LifeContingencies/Intro.html",
+        href: "https://openacttexts.github.io/Loss-Data-Analytics/",
         type: "external",
         verified: true,
       },

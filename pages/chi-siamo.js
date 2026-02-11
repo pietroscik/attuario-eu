@@ -76,6 +76,14 @@ export default function ChiSiamo() {
         </p>
       </section>
 
+      <section className="section info-panel" aria-labelledby="chi-siamo-profilo">
+        <h2 id="chi-siamo-profilo">Il Mio Profilo Professionale</h2>
+        <p><strong>Nome:</strong> Pietro Maietta</p>
+        <p><strong>Formazione:</strong> Laureato magistrale in Statistica e Scienze Attuariali (105/110), in fase di completamento della laurea magistrale in Economia.</p>
+        <p><strong>Status attuale:</strong> <strong>Non iscritto all'Albo Nazionale Attuari</strong> — in preparazione per l'esame di Stato.</p>
+        <p><strong>Questo sito:</strong> Iniziativa personale a scopo divulgativo e formativo, non attività professionale regolamentata.</p>
+      </section>
+
       <section className="section" aria-labelledby="chi-siamo-cosa-facciamo">
         <h2 id="chi-siamo-cosa-facciamo">Cosa trovi su attuario.eu</h2>
         <div className="card-grid">

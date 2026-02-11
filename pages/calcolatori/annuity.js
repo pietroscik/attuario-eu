@@ -12,6 +12,11 @@ export default function AnnuityPage() {
       metaDescription="Calcolatore rendite attuariali: coefficienti a_n|i, ä_n|i, s_n|i e ś_n|i con valore attuale e futuro per modelli vita e previdenza."
       width="narrow"
     >
+      <div className="alert alert-info">
+        <p>
+          ⚠️ Questo strumento è una simulazione didattica a scopo formativo. I risultati non costituiscono consulenza professionale e non devono essere utilizzati per decisioni finanziarie reali.
+        </p>
+      </div>
       <Annuity />
       <KnowledgePanel metadata={CALCULATOR_METADATA.annuity} />
       <section className="section info-panel">

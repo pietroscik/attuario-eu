@@ -10,6 +10,6 @@ export const NAV_LINKS = [
   { href: "/wiki", label: "Wiki" },
   { href: "/notizie", label: "Notizie" },
   { href: "/strumenti", label: "Strumenti" },
-  { href: "/shop", label: "Shop" },
+  { href: "/toolkit", label: "Toolkit" },
   { href: "/blog", label: "Blog" },
 ];

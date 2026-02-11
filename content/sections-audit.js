@@ -8,7 +8,7 @@ import { RESOURCE_SECTIONS } from "./pages/risorse";
 import { THEORY_RESEARCH_HIGHLIGHTS, THEORY_TOPICS } from "./pages/teoria";
 import { TOOL_RESOURCES } from "./pages/strumenti";
 import { COMMUNITY_CHANNELS, COMMUNITY_INITIATIVES } from "./pages/community";
-import { SHOP_BUNDLES } from "./pages/shop";
+import { SHOP_BUNDLES } from "./pages/toolkit";
 
 const INTERNAL_NAV_MAP = new Map(NAV_LINKS.map(({ href, label }) => [href, label]));
 

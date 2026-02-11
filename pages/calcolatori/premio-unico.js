@@ -12,6 +12,11 @@ export default function PremioUnicoPage() {
       metaDescription="Premio unico vita: calcolatore con probabilità di sinistro, tasso tecnico, caricamenti e spese secondo le linee guida IVASS."
       width="narrow"
     >
+      <div className="alert alert-info">
+        <p>
+          ⚠️ Questo strumento è una simulazione didattica a scopo formativo. I risultati non costituiscono consulenza professionale e non devono essere utilizzati per decisioni finanziarie reali.
+        </p>
+      </div>
       <PremioUnico />
       <KnowledgePanel metadata={CALCULATOR_METADATA["premio-unico"]} />
       <section className="section info-panel">

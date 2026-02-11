@@ -12,6 +12,11 @@ export default function BlackScholesPage() {
       metaDescription="Calcolatore Black-Scholes in italiano: prezzi Call/Put, delta, gamma, vega, theta e rho per scenari Solvency II e IFRS 17."
       width="narrow"
     >
+      <div className="alert alert-info">
+        <p>
+          ⚠️ Questo strumento è una simulazione didattica a scopo formativo. I risultati non costituiscono consulenza professionale e non devono essere utilizzati per decisioni finanziarie reali.
+        </p>
+      </div>
       <BlackScholes />
       <KnowledgePanel metadata={CALCULATOR_METADATA["black-scholes"]} />
       <section className="section info-panel">
