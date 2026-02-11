@@ -33,7 +33,7 @@ export const THEORY_TOPICS = [
           },
           {
             label: "Linea guida Ordine Attuari su tavole generazionali",
-            href: "https://www.ordineattuari.it/professione/standard-attuariali/",
+            href: "https://www.ordineattuari.it/",
             external: true,
           },
         ],
@@ -97,7 +97,7 @@ export const THEORY_TOPICS = [
         resources: [
           {
             label: "Standard professionali ONA",
-            href: "https://www.ordineattuari.it/professione/standard-attuariali/",
+            href: "https://www.ordineattuari.it/",
             external: true,
           },
         ],
@@ -254,8 +254,8 @@ export const THEORY_TOPICS = [
         difficulty: "avanzato",
         resources: [
           {
-            label: "Dispensa CAS Loss Models",
-            href: "https://www.casact.org/sites/default/files/2021-07/loss-models-study-note.pdf",
+            label: "CAS Syllabus of Basic Education",
+            href: "https://www.casact.org/exams/syllabus/",
             external: true,
           },
         ],

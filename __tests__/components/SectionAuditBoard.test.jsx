@@ -41,7 +41,7 @@ const MOCK_SECTIONS = [
       { label: "Canali", value: "5" },
     ],
     sources: [
-      { label: "Calendario eventi", href: "https://cal.attuario.eu/community", type: "external", verified: true },
+      { label: "Calendario eventi", href: "https://attuario.eu/community", type: "external", verified: true },
     ],
   },
 ];

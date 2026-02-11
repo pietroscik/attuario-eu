@@ -13,12 +13,12 @@ export const CALCULATOR_METADATA = {
         label: "Dickson, Hardy, Waters (2013) — Actuarial Mathematics for Life Contingent Risks",
         detail:
           "Capitoli 3-5 sulle rendite immediate e differite, con derivazioni per valori attuali e funzioni di commutazione.",
-        href: "https://www.cambridge.org/core/books/actuarial-mathematics-for-life-contingent-risks/",
       },
       {
-        label: "Bowers et al. (1997) — Actuarial Mathematics",
-        detail: "Paragrafo su annuity-due vs annuity-immediate e sui fattori di conversione per pagamenti frazionati.",
-        href: "https://www.soa.org/globalassets/assets/files/edu/edu-2013-catalog-actuarial-mathematics.pdf",
+        label: "Open Actuarial Text – Life Contingencies (Loss Data Analytics)",
+        detail:
+          "Capitolo sulle rendite immediate e differite con esempi numerici e tabelle di fattori.",
+        href: "https://openacttexts.github.io/Loss-Data-Analytics/chapters/life.html",
       },
     ],
     validity: [
@@ -30,7 +30,7 @@ export const CALCULATOR_METADATA = {
         type: "Teoria",
         description:
           "Formula di valore attuale Σ v^t con riferimento ai fattori di commutazione a:n illustrati in Dickson et al.",
-        href: "https://openacttexts.github.io/LifeContingencies/Annuities.html",
+        href: "https://openacttexts.github.io/Loss-Data-Analytics/chapters/life.html",
       },
       {
         type: "Pratica",
@@ -63,7 +63,6 @@ export const CALCULATOR_METADATA = {
       {
         label: "Merton (1973) — Theory of Rational Option Pricing",
         detail: "Estende il framework a dividendi, opzioni americane e strutture di tasso variabile.",
-        href: "https://doi.org/10.2307/1831021",
       },
     ],
     validity: [
@@ -103,7 +102,6 @@ export const CALCULATOR_METADATA = {
       {
         label: "Sharpe (1964) — Capital Asset Prices",
         detail: "Derivazione originale del CAPM con portafoglio di mercato efficiente.",
-        href: "https://doi.org/10.2307/2329297",
       },
       {
         label: "Lintner (1965) — The Valuation of Risk Assets",
@@ -131,7 +129,7 @@ export const CALCULATOR_METADATA = {
         type: "Normativa",
         description:
           "Rilevante per determinare il costo del capitale (CoC) nel calcolo del Risk Margin Solvency II e nei modelli ORSA.",
-        href: "https://www.ivass.it/normativa/nazionale/lettere/2022/note-orientamento-orsa/index.html",
+        href: "https://www.ivass.it/it/normativa/circolari-e-lettere",
       },
     ]
   },
@@ -165,7 +163,6 @@ export const CALCULATOR_METADATA = {
         type: "Teoria",
         description:
           "Derivata prima e seconda del prezzo rispetto al rendimento e relazione con Taylor series in Fabozzi & Mann.",
-        href: "https://doi.org/10.2139/ssrn.2176592",
       },
       {
         type: "Pratica",
@@ -281,7 +278,6 @@ export const CALCULATOR_METADATA = {
       {
         label: "Klugman, Panjer, Willmot (2012) — Loss Models",
         detail: "Capitoli su frequenza × severità e modelli collettivi per la tariffazione danni.",
-        href: "https://www.wiley.com/en-us/Loss+Models%3A+From+Data+to+Decisions%2C+4th+Edition-p-9781118315323",
       },
       {
         label: "Werner & Modlin (2016) — Basic Ratemaking",

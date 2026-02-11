@@ -7,22 +7,10 @@ const RELATED_CASES = ["assicurazioni-danni", "assicurazioni-vita", "previdenza"
 
 const RESOURCES = [
   {
-    label: "Template ORSA semplificato",
-    href: "https://github.com/attuario-eu/templates/blob/main/orsa-sintetico.xlsx",
-    description:
-      "Foglio di calcolo con sezioni per profilo di rischio, valutazione capitale e piano di azioni correttive.",
-  },
-  {
     label: "Scenario NGFS climate",
     href: "https://www.ngfs.net/ngfs-scenarios-portal/",
     description:
       "Portale ufficiale con dataset di scenari climatici utilizzabili per analizzare impatti su asset e passività.",
-  },
-  {
-    label: "Notebook simulazioni VaR/TVaR",
-    href: "https://github.com/attuario-eu/notebook/blob/main/var-tvar.ipynb",
-    description:
-      "Notebook Python per simulare distribuzioni di perdita multi-linea e confrontare metriche di capitale economico.",
   },
 ];
 

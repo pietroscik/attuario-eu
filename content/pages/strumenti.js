@@ -44,7 +44,7 @@ export const TOOL_RESOURCES = [
         label: "insurancerating (R)",
         summary:
           "Documentazione del pacchetto per il pricing con GLM, funzioni per l’esplorazione dati e tutorial su metriche di performance tariffaria.",
-        href: "https://insurancerating.readthedocs.io/",
+        href: "https://mharinga.github.io/insurancerating/",
         external: true,
         languages: ["R"],
       },
@@ -107,7 +107,7 @@ export const TOOL_RESOURCES = [
         label: "GEMAct (Python)",
         summary:
           "Libreria per modelli collettivi, copule e riserve stocastiche con tutorial su fitting, simulazione e variabilità.",
-        href: "https://gemact.readthedocs.io/",
+        href: "https://gemact.github.io/",
         external: true,
         languages: ["Python"],
       },
@@ -115,7 +115,7 @@ export const TOOL_RESOURCES = [
         label: "PyMC & ArviZ actuarial workflows",
         summary:
           "Esempi Bayesiani per frequenza/severità e diagnostica con ArviZ (GLM Poisson, MCMC, best-practice di modellazione).",
-        href: "https://www.pymc.io/projects/examples/en/latest/case_studies/insurance_claims.html",
+        href: "https://www.pymc.io/projects/examples/en/latest/gallery.html",
         external: true,
         languages: ["Python"],
       },
@@ -187,22 +187,8 @@ export const TOOL_RESOURCES = [
     description:
       "Notebook e script per experience studies, ESG e demo interattive costruiti con l’ecosistema R.",
     resources: [
-      {
-        label: "actxps experience studies",
-        summary:
-          "Pipeline R per experience study vita con tassi osservati/attesi e benchmark interattivi.",
-        href: "https://github.com/ActuarialVo/actxps",
-        external: true,
-        languages: ["R"],
-      },
-      {
-        label: "ESGtoolkit (R)",
-        summary:
-          "Funzioni e notebook per generare scenari stocastici multi-fattore calibrati a curve risk-free e volatilità storiche.",
-        href: "https://github.com/fcasados/ESGtoolkit",
-        external: true,
-        languages: ["R"],
-      },
+
+
       {
         label: "StMoMo demo scripts",
         summary:

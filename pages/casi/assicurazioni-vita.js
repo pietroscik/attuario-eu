@@ -19,12 +19,7 @@ const DATASETS = [
     description:
       "Serie storica dei tassi privi di rischio da utilizzare per analisi di sensitività e scenari di stress.",
   },
-  {
-    label: "Template partecipazioni agli utili",
-    href: "https://github.com/attuario-eu/templates/blob/main/partecipazioni-utili.xlsx",
-    description:
-      "Foglio di calcolo con formule per proiettare il rendimento retrocesso e le riserve matematiche.",
-  },
+
 ];
 
 const STEPS = [

@@ -18,7 +18,7 @@ export const COMMUNITY_CHANNELS = [
     description:
       "Riunioni online di 60 minuti con focus tematici: preparazione esami professionali, approfondimenti su risk management e workshop di coding.",
     action: "Prenota il prossimo slot",
-    href: "https://cal.attuario.eu/community",
+    href: "https://attuario.eu/community",
   },
   {
     name: "Call individuale con il team",

@@ -253,7 +253,7 @@ export const SECTION_AUDIT = [
       },
       {
         label: "Calendario eventi",
-        href: "https://cal.attuario.eu/community",
+        href: "https://attuario.eu/community",
         type: "external",
         verified: true,
       },

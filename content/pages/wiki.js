@@ -4,7 +4,7 @@ export const RESEARCH_PAPERS = [
     title: "IFRS 17 e misurazione delle passività assicurative",
     authors: "IASB, EFRAG task force",
     sourceLabel: "IFRS 17 Project Summary & Feedback Statement",
-    sourceHref: "https://www.ifrs.org/projects/completed/ifrs-17-insurance-contracts/",
+    sourceHref: "https://www.ifrs.org/issued-standards/list-of-standards/ifrs-17-insurance-contracts/",
     summary:
       "Panoramica del General Measurement Model (GMM), struttura BEL + RA + CSM e impatti su redditività, equity e disclosure dei contratti assicurativi.",
     applications:
