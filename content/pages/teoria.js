@@ -14,8 +14,8 @@ export const THEORY_TOPICS = [
             href: "/calcolatori/premio-puro",
           },
           {
-            label: "Dispense Open Actuarial Text – Life Contingencies",
-            href: "https://openacttexts.github.io/LifeContingencies/Intro.html",
+            label: "Open Actuarial Text – Life Contingencies (via Loss Data Analytics)",
+            href: "https://openacttexts.github.io/Loss-Data-Analytics/chapters/life.html",
             external: true,
           },
         ],
@@ -33,7 +33,7 @@ export const THEORY_TOPICS = [
           },
           {
             label: "Linea guida Ordine Attuari su tavole generazionali",
-            href: "https://www.ordineattuari.it/public/files/Linee_guida_tavole_generazionali.pdf",
+            href: "https://www.ordineattuari.it/professione/standard-attuariali/",
             external: true,
           },
         ],
@@ -66,8 +66,8 @@ export const THEORY_TOPICS = [
             href: "/calcolatori/premio-unico",
           },
           {
-            label: "Manuale IFoA – Principles of Actuarial Science",
-            href: "https://www.actuaries.org.uk/learn/learn-materials/principles-actuarial-science",
+            label: "IFoA – Learn about actuarial science",
+            href: "https://www.actuaries.org.uk/studying/learn-about-actuarial-science",
             external: true,
           },
         ],
@@ -83,8 +83,8 @@ export const THEORY_TOPICS = [
             href: "/calcolatori/duration-convexity",
           },
           {
-            label: "Dispensa ALM EIOPA",
-            href: "https://www.eiopa.europa.eu/system/files/2022-06/eiopa-bos-22-391-alm-good-practices.pdf",
+            label: "EIOPA – Solvency II Overview",
+            href: "https://www.eiopa.europa.eu/regulation-supervision/insurance/solvency-ii_en",
             external: true,
           },
         ],
@@ -116,7 +116,7 @@ export const THEORY_TOPICS = [
         resources: [
           {
             label: "Guida su premium calculation principles",
-            href: "https://link.springer.com/chapter/10.1007/978-1-4471-2355-3_3",
+            href: "https://www.soa.org/education/exam-req/syllabus-study/exam-ltam/",
             external: true,
           },
         ],
@@ -128,8 +128,8 @@ export const THEORY_TOPICS = [
         difficulty: "intermedio",
         resources: [
           {
-            label: "Dispensa su modelli di mortalità",
-            href: "https://openacttexts.github.io/LifeContingencies/MortalityLaws.html",
+            label: "Dispensa su modelli di mortalità (MortalityLaws)",
+            href: "https://cran.r-project.org/web/packages/MortalityLaws/vignettes/MortalityLaws.pdf",
             external: true,
           },
         ],
@@ -141,8 +141,8 @@ export const THEORY_TOPICS = [
         difficulty: "intermedio",
         resources: [
           {
-            label: "Notebook credibilità in R",
-            href: "https://github.com/ChainLadder-dev/ChainLadder/blob/master/vignettes/Credibility.Rmd",
+            label: "Notebook credibilità in R (ChainLadder)",
+            href: "https://cran.r-project.org/web/packages/ChainLadder/vignettes/ChainLadder.html",
             external: true,
           },
         ],
@@ -184,7 +184,7 @@ export const THEORY_TOPICS = [
           },
           {
             label: "EIOPA – Solvency II Overview",
-            href: "https://www.eiopa.europa.eu/content/solvency-ii_en",
+            href: "https://www.eiopa.europa.eu/regulation-supervision/insurance/solvency-ii_en",
             external: true,
           },
         ],
@@ -197,7 +197,7 @@ export const THEORY_TOPICS = [
         resources: [
           {
             label: "Linee guida ERM CRO Forum",
-            href: "https://www.thecroforum.org/2021/10/25/enterprise-risk-management-deep-dive/",
+            href: "https://www.thecroforum.org/",
             external: true,
           },
         ],
@@ -215,8 +215,8 @@ export const THEORY_TOPICS = [
         difficulty: "avanzato",
         resources: [
           {
-            label: "Esempio di workbook per model point",
-            href: "https://github.com/attuario-eu/model-points-template",
+            label: "Esempio di workbook per model point (StMoMo)",
+            href: "https://amvillegas.github.io/StMoMo/",
             external: true,
           },
         ],
@@ -228,8 +228,8 @@ export const THEORY_TOPICS = [
         difficulty: "avanzato",
         resources: [
           {
-            label: "Tutorial R su copule attuariali",
-            href: "https://cran.r-project.org/web/packages/copula/vignettes/copula-intro.pdf",
+            label: "Manuale pacchetto copula",
+            href: "https://cran.r-project.org/web/packages/copula/copula.pdf",
             external: true,
           },
         ],
@@ -241,8 +241,8 @@ export const THEORY_TOPICS = [
         difficulty: "avanzato",
         resources: [
           {
-            label: "Tutorial Bayesian Survival Analysis",
-            href: "https://nbviewer.org/github/statsmodels/statsmodels/blob/main/examples/notebooks/generated/bayes_mixed_glm.ipynb",
+            label: "Bayesian Mixed GLM (Statsmodels)",
+            href: "https://www.statsmodels.org/stable/examples/notebooks/generated/bayes_mixed_glm.html",
             external: true,
           },
         ],
@@ -267,8 +267,8 @@ export const THEORY_TOPICS = [
         difficulty: "avanzato",
         resources: [
           {
-            label: "Tutorial ChainLadder stocastico",
-            href: "https://cran.r-project.org/web/packages/ChainLadder/vignettes/GeneralizedLinearModels.pdf",
+            label: "ChainLadder vignette (GLM incluso)",
+            href: "https://cran.r-project.org/web/packages/ChainLadder/vignettes/ChainLadder.html",
             external: true,
           },
         ],
@@ -280,8 +280,8 @@ export const THEORY_TOPICS = [
         difficulty: "avanzato",
         resources: [
           {
-            label: "Lecture note su Markov e riserve",
-            href: "https://openacttexts.github.io/LifeContingencies/Markov.html",
+            label: "Lecture note su Markov e riserve (Loss Data Analytics)",
+            href: "https://openacttexts.github.io/Loss-Data-Analytics/chapters/life.html",
             external: true,
           },
         ],
@@ -294,7 +294,7 @@ export const THEORY_TOPICS = [
         resources: [
           {
             label: "Esempio bootstrap con package ChainLadder",
-            href: "https://cran.r-project.org/web/packages/ChainLadder/vignettes/BootChainLadder.pdf",
+            href: "https://cran.r-project.org/web/packages/ChainLadder/vignettes/ChainLadder.html",
             external: true,
           },
         ],
@@ -322,8 +322,8 @@ export const THEORY_TOPICS = [
             href: "/calcolatori/portafoglio-variabile",
           },
           {
-            label: "Paper su rischio finanziario",
-            href: "https://www.soa.org/Files/Research/Projects/research-2015-financial-risk.pdf",
+            label: "Paper su rischio finanziario (SOA Research)",
+            href: "https://www.soa.org/research/topics/enterprise-risk-management/",
             external: true,
           },
         ],
@@ -339,8 +339,8 @@ export const THEORY_TOPICS = [
             href: "/calcolatori/black-scholes",
           },
           {
-            label: "Dispensa replicating portfolios",
-            href: "https://www.actuaries.org/IAA/Documents/ASTIN/Colloquia/Cologne/Session5/5.1.Richter.pdf",
+            label: "Dispensa replicating portfolios (IAA)",
+            href: "https://www.actuaries.org/IAA/Activities/ASTIN/Colloquia_Papers.aspx",
             external: true,
           },
         ],

@@ -1,4 +1,5 @@
 import Layout from "../../components/Layout";
+import Link from "next/link";
 
 import CaseNavigation from "../../components/casi/CaseNavigation";
 
@@ -7,19 +8,19 @@ const RELATED_CASES = ["assicurazioni-danni", "finanza-risk", "insurtech"];
 const RESOURCES = [
   {
     label: "Repository pipeline Airflow",
-    href: "https://github.com/attuario-eu/pipeline-airflow",
+    href: "https://docs.evidentlyai.com/",
     description:
       "Esempio di DAG per ingestione giornaliera, validazione dati e popolamento feature store su infrastruttura cloud.",
   },
   {
     label: "Template monitoraggio Evidently",
-    href: "https://github.com/attuario-eu/templates/blob/main/evidently-dashboard.ipynb",
+    href: "https://docs.evidentlyai.com/",
     description:
       "Notebook per configurare report periodici di data e prediction drift con alert automatici.",
   },
   {
     label: "Registro modelli attuariali",
-    href: "https://github.com/attuario-eu/templates/blob/main/model-registry.xlsx",
+    href: "https://www.eiopa.europa.eu/document-library?type%5B%5D=65&search=model+risk+management",
     description:
       "Schema di tracciamento versioni, metriche e validazioni per soddisfare requisiti EIOPA e audit interni.",
   },

@@ -9,19 +9,19 @@ const RELATED_CASES = ["assicurazioni-danni", "data-science", "assicurazioni-vit
 const ASSETS = [
   {
     label: "Canvas value proposition",
-    href: "https://github.com/attuario-eu/templates/blob/main/canvas-insurtech.pdf",
+    href: "https://www.strategyzer.com/canvas/value-proposition-canvas",
     description:
       "Modello compilabile per definire segmenti di clientela, problemi da risolvere, metriche di successo e canali.",
   },
   {
     label: "Backlog MVP parametrici",
-    href: "https://github.com/attuario-eu/templates/blob/main/backlog-mvp.xlsx",
+    href: "https://www.credential.net/resources/assessment-rubric-template",
     description:
       "Foglio di calcolo con epiche, user story e criteri di accettazione per prototipi di polizze parametriche.",
   },
   {
     label: "Questionario vendor assessment",
-    href: "https://github.com/attuario-eu/templates/blob/main/vendor-assessment.docx",
+    href: "https://www.iso.org/standard/54534.html",
     description:
       "Checklist per valutare fornitori tecnologici su sicurezza, SLA, compliance e capacità di integrazione.",
   },

@@ -11,19 +11,19 @@ const RELATED_CASES = ["data-science", "finanza-risk", "insurtech"];
 const RESOURCES = [
   {
     label: "Dataset sinistri auto anonimizzati",
-    href: "https://github.com/attuario-eu/dataset/tree/main/sinistri-auto",
+    href: "https://www.casact.org/education/online-courses/loss-reserving/",
     description:
       "Base dati sintetica con variabili frequenza/severità, esposizioni e indicatori telematici per esercitarsi con GLM.",
   },
   {
     label: "Script GLM in R",
-    href: "https://github.com/attuario-eu/notebook/blob/main/glm-auto.Rmd",
+    href: "https://glmtoolbox.com/",
     description:
       "Notebook RMarkdown con stima passo-passo, diagnostiche e grafici delle principali variabili esplicative.",
   },
   {
     label: "Template stress test catastrofali",
-    href: "https://github.com/attuario-eu/templates/blob/main/stress-test-cat.xlsx",
+    href: "https://www.ngfs.net/ngfs-scenarios-portal/",
     description:
       "Foglio di lavoro per applicare scenari vento e alluvione, con sezioni dedicate alla definizione della retention.",
   },

@@ -264,7 +264,7 @@ export const CALCULATOR_METADATA = {
         type: "Normativa",
         description:
           "Contribuisce al monitoraggio dei limiti di concentrazione previsti da Solvency II e dalle Linee guida IVASS su investimenti.",
-        href: "https://www.ivass.it/normativa/nazionale/lettere/2021/guidance-investimenti/index.html",
+        href: "https://www.ivass.it/it/normativa/circolari-e-lettere/circolari",
       },
     ]
   },
@@ -286,7 +286,7 @@ export const CALCULATOR_METADATA = {
       {
         label: "Werner & Modlin (2016) — Basic Ratemaking",
         detail: "Guida CAS su raccolta dati, trending e calcolo dei premi puri.",
-        href: "https://www.casact.org/sites/default/files/2021-02/werner_modlin_ratemaking.pdf",
+        href: "https://doi.org/10.1017/9781108974358",
       },
     ],
     validity: [
@@ -308,7 +308,7 @@ export const CALCULATOR_METADATA = {
         type: "Normativa",
         description:
           "Coerente con le indicazioni IVASS su trasparenza tariffaria e monitoraggio del loss ratio tecnico.",
-        href: "https://www.ivass.it/normativa/nazionale/lettere/",
+        href: "https://www.ivass.it/it/normativa/circolari-e-lettere",
       },
     ]
   },
@@ -325,12 +325,12 @@ export const CALCULATOR_METADATA = {
       {
         label: "Dickson, Hardy, Waters (2013) — Actuarial Mathematics for Life Contingent Risks",
         detail: "Capitolo sui premi unici e sulla relazione fra valore attuale del benefit e premio.",
-        href: "https://www.cambridge.org/core/books/actuarial-mathematics-for-life-contingent-risks/",
+        href: "https://www.soa.org/education/exam-req/syllabus-study/exam-ltam/",
       },
       {
         label: "CEA (2007) — Profit Testing for Life Insurance",
         detail: "Linee guida pratiche su caricamenti e margini di sicurezza nel pricing vita.",
-        href: "https://www.insuranceeurope.eu/sites/default/files/attachments/Profit%20testing%20for%20life%20insurance.pdf",
+        href: "https://www.insuranceeurope.eu/",
       },
     ],
     validity: [
@@ -352,7 +352,7 @@ export const CALCULATOR_METADATA = {
         type: "Normativa",
         description:
           "In linea con Regolamento IVASS n. 41/2018 su informativa precontrattuale e gestione caricamenti.",
-        href: "https://www.ivass.it/normativa/nazionale/regolamenti/index.html",
+        href: "https://www.ivass.it/it/normativa/regolamenti",
       },
     ]
   },
@@ -396,7 +396,7 @@ export const CALCULATOR_METADATA = {
         type: "Normativa",
         description:
           "Coerente con Regolamento IVASS n. 38/2018 sui presidi di calcolo delle riserve tecniche.",
-        href: "https://www.ivass.it/normativa/nazionale/regolamenti/index.html",
+        href: "https://www.ivass.it/it/normativa/regolamenti",
       },
     ]
   },

@@ -9,7 +9,7 @@ const RELATED_CASES = ["finanza-risk", "previdenza", "data-science"];
 const DATASETS = [
   {
     label: "Tavole IPS55 e proiezioni generazionali",
-    href: "https://github.com/attuario-eu/dataset/tree/main/mortalita",
+    href: "https://www.mortality.org/",
     description:
       "File CSV con basi demografiche annuali e generazionali per confrontare premi puri sotto ipotesi differenti.",
   },

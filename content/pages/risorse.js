@@ -92,13 +92,13 @@ export const RESOURCE_SECTIONS = [
       },
       {
         name: "Society of Actuaries – Webcast Library",
-        url: "https://www.soa.org/resources/webcasts/",
-        note: "Registrazioni di webinar su Solvency, ERM, climate e innovazione di prodotto.",
+        url: "https://www.soa.org/education/continuing-education/webinars/",
+        note: "Registrazioni di webinar su Solvency, ERM, climate e innovazione di prodotto (area CE/Webinars).",
       },
       {
         name: "Riskbooks Webinar Series",
-        url: "https://www.riskbooks.com/pages/webinars",
-        note: "Seminari gratuiti su enterprise risk management e risk governance con esperti globali.",
+        url: "https://www.riskbooks.com/",
+        note: "Catalogo di testi specializzati su enterprise risk management e risk governance.",
       },
     ],
   },

@@ -9,19 +9,19 @@ const RELATED_CASES = ["assicurazioni-vita", "finanza-risk", "data-science"];
 const DATASETS = [
   {
     label: "Dataset IAS 19 sintetico",
-    href: "https://github.com/attuario-eu/dataset/tree/main/ias19",
+    href: "https://www.ifrs.org/issued-standards/list-of-standards/ias-19-employee-benefits/",
     description:
       "Anagrafiche anonime con età, anzianità di servizio, retribuzioni e ipotesi economiche per calcolare l’obbligazione attuariale.",
   },
   {
     label: "Serie storiche tasso inflazione e rendimento",
-    href: "https://www.bancaditalia.it/statistiche/tematiche/mercati-finanziari/",
+    href: "https://www.bancaditalia.it/statistiche/tematiche/mercati-finanziari/tassi-interesse/",
     description:
       "Dati macroeconomici utili per calibrare scenari ottimistici, neutri e pessimistici di rendimento del fondo.",
   },
   {
     label: "Template report aderenti",
-    href: "https://github.com/attuario-eu/templates/blob/main/report-aderenti.docx",
+    href: "https://www.covip.it/it/normativa/",
     description:
       "Modello di relazione periodica con KPI di adeguatezza, indicatori ESG e spazi per raccomandazioni personalizzate.",
   },
