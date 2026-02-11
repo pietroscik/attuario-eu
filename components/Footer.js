@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="legal-disclaimer">
         <div className="shell">
           <p>
-            <strong>attuario.eu</strong> è un progetto didattico open source ideato da Pietro Maietta, laureato magistrale in Statistica e Scienze Attuariali. <strong>Non iscritto all'Albo Nazionale Attuari</strong>. Tutti i materiali sono a scopo esclusivamente formativo e non costituiscono consulenza professionale ai sensi della Legge 194/1942.
+            <strong>attuario.eu</strong> è un progetto didattico open source ideato da Pietro Maietta, laureato magistrale in Statistica e Scienze Attuariali. <strong>Non iscritto all&apos;Albo Nazionale Attuari</strong>. Tutti i materiali sono a scopo esclusivamente formativo e non costituiscono consulenza professionale ai sensi della Legge 194/1942.
           </p>
         </div>
       </div>
