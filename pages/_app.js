@@ -4,14 +4,16 @@ import Script from "next/script";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 
-const GA_MEASUREMENT_ID = 'G-HMHRTDB0B2';
+import CookieBanner from "../components/CookieBanner";
+
+const GA_MEASUREMENT_ID = "G-HMHRTDB0B2";
 
 export default function MyApp({ Component, pageProps }) {
   const router = useRouter();
 
   useEffect(() => {
     const handleRouteChange = (url) => {
-      window.gtag?.('config', GA_MEASUREMENT_ID, {
+      window.gtag?.("config", GA_MEASUREMENT_ID, {
         page_path: url,
       });
     };
@@ -42,6 +44,7 @@ export default function MyApp({ Component, pageProps }) {
           `,
         }}
       />
+      <CookieBanner />
       <Component {...pageProps} />
     </>
   );

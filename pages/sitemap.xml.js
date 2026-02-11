@@ -1,6 +1,5 @@
 import { NAV_LINKS } from "../content/navigation";
 import { CASE_STUDIES } from "../content/pages/casi";
-import { BLOG_POSTS } from "../content/pages/blog";
 
 const BASE_URL = "https://attuario.eu";
 
@@ -62,8 +61,6 @@ function generateSitemapXml() {
     "/calcolatori/portafoglio-variabile",
   ];
 
-  const blogPaths = BLOG_POSTS.map((_, index) => `/blog#post-${index + 1}`);
-
   const resourcePaths = ["/risorse/ifrs17-essentials"];
 
   const allPaths = new Set([
@@ -106,4 +103,3 @@ export async function getServerSideProps({ res }) {
 export default function Sitemap() {
   return null;
 }
-
