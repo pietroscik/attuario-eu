@@ -8,8 +8,7 @@ export default function Casi() {
     <Layout
       title="Case study operativi"
       eyebrow="Esempi guidati"
-      intro="Una raccolta di percorsi pratici per applicare la teoria attuariale. Ogni case study include dataset di supporto, note metodologiche e deliverable pronti per essere adattati al proprio contesto."
-
+      intro="Una raccolta di percorsi pratici per applicare la teoria attuariale. Ogni case study include dataset di supporto, note metodologiche e deliverable pronti per essere adattati al proprio contesto, dalla tariffazione vita ai progetti di data science attuariale."
       metaDescription="Elenco di case study attuariali con dataset, workflow e checklist normative su vita, danni, previdenza, risk management, data science e InsurTech."
     >
       <section className="card-grid">

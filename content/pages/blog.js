@@ -1,5 +1,6 @@
 export const BLOG_POSTS = [
   {
+    slug: "stress-test-eiopa-2023",
     title: "Stress test assicurativi: cosa impariamo dal report EIOPA 2023",
     summary:
       "Analisi dei principali indicatori di resilienza tratti dall’EIOPA Insurance Stress Test 2023 e implicazioni per le funzioni attuariali.",
@@ -9,6 +10,7 @@ export const BLOG_POSTS = [
     updatedAt: "2024-04-18",
   },
   {
+    slug: "ifrs17-gmm-iasb",
     title: "IFRS 17 in pratica: l’approccio GMM secondo l’IASB",
     summary:
       "Sintesi operativa basata sull’IFRS 17 Project Summary dell’IASB e sui recenti Transition Resource Group papers per impostare policy coerenti.",
@@ -18,6 +20,7 @@ export const BLOG_POSTS = [
     updatedAt: "2024-04-10",
   },
   {
+    slug: "risk-appetite-framework-board",
     title: "Risk Appetite Framework: le best practice IAIS per il board",
     summary:
       "Riepilogo delle Insurance Core Principles dell’IAIS e del paper sulla gestione integrata dei rischi per supportare decisioni consapevoli.",
@@ -27,6 +30,7 @@ export const BLOG_POSTS = [
     updatedAt: "2024-03-28",
   },
   {
+    slug: "climate-risk-metriche-esg-ngfs",
     title: "Climate risk e metriche ESG: insight dal network NGFS",
     summary:
       "Approccio divulgativo ai scenari climatici NGFS 2023 e alle raccomandazioni dell’UNEP FI per integrare KPI ESG nei modelli attuariali.",
@@ -36,6 +40,7 @@ export const BLOG_POSTS = [
     updatedAt: "2024-05-02",
   },
   {
+    slug: "pricing-avanzato-machine-learning",
     title: "Pricing avanzato: lezioni dal report CAS sull’uso del machine learning",
     summary:
       "Panoramica delle linee guida CAS 2022 e dei white paper SOA per coniugare algoritmi complessi, interpretabilità e governance dei dati.",
@@ -45,6 +50,7 @@ export const BLOG_POSTS = [
     updatedAt: "2024-04-24",
   },
   {
+    slug: "longevity-risk-prodotti-innovativi",
     title: "Longevity risk: dalle tavole dinamiche ai prodotti innovativi",
     summary:
       "Confronto tra approcci deterministici e stocastici alle tavole di mortalità, impatti su rendite e polizze long-term care e casi studio dal mercato europeo.",
@@ -54,6 +60,7 @@ export const BLOG_POSTS = [
     updatedAt: "2024-03-15",
   },
   {
+    slug: "data-governance-attuariale",
     title: "Data governance attuariale: costruire un catalogo dati vivente",
     summary:
       "Checklist per censire le fonti informative, definire data owner, stabilire controlli di qualità e favorire la collaborazione tra attuari e data engineer.",
@@ -63,6 +70,7 @@ export const BLOG_POSTS = [
     updatedAt: "2024-04-05",
   },
   {
+    slug: "insurtech-italiano-2024",
     title: "InsurTech italiano: panoramica su startup e partnership 2024",
     summary:
       "Mappa delle principali iniziative InsurTech in Italia, modelli di collaborazione con compagnie tradizionali e lezioni apprese dai sandbox regolamentari.",
@@ -72,6 +80,7 @@ export const BLOG_POSTS = [
     updatedAt: "2024-04-12",
   },
   {
+    slug: "didattica-attuariale-giochi-seri",
     title: "Didattica attuariale: come usare simulazioni e giochi seri in aula",
     summary:
       "Suggerimenti pratici per progettare esercitazioni immersive, strumenti digitali per il blended learning e rubriche di valutazione trasparenti.",

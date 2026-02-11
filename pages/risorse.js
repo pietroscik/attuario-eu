@@ -9,7 +9,7 @@ export default function Risorse() {
     <Layout
       title="Risorse attuariali consigliate"
       eyebrow="Directory curata"
-      intro="Una raccolta di portali, blog e community da esplorare per approfondire la professione attuariale. Ogni link rimanda a contenuti esterni affidabili: verifica sempre termini di utilizzo e diritti di autore."
+      intro="Una raccolta di portali, blog e community da esplorare per approfondire la professione attuariale. Ogni link rimanda a contenuti esterni affidabili: verifica sempre termini di utilizzo, diritti di autore e aggiornamento delle informazioni."
     >
       <section className="card-grid">
         {RESOURCE_SECTIONS.map(({ title, description, items }) => (
@@ -37,7 +37,7 @@ export default function Risorse() {
           <Link href="/contatti">Contatti</Link> e lo valuteremo per l’inserimento in questa directory.
         </p>
         <p className="small-print">
-          Le risorse elencate sono fornite a titolo informativo; attuario.eu non fornisce consulenza né garantisce l’aggiornamento continuo dei contenuti esterni.
+          Le risorse elencate sono fornite a titolo informativo; attuario.eu non fornisce consulenza né garantisce l’aggiornamento continuo dei contenuti esterni. Per applicazioni professionali fai sempre riferimento alle fonti ufficiali (IVASS, EIOPA, IASB, Ordini professionali) e alle policy della tua organizzazione.
         </p>
       </section>
     </Layout>

@@ -82,6 +82,11 @@ export default function CaseInsurtech() {
         <p>
           Una compagnia vuole lanciare un prodotto parametric travel legato a ritardi aerei. Il team cross-funzionale (attuari, product manager, IT, compliance) deve disegnare la value proposition, preparare test in sandbox regolamentare e selezionare partner dati affidabili.
         </p>
+        <p className="small-print">
+          Per approfondire la teoria sulle opzioni incorporate, sul rischio operativo e sui requisiti di product governance puoi partire dalle sezioni{" "}
+          <Link href="/teoria">Teoria</Link> e{" "}
+          <Link href="/applicazioni">Applicazioni</Link>.
+        </p>
       </section>
 
       <section className="section" aria-labelledby="asset-heading">
@@ -137,6 +142,9 @@ export default function CaseInsurtech() {
             <li key={item}>{item}</li>
           ))}
         </ul>
+        <p className="small-print">
+          Le checklist proposte non sostituiscono i processi formali di vendor risk assessment e di due diligence previsti dalle linee guida IVASS/EBA: usale come supporto di lavoro e allineale alle policy del tuo gruppo.
+        </p>
       </section>
 
       <CaseNavigation currentSlug="insurtech" relatedSlugs={RELATED_CASES} />

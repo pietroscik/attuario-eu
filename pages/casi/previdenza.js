@@ -87,6 +87,11 @@ export default function CasePrevidenza() {
         <p>
           Un’azienda vuole aggiornare la valutazione IAS 19 e fornire ai dipendenti un report personalizzato sulla posizione previdenziale. Il team attuariale deve integrare ipotesi economiche aggiornate, proiettare scenari di contribuzione e coordinare la comunicazione con HR e sostenibilità.
         </p>
+        <p className="small-print">
+          Per i richiami teorici su rendite, tavole di mortalità e modelli di riserva puoi fare riferimento alle sezioni{" "}
+          <Link href="/teoria">Teoria attuariale</Link> e{" "}
+          <Link href="/corso">Corso attuariale completo</Link>.
+        </p>
       </section>
 
       <section className="section" aria-labelledby="dataset-supporto">
@@ -119,6 +124,11 @@ export default function CasePrevidenza() {
             </article>
           ))}
         </div>
+        <p className="small-print">
+          Ogni fase del workflow può essere supportata da strumenti pratici nelle sezioni{" "}
+          <Link href="/strumenti">Strumenti &amp; calcolatori</Link> e{" "}
+          <Link href="/applicazioni">Applicazioni</Link>, dove trovi esempi di codici, template e checklist su previdenza e fondi pensione.
+        </p>
       </section>
 
       <section
@@ -161,6 +171,9 @@ export default function CasePrevidenza() {
             <li key={item}>{item}</li>
           ))}
         </ul>
+        <p className="small-print">
+          Le indicazioni riportate non sostituiscono le linee guida ufficiali IVASS/COVIP né le policy interne del fondo o dell&apos;azienda: assicurati sempre che le analisi siano validate dalle funzioni competenti.
+        </p>
       </section>
 
       <CaseNavigation currentSlug="previdenza" relatedSlugs={RELATED_CASES} />

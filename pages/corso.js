@@ -23,6 +23,11 @@ export default function CorsoAttuarialeCompleto() {
     >
       <section className="section">
         <h2>📖 Sezione 1 – Teoria attuariale</h2>
+        <p className="small-print">
+          Ogni sezione di questo corso è collegata alle altre pagine di attuario.eu: puoi passare alla sezione{" "}
+          <InlineCode>Teoria</InlineCode>, ai <InlineCode>Case study</InlineCode> o ai{" "}
+          <InlineCode>Calcolatori</InlineCode> per vedere gli stessi concetti applicati nella pratica.
+        </p>
         <h3>Parte 1: Tavole di mortalità e valori attuariali</h3>
         <p>
           La teoria attuariale fornisce il linguaggio matematico per valutare contratti
@@ -281,6 +286,10 @@ export default function CorsoAttuarialeCompleto() {
             <FormulaBlock>(1 + i)^5 = 1,25 ⇒ i ≈ 4,56%</FormulaBlock>
           </li>
         </ol>
+        <p className="small-print">
+          Puoi confrontare i risultati di questi esercizi con i calcoli effettuati tramite i calcolatori online nella sezione{" "}
+          <InlineCode>Strumenti &amp; calcolatori</InlineCode> del sito.
+        </p>
       </section>
 
       <section className="section">
@@ -318,6 +327,10 @@ def premio_puro(qx_list, i, capitale=100000):
     return prestazioni - premi
 `}
         </pre>
+        <p className="small-print">
+          Nel sito, la sezione <InlineCode>Strumenti</InlineCode> e la pagina <InlineCode>Calcolatori</InlineCode> raccolgono esempi di codice,
+          dataset e tool interattivi che seguono lo stesso impianto teorico di questo corso.
+        </p>
       </section>
 
       <section className="section">
@@ -335,6 +348,10 @@ def premio_puro(qx_list, i, capitale=100000):
           <li><strong>Tasso tecnico:</strong> tasso di attualizzazione utilizzato nei calcoli</li>
           <li><strong>v:</strong> fattore di attualizzazione</li>
         </ul>
+        <p className="small-print">
+          Il glossario completo, con ulteriori termini e collegamenti a paper e fonti istituzionali, è in preparazione nella sezione{" "}
+          <InlineCode>Wiki attuariale</InlineCode> del sito.
+        </p>
       </section>
 
       <section className="section">
@@ -358,6 +375,10 @@ def premio_puro(qx_list, i, capitale=100000):
         <p>Ruoli: pricing, reserving, valuation, ALM, attuario incaricato.</p>
         <h4>🧾 Formazione continua</h4>
         <p>Obbligo di 60 crediti formativi triennali tra corsi online, seminari e master.</p>
+        <p className="small-print">
+          Nella sezione <InlineCode>Attuari nel mondo reale</InlineCode> trovi una panoramica più estesa dei ruoli, delle competenze richieste e
+          dei percorsi di carriera possibili in Italia e all&apos;estero.
+        </p>
       </section>
 
       <section className="section">
@@ -372,6 +393,10 @@ def premio_puro(qx_list, i, capitale=100000):
           <li>SOA Mortality Tables.</li>
           <li>Actuview.</li>
         </ul>
+        <p className="small-print">
+          Per un monitoraggio strutturato di novità regolamentari, ricerca e mercato del lavoro puoi consultare anche le sezioni{" "}
+          <InlineCode>Notizie</InlineCode> e <InlineCode>Risorse</InlineCode> del sito.
+        </p>
       </section>
 
       <section className="section">

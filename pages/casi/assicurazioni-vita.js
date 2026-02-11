@@ -129,6 +129,10 @@ export default function CaseAssicurazioniVita() {
             </article>
           ))}
         </div>
+        <p className="small-print">
+          Per ogni fase puoi tornare alle sezioni <Link href="/teoria">Teoria</Link> e{" "}
+          <Link href="/applicazioni">Applicazioni</Link> per rivedere formule, ipotesi e schemi di comunicazione che supportano le scelte del case study.
+        </p>
       </section>
 
       <section className="section info-panel" id="output-attesi" aria-labelledby="output-attesi-heading">
@@ -152,6 +156,9 @@ export default function CaseAssicurazioniVita() {
             <li key={item}>{item}</li>
           ))}
         </ul>
+        <p className="small-print">
+          Le indicazioni riportate sono sintetiche e non sostituiscono la normativa ufficiale né i pareri richiesti dalle funzioni di controllo interne.
+        </p>
       </section>
 
       <CaseNavigation currentSlug="assicurazioni-vita" relatedSlugs={RELATED_CASES} />

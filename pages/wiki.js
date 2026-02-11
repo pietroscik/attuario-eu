@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Link from "next/link";
 import Layout from "../components/Layout";
 
 import { RESEARCH_PAPERS } from "../content/pages/wiki";
@@ -16,7 +17,7 @@ export default function Wiki() {
     <Layout
       title="Wiki attuariale"
       eyebrow="Knowledge base"
-      intro="Sezione dedicata a glossari, FAQ e snippet normativi riutilizzabili. Popola questa pagina con articoli o collegamenti alla tua base di conoscenza."
+      intro="Sezione dedicata a glossari, FAQ e snippet normativi riutilizzabili. Qui trovi collegamenti tra teoria, normativa e casi pratici per orientare studio, tesi e progetti professionali."
     >
       <style jsx>{`
         .research-grid {
@@ -102,6 +103,12 @@ export default function Wiki() {
         <p>
           Sintesi di termini chiave utili nella pratica assicurativa, con riferimenti alle definizioni raccolte da <abbr title="International Actuarial Association">IAA</abbr>
           e Ordine Nazionale degli Attuari.
+        </p>
+        <p className="small-print">
+          Per esempi numerici e applicazioni su contratti specifici puoi incrociare queste definizioni con le sezioni{" "}
+          <Link href="/teoria">Teoria</Link>,{" "}
+          <Link href="/corso">Corso</Link> e{" "}
+          <Link href="/casi">Case study</Link>.
         </p>
         <h3>Definizioni chiave</h3>
         <dl>

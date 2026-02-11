@@ -103,6 +103,11 @@ export default function CaseFinanzaRisk() {
         <p>
           Un gruppo assicurativo vuole aggiornare la valutazione di rischio integrato in vista della riunione annuale del board. L’obiettivo è presentare un ORSA condensato con analisi di capitale economico, scenari climatici e un piano di intervento tracciabile.
         </p>
+        <p className="small-print">
+          I concetti teorici richiamati (VaR/TVaR, ORSA, moduli Solvency II) sono descritti in maggiore dettaglio nelle sezioni{" "}
+          <Link href="/teoria">Teoria</Link> e{" "}
+          <Link href="/applicazioni">Applicazioni</Link>.
+        </p>
       </section>
 
       <section className="section" aria-labelledby="risorse-heading">
@@ -146,6 +151,9 @@ export default function CaseFinanzaRisk() {
             </li>
           ))}
         </ul>
+        <p className="small-print">
+          Utilizza questi deliverable come base di lavoro: adattali al perimetro di rischio della tua compagnia e condividi la documentazione con le funzioni Risk, Compliance e Attuariato per le valide approvazioni interne.
+        </p>
       </section>
 
       <section className="section" id="kpi-da-monitorare" aria-labelledby="kpi-heading">
@@ -158,6 +166,9 @@ export default function CaseFinanzaRisk() {
             </article>
           ))}
         </div>
+        <p className="small-print">
+          I KPI proposti non sono esaustivi: integra sempre le metriche richieste dal tuo RAF e dagli orientamenti IVASS/EIOPA, documentando in modo tracciabile soglie, frequenza di monitoraggio e responsabilità.
+        </p>
       </section>
 
       <CaseNavigation currentSlug="finanza-risk" relatedSlugs={RELATED_CASES} />

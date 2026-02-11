@@ -9,13 +9,19 @@ export default function Applicazioni() {
     <Layout
       title="Applicazioni attuariali"
       eyebrow="Dal modello all’impatto"
-      intro="Come trasformare la teoria in decisioni operative. I moduli di questa sezione propongono workflow replicabili, dataset aperti e suggerimenti per presentazioni a stakeholder non tecnici."
+      intro="Come trasformare la teoria in decisioni operative end‑to‑end. I moduli di questa sezione propongono workflow replicabili, dataset aperti e suggerimenti per presentazioni a stakeholder tecnici e non tecnici."
     >
       <section className="card-grid">
         {APPLICATION_AREAS.map(({ title, description, cases }) => (
           <article key={title} className="card application-card">
             <h2>{title}</h2>
             <p>{description}</p>
+            <p className="small-print">
+              Ogni blocco collega i concetti teorici alle sezioni{" "}
+              <Link href="/teoria">Teoria</Link>,{" "}
+              <Link href="/casi">Case study</Link> e{" "}
+              <Link href="/calcolatori">Calcolatori</Link>, così puoi vedere la stessa idea declinata in formule, esempi numerici e workflow operativi.
+            </p>
             <ul className="list">
               {cases.map(({ label, summary, href }) => (
                 <li key={label}>
@@ -48,7 +54,9 @@ export default function Applicazioni() {
           <li>Notebook con codice commentato e visualizzazioni.</li>
           <li>Template di presentazione per raccontare i risultati a management e regulator.</li>
         </ul>
-        <p className="small-print">Uso consentito esclusivamente a fini didattici e di studio.</p>
+        <p className="small-print">
+          I materiali sono pensati per studio e divulgazione: non sostituiscono in alcun modo valutazioni ufficiali di bilancio, pareri professionali o policy aziendali.
+        </p>
         <div className="cta-row">
           <Link className="button" href="/casi">
             Esplora i case study operativi

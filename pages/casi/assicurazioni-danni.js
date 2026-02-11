@@ -89,6 +89,12 @@ export default function CaseAssicurazioniDanni() {
         <p>
           Una compagnia danni vuole aggiornare la tariffa auto introducendo variabili telematiche e verificare la resilienza del piano riassicurativo a scenari vento. Il team deve produrre analisi GLM trasparenti, stress test documentati e linee guida per l’utilizzo dei dati.
         </p>
+        <p className="small-print">
+          Per i richiami teorici su GLM, stress test e riassicurazione puoi consultare le sezioni{" "}
+          <Link href="/teoria">Teoria</Link> e{" "}
+          <Link href="/applicazioni">Applicazioni</Link>, mentre i dettagli su ALM e rischio climatico sono collegati al case{" "}
+          <Link href="/casi/finanza-risk">Finanza e risk management</Link>.
+        </p>
       </section>
 
       <section className="section" aria-labelledby="risorse-supporto">
@@ -141,6 +147,9 @@ export default function CaseAssicurazioniDanni() {
             <li key={item}>{item}</li>
           ))}
         </ul>
+        <p className="small-print">
+          Le indicazioni riportate non sostituiscono i requisiti formali dei regolatori né le policy interne: usale come guida operativa e allineale ai processi di product governance e vendor risk management del tuo gruppo.
+        </p>
       </section>
 
       <CaseNavigation currentSlug="assicurazioni-danni" relatedSlugs={RELATED_CASES} />

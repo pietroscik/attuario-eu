@@ -179,6 +179,10 @@ export default function Teoria() {
 
       <section className="section info-panel">
         <h2>Approfondimenti multimediali</h2>
+        <p>
+          Ogni capitolo è pensato per collegarsi alle altre sezioni del sito e agli strumenti pratici: puoi usare i calcolatori, i case
+          study e la wiki per vedere la teoria applicata su dati e scenari reali.
+        </p>
         <p>Ogni capitolo integra note teoriche con:</p>
         <ul className="list">
           <li>Animazioni con MathJax e grafici interattivi in Python o R.</li>
@@ -186,8 +190,8 @@ export default function Teoria() {
           <li>Mini-quiz autogenerati per verificare la comprensione immediata.</li>
         </ul>
         <p className="small-print">
-          Materiale didattico open-source con licenza CC BY-SA, ideale per corsi
-          universitari e gruppi di studio.
+          Materiale didattico open-source con licenza CC BY-SA, ideale per corsi universitari e gruppi di studio. Molti esempi numerici
+          sono ripresi e ampliati nella sezione <Link href="/corso">Corso attuariale completo</Link>.
         </p>
       </section>
 
@@ -214,6 +218,11 @@ export default function Teoria() {
             )}
           </div>
         ))}
+        <p className="small-print">
+          Le ricerche elencate costituiscono un punto di partenza per tesi, progetti e approfondimenti professionali. Per casi applicativi
+          guidati, con dataset e deliverable suggeriti, visita anche la sezione{" "}
+          <Link href="/casi">Case study operativi</Link>.
+        </p>
       </section>
 
       <style jsx>{`

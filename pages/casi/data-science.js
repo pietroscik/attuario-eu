@@ -97,6 +97,11 @@ export default function CaseDataScience() {
         <p>
           Un team attuariale vuole automatizzare il processo di pricing e reserving sfruttando pipeline dati e modelli machine learning. L’obiettivo è garantire riproducibilità, controllo delle versioni e monitoraggio costante di drift e performance.
         </p>
+        <p className="small-print">
+          Per la parte teorica su modelli predittivi, governance dei dati e framework di controllo interno puoi fare riferimento alle sezioni{" "}
+          <Link href="/teoria">Teoria</Link> e <Link href="/wiki">Wiki attuariale</Link>, mentre la pagina{" "}
+          <Link href="/applicazioni">Applicazioni</Link> collega questi concetti a casi d&apos;uso concreti.
+        </p>
       </section>
 
       <section className="section" aria-labelledby="risorse-heading">
@@ -123,6 +128,10 @@ export default function CaseDataScience() {
             </article>
           ))}
         </div>
+        <p className="small-print">
+          Durante queste fasi è utile tenere allineate le funzioni Attuariato, IT e Risk Management: usa le checklist nella sezione{" "}
+          <Link href="/casi/finanza-risk">Finanza e risk management</Link> per assicurarti che i modelli rispettino anche i vincoli regolamentari.
+        </p>
       </section>
 
       <section className="section info-panel" id="componenti-principali" aria-labelledby="componenti-heading">
@@ -149,6 +158,9 @@ export default function CaseDataScience() {
             </li>
           ))}
         </ul>
+        <p className="small-print">
+          I deliverable suggeriti sono una base: vanno adattati alle policy interne, al framework di model risk management aziendale e alle aspettative di IVASS/EIOPA su registri modello e tracciabilità delle decisioni.
+        </p>
       </section>
 
       <CaseNavigation currentSlug="data-science" relatedSlugs={RELATED_CASES} />
