@@ -91,7 +91,8 @@ ${urlEntries}
 export async function getServerSideProps({ res }) {
   const sitemap = generateSitemapXml();
 
-  res.setHeader("Content-Type", "application/xml");
+  res.statusCode = 200;
+  res.setHeader("Content-Type", "text/xml; charset=utf-8");
   res.write(sitemap);
   res.end();
 
