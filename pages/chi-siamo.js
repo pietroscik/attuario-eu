@@ -59,31 +59,26 @@ const CONTRIBUTION_PATHS = [
 export default function ChiSiamo() {
   return (
     <Layout
-      title="Chi siamo"
-      eyebrow="Un progetto di divulgazione attuariale"
-      intro="attuario.eu è una piattaforma editoriale che raccoglie percorsi di studio, risorse e strumenti per la community attuariale in lingua italiana."
-      metaDescription="Scopri la missione, l’approccio editoriale e come contribuire al progetto divulgativo di attuario.eu."
+      title="Chi Sono"
+      eyebrow="L'autore del progetto"
+      intro={
+        <>
+          <p>
+            Sono <strong>Pietro Maietta</strong>, 40 anni, laureato magistrale in Statistica e Scienze 
+            Attuariali (105/110) e in fase di completamento della laurea magistrale in 
+            Economia e Management del Mare (Università di Napoli Parthenope). <strong>Non sono iscritto all&apos;Albo Nazionale Attuari</strong> — sto preparando 
+            l&apos;esame di Stato per l&apos;abilitazione professionale.
+          </p>
+          <p>
+            <strong>attuario.eu</strong> è la mia iniziativa personale per condividere risorse didattiche 
+            con altri studenti e aspiranti attuari. Non è uno studio professionale né 
+            un&apos;organizzazione: è un progetto open source gestito da una singola persona.
+          </p>
+        </>
+      }
+      metaDescription="Scopri chi è l'autore di attuario.eu, il suo background e la missione del progetto."
       width="narrow"
     >
-      <section className="section info-panel" aria-labelledby="chi-siamo-missione">
-        <h2 id="chi-siamo-missione">La nostra missione</h2>
-        <p>
-          Rendiamo più accessibili concetti, casi e strumenti della scienza attuariale. Il sito nasce come hub divulgativo per
-          riunire materiali affidabili, percorsi guidati e opportunità di collaborazione, con particolare attenzione al pubblico italiano.
-        </p>
-        <p className="small-print">
-          Ogni pagina mantiene il disclaimer presente nel footer del sito: le informazioni hanno scopo informativo e non costituiscono consulenza professionale.
-        </p>
-      </section>
-
-      <section className="section info-panel" aria-labelledby="chi-siamo-profilo">
-        <h2 id="chi-siamo-profilo">Il Mio Profilo Professionale</h2>
-        <p><strong>Nome:</strong> Pietro Maietta</p>
-        <p><strong>Formazione:</strong> Laureato magistrale in Statistica e Scienze Attuariali (105/110), in fase di completamento della laurea magistrale in Economia.</p>
-        <p><strong>Status attuale:</strong> <strong>Non iscritto all&apos;Albo Nazionale Attuari</strong> — in preparazione per l&apos;esame di Stato.</p>
-        <p><strong>Questo sito:</strong> Iniziativa personale a scopo divulgativo e formativo, non attività professionale regolamentata.</p>
-      </section>
-
       <section className="section" aria-labelledby="chi-siamo-cosa-facciamo">
         <h2 id="chi-siamo-cosa-facciamo">Cosa trovi su attuario.eu</h2>
         <div className="card-grid">
